@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   const [bill, setBill] = useState(0);
   const [tip, setTip] = useState(0);
+  const [customTip, setCustomTip] = useState(0);
   const [numOfPeople, setNumOfPeople] = useState(1);
   const [tipAmount, setTipAmount] = useState(0);
   const [total, setTotal] = useState(0);
@@ -23,7 +24,8 @@ function App() {
 
   const handleCustomTip = (e) => {
     if (e.target.value >= 0) {
-      setTip(e.target.value);
+      setCustomTip(e.target.value);
+      setTip(costumTip);
     }
   };
 
@@ -39,6 +41,7 @@ function App() {
     setBill(0);
     setTip(0);
     setNumOfPeople(1);
+    setCustomTip(0);
   };
 
   return (
