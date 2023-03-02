@@ -25,7 +25,7 @@ function App() {
   const handleCustomTip = (e) => {
     if (e.target.value >= 0) {
       setCustomTip(e.target.value);
-      setTip(costumTip);
+      setTip(customTip);
     }
   };
 
@@ -54,6 +54,7 @@ function App() {
               <input
                 className='input input-bill'
                 type='number'
+                value={bill}
                 placeholder='$'
                 onChange={(e) => setBill(e.target.value)}
               />
