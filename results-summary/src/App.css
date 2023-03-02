@@ -1,0 +1,171 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card-container {
+  border-radius: 30px;
+  width: 1000px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px 3px rgb(9, 9, 9);
+}
+
+.results-container {
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    150deg,
+    rgba(103, 67, 254) 0%,
+    rgb(51, 42, 234) 100%
+  );
+}
+
+.results-title {
+  color: rgb(182, 182, 182);
+}
+
+.results-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(68, 45, 224);
+}
+
+.results-score {
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+.maxscore {
+  color: rgb(182, 182, 182);
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.results-desc-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+}
+
+.results-desc {
+  color: rgb(182, 182, 182);
+}
+
+.summary-container {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  gap: 25px;
+}
+
+.summary-title {
+  display: flex;
+  padding-left: 20px;
+  color: #3b4058;
+}
+
+.summary-scores-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-self: center;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 10px;
+}
+.summary-score-container {
+  display: flex;
+  justify-content: space-between;
+
+  border-radius: 20px;
+}
+.summary-name {
+  padding-left: 5px;
+}
+.summary-score {
+  align-self: flex-end;
+  padding-right: 5px;
+  color: #3b4058;
+}
+
+.reaction {
+  background-color: hsla(0, 100%, 67%, 0.1);
+  color: hsl(0, 100%, 67%);
+  padding-left: 5px;
+}
+.memory {
+  background-color: hsl(39, 100%, 56%, 0.1);
+  color: hsl(39, 100%, 56%);
+  padding-left: 5px;
+}
+
+.verbal {
+  background-color: hsl(166, 100%, 37%, 0.1);
+  color: hsl(166, 100%, 37%);
+  padding-left: 5px;
+}
+
+.visual {
+  background-color: hsl(234, 85%, 45%, 0.1);
+  color: hsl(234, 85%, 45%);
+  padding-left: 5px;
+}
+
+.max {
+  display: flex;
+  align-self: flex-end;
+}
+
+.summary-max-score {
+  color: #95929b;
+}
+
+.score {
+  display: flex;
+  padding-right: 5px;
+}
+
+.summary-score {
+  color: #1e2336;
+  font-weight: bold;
+}
+
+.continue-button {
+  width: 80%;
+  height: 70px;
+  border-radius: 30px;
+  align-self: center;
+  text-align: center;
+  font-size: 18px;
+  background-color: rgb(48, 58, 88);
+}
