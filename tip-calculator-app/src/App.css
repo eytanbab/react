@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -19,6 +19,7 @@ button {
   display: flex;
   justify-content: flex-start;
   border-radius: 20px;
+  box-shadow: 0px 0px 20px 3px rgba(200, 200, 200, 0.7);
 }
 
 .bill-container {
@@ -194,25 +195,31 @@ input:focus {
 }
 
 @media screen and (max-width: 820px) {
+  #root {
+    padding: 0;
+  }
   .container {
     flex-direction: column;
     height: 100%;
     width: 100%;
     align-items: center;
-    justify-content: center;
   }
 
   .bill-container {
     margin: 0;
     padding: 0;
-    position: relative;
-    max-height: 100%;
-    max-width: 100%;
+    position: absolute;
+    top: 10px;
+    height: 50%;
   }
   .total-container {
+    position: absolute;
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 50%;
+    border-radius: 20px 20px 0px 0px;
+    bottom: 0;
   }
   .reset-btn {
     width: 50%;
@@ -223,5 +230,9 @@ input:focus {
 
   .select-tip-container {
     margin: 0;
+  }
+
+  .upper {
+    width: 90%;
   }
 }
