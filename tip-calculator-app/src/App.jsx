@@ -12,7 +12,7 @@ function App() {
 
   //tip amount per person
   useEffect(() => {
-    const temp = ((bill / numOfPeople) * tip) / 100;
+    const temp = ((Number(bill) / Number(numOfPeople)) * tip) / 100;
     setTipAmount(Number(temp).toFixed(2));
   }, [bill, tip, numOfPeople]);
 
@@ -57,6 +57,7 @@ function App() {
                 value={bill}
                 placeholder='$'
                 onChange={(e) => setBill(e.target.value)}
+                onClick={() => setBill('')}
               />
             </form>
           </div>
@@ -118,6 +119,7 @@ function App() {
                 className='input people-amount'
                 type='number'
                 placeholder='1'
+                value={numOfPeople}
                 onChange={handleNumberOfPeople}
               />
             </form>
