@@ -14,18 +14,18 @@ function App() {
   useEffect(() => {
     const temp = ((Number(bill) / Number(numOfPeople)) * tip) / 100;
     setTipAmount(Number(temp).toFixed(2));
-  }, [bill, tip, numOfPeople]);
+  }, [bill, tip, numOfPeople, customTip]);
 
   //total price per person
   useEffect(() => {
     const temp = Number(bill) / Number(numOfPeople) + Number(tipAmount);
     setTotal(Number(temp).toFixed(2));
-  }, [bill, tipAmount]);
+  }, [bill, tipAmount, customTip]);
 
   const handleCustomTip = (e) => {
     if (e.target.value >= 0) {
       setCustomTip(e.target.value);
-      setTip(customTip);
+      setTip(e.target.value);
     }
   };
 
@@ -41,7 +41,7 @@ function App() {
     setBill(0);
     setTip(0);
     setNumOfPeople(1);
-    setCustomTip(0);
+    setCustomTip('');
   };
 
   return (
@@ -111,6 +111,7 @@ function App() {
                 className='tip-percentage custom'
                 type='number'
                 placeholder='Custom'
+                value={customTip}
               />
             </div>
           </div>
