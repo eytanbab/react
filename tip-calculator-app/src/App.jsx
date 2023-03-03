@@ -56,7 +56,9 @@ function App() {
                 type='number'
                 value={bill}
                 placeholder='$'
-                onChange={(e) => setBill(e.target.value)}
+                onChange={(e) =>
+                  e.target.value > 0 ? setBill(e.target.value) : setBill('')
+                }
                 onClick={() => setBill('')}
               />
             </form>
@@ -119,7 +121,6 @@ function App() {
                 className='input people-amount'
                 type='number'
                 placeholder='1'
-                value={numOfPeople}
                 onChange={handleNumberOfPeople}
               />
             </form>
