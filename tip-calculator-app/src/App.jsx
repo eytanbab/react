@@ -150,12 +150,14 @@ function App() {
               <div className='tip-amount-price'>${total}</div>
             </div>
           </div>
-          <button onClick={handleSubmit} className='submit-btn'>
-            SUBMIT
-          </button>
-          <button onClick={handleReset} className='reset-btn'>
-            RESET
-          </button>
+          <div className='btn-container'>
+            <button onClick={handleSubmit} className='submit-btn'>
+              SUBMIT
+            </button>
+            <button onClick={handleReset} className='reset-btn'>
+              RESET
+            </button>
+          </div>
         </div>
       </div>
     </div>
