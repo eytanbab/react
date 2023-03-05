@@ -1,0 +1,54 @@
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.notification {
+  background-color: hsl(211, 68%, 94%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.upper {
+  display: flex;
+  gap: 20px;
+  padding: 10px 10px 0px;
+}
+
+.notification-info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.person-name,
+.action-name {
+  font-weight: 600;
+}
+
+.notification-action {
+  color: #5a5a5a;
+}
+
+.unread-dot {
+  background-color: red;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+}
+
+.notification-time {
+  display: flex;
+  position: relative;
+  left: 70px;
+}
