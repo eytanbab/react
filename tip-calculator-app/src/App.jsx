@@ -11,16 +11,16 @@ function App() {
   const [total, setTotal] = useState(0);
 
   //tip amount per person
-  useEffect(() => {
-    const temp = ((Number(bill) / Number(numOfPeople)) * tip) / 100;
-    setTipAmount(Number(temp).toFixed(2));
-  }, [bill, tip, numOfPeople, customTip]);
+  // useEffect(() => {
+  //   const temp = ((Number(bill) / Number(numOfPeople)) * tip) / 100;
+  //   setTipAmount(Number(temp).toFixed(2));
+  // }, [bill, tip, numOfPeople, customTip]);
 
   //total price per person
-  useEffect(() => {
-    const temp = Number(bill) / Number(numOfPeople) + Number(tipAmount);
-    setTotal(Number(temp).toFixed(2));
-  }, [bill, tipAmount, customTip]);
+  // useEffect(() => {
+  //   const temp = Number(bill) / Number(numOfPeople) + Number(tipAmount);
+  //   setTotal(Number(temp).toFixed(2));
+  // }, [bill, tipAmount, customTip]);
 
   const handleCustomTip = (e) => {
     if (e.target.value >= 0) {
@@ -37,6 +37,12 @@ function App() {
     }
   };
 
+  const handleSubmit = () => {
+    const temp = ((Number(bill) / Number(numOfPeople)) * tip) / 100;
+    setTipAmount(Number(temp).toFixed(2));
+    const temp2 = Number(bill) / Number(numOfPeople) + temp;
+    setTotal(Number(temp2).toFixed(2));
+  };
   const handleReset = () => {
     setBill(0);
     setTip(0);
@@ -144,6 +150,9 @@ function App() {
               <div className='tip-amount-price'>${total}</div>
             </div>
           </div>
+          <button onClick={handleSubmit} className='submit-btn'>
+            SUBMIT
+          </button>
           <button onClick={handleReset} className='reset-btn'>
             RESET
           </button>
