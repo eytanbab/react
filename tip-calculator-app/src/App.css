@@ -180,12 +180,19 @@ input::-webkit-inner-spin-button {
   margin-right: 10px;
 }
 
-.reset-btn {
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.reset-btn,
+.submit-btn {
   border: none;
   font-weight: bold;
-
-  margin-top: 100px;
-  width: 80%;
+  width: 70%;
   background-color: hsl(185, 41%, 84%);
   color: hsl(183, 100%, 15%);
 }
@@ -221,7 +228,8 @@ input:focus {
     border-radius: 20px 20px 0px 0px;
     bottom: 0;
   }
-  .reset-btn {
+  .reset-btn,
+  .submit-btn {
     width: 50%;
     height: 40px;
     padding: 0;
