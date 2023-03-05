@@ -30,7 +30,7 @@ function App() {
   };
 
   const handleNumberOfPeople = (e) => {
-    if (e.target.value > 0) {
+    if (e.target.value >= 0) {
       setNumOfPeople(e.target.value);
     } else {
       setNumOfPeople(1);
@@ -127,8 +127,12 @@ function App() {
               <input
                 className='input people-amount'
                 type='number'
-                placeholder='1'
+                value={numOfPeople}
                 onChange={handleNumberOfPeople}
+                placeholder='1'
+                onClick={() => {
+                  setNumOfPeople('');
+                }}
               />
             </form>
           </div>
