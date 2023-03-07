@@ -5,7 +5,6 @@ export default function Result({ definition }) {
   return (
     <div className=' flex max-w-lg  flex-col items-center gap-4 rounded-3xl bg-slate-800 p-2 px-6 text-white'>
       <div className=' flex w-full items-center justify-between'>
-        {console.log(definition)}
         <div className=' flex flex-col gap-2'>
           <h3 className='text-6xl font-medium'>{definition[0]?.word}</h3>
           <h4 className='text-2xl  font-light text-purple-500'>
