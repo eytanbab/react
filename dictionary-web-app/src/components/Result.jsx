@@ -23,10 +23,14 @@ export default function Result({ definition, lightMode }) {
       </div>
       <div className='flex w-full flex-col gap-6 rounded-3xl py-4'>
         {definition[0]?.meanings?.map((meaning) => (
-          <div key={Math.random() * 1000} className=''>
+          <div key={Math.random() * 1000}>
             <div className='mx-2 flex items-center gap-4'>
               <h1 className='italic'>{meaning.partOfSpeech}</h1>
-              <div className=' h-px w-full bg-slate-100/30'></div>
+              <div
+                className={`h-px w-full ${
+                  lightMode ? ' bg-slate-900/10' : 'bg-slate-100/30'
+                } `}
+              ></div>
             </div>
             <div className='w-full py-2'>
               <h1
