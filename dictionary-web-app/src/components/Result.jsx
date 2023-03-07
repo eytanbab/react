@@ -3,7 +3,7 @@ import { AiFillPlayCircle } from 'react-icons/ai';
 
 export default function Result({ definition }) {
   return (
-    <div className=' flex max-w-lg  flex-col items-center gap-12 rounded-3xl bg-slate-800 p-2 px-6 text-white'>
+    <div className=' flex max-w-lg  flex-col items-center gap-4 rounded-3xl bg-slate-800 p-2 px-6 text-white'>
       <div className=' flex w-full items-center justify-between'>
         {console.log(definition)}
         <div className=' flex flex-col gap-2'>
@@ -23,10 +23,10 @@ export default function Result({ definition }) {
               <h1 className='italic'>{meaning.partOfSpeech}</h1>
               <div className=' h-px w-full bg-slate-100/30'></div>
             </div>
-            <div className='w-full'>
-              <h1 className='text-xl font-medium text-gray-200'>Meaning:</h1>
+            <div className='w-full py-2'>
+              <h1 className='text-xl text-gray-300'>Meaning:</h1>
               {meaning.definitions.map((item) => (
-                <ul className='list-disc px-6'>
+                <ul className='list-disc px-6 py-2 marker:text-purple-500'>
                   <li key={Math.random() * 1000} className=''>
                     {item.definition}
                   </li>
