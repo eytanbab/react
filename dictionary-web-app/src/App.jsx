@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 function App() {
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState([]);
-  const [lightMode, setLightMode] = useState(false);
+  const [lightMode, setLightMode] = useState(true);
 
   const getDefinition = async () => {
     const api = await fetch(
@@ -23,7 +23,7 @@ function App() {
   return (
     <div
       className={`flex h-auto min-h-screen flex-col items-center gap-8 ${
-        lightMode ? 'bg-gray-100' : 'bg-gray-700'
+        lightMode ? 'bg-gray-200' : 'bg-gray-700'
       }`}
     >
       <Nav lightMode={lightMode} setLightMode={setLightMode} />

@@ -2,10 +2,9 @@ import { useState } from 'react';
 import { FaBook } from 'react-icons/fa';
 import { BsToggle2Off, BsToggle2On, BsMoon, BsSun } from 'react-icons/bs';
 
-const Nav = ({lightMode, setLightMode}) => {
-  
+const Nav = ({ lightMode, setLightMode }) => {
   return (
-    <nav className='flex h-16 w-full items-center justify-between bg-gray-100 p-2  px-6'>
+    <nav className='flex h-16 w-full items-center justify-between bg-gray-200 p-2  px-6'>
       <FaBook size={30} />
       <div className='flex items-center gap-8'>
         <button onClick={() => setLightMode(!lightMode)}>

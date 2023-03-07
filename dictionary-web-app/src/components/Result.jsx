@@ -5,7 +5,9 @@ export default function Result({ definition, lightMode }) {
   return (
     <div
       className={`mx-2 mb-6 flex max-w-lg flex-col items-center gap-4 rounded-3xl ${
-        lightMode ? 'bg-gray-200 text-gray-900' : 'bg-slate-800 text-gray-50'
+        lightMode
+          ? 'bg-gray-200 text-gray-900 shadow-2xl'
+          : 'bg-slate-800 text-gray-50'
       }  py-6 px-6`}
     >
       <div className=' flex w-full items-center justify-between'>
