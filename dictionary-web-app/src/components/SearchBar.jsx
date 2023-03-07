@@ -9,7 +9,7 @@ function SearchBar({ setWord }) {
 
   return (
     <form
-      className='flex w-[32rem] min-w-max items-center justify-between rounded-xl bg-gray-200 px-4 shadow'
+      className='flex min-w-max items-center justify-between rounded-xl bg-gray-200 px-4 shadow sm:w-96'
       onSubmit={submitHandler}
     >
       <input
