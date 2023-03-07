@@ -18,12 +18,12 @@ export default function Result({ definition }) {
       </div>
       <div className='flex w-full flex-col gap-6 rounded-3xl py-4'>
         {definition[0]?.meanings?.map((meaning) => (
-          <div key={Math.random() * 1000} className='bg-blue-400'>
+          <div key={Math.random() * 1000} className=''>
             <div className='mx-2 flex items-center gap-4'>
-              <h1 className='font-semibold'>{meaning.partOfSpeech}</h1>
+              <h1 className='italic'>{meaning.partOfSpeech}</h1>
               <div className=' h-px w-full bg-slate-100/30'></div>
             </div>
-            <div className='w-full bg-red-500 py-2'>
+            <div className='w-full'>
               <h1 className='text-xl font-medium text-gray-200'>Meaning:</h1>
               {meaning.definitions.map((item) => (
                 <ul className='list-disc px-6'>
