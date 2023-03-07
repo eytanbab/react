@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 function App() {
   const [word, setWord] = useState('');
   const [definition, setDefinition] = useState([]);
+  const [lightMode, setLightMode] = useState(false);
 
   const getDefinition = async () => {
     const api = await fetch(
@@ -20,10 +21,14 @@ function App() {
   }, [word]);
 
   return (
-    <div className='flex h-screen flex-col items-center gap-8 bg-gray-700'>
-      <Nav />
+    <div
+      className={`flex h-auto min-h-screen flex-col items-center gap-8 ${
+        lightMode ? 'bg-gray-100' : 'bg-gray-700'
+      }`}
+    >
+      <Nav lightMode={lightMode} setLightMode={setLightMode} />
       <SearchBar setWord={setWord} />
-      {word && <Result definition={definition} />}
+      {word && <Result definition={definition} lightMode={lightMode} />}
     </div>
   );
 }
