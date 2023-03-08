@@ -14,7 +14,7 @@ export default function Result({ definition, lightMode }) {
         <div className=' flex flex-col gap-2'>
           <h3 className='text-6xl font-medium'>{definition[0]?.word}</h3>
           <h4 className='text-2xl  font-light text-purple-500'>
-            {definition[0]?.phonetic || definition[0]?.phonetics[1].text}
+            {definition[0]?.phonetic || definition[0]?.phonetics[1]?.text}
           </h4>
         </div>
         <button className='text-purple-500'>
