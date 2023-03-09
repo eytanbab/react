@@ -20,7 +20,7 @@ const Card = () => {
     }
   };
   return (
-    <div className='flex bg-[#313A49] flex-col max-w-md max-h-md rounded-2xl shadow-[0_0_50px_5px_rgba(0,0,0,0.6)]'>
+    <div className='m-4 flex bg-[#313A49] flex-col max-w-md max-h-md rounded-2xl shadow-[0_0_50px_5px_rgba(0,0,0,0.6)]'>
       <div className='flex flex-col gap-6 py-12 mx-16 text-center'>
         <h3 className='text-lg text-[#72F0BE] tracking-widest'>
           ADVICE #{adviceId}
@@ -35,9 +35,7 @@ const Card = () => {
       </div>
       <button
         className='flex self-center items-center justify-center bg-[#52FFAE] w-14 h-14 rounded-full transition ease-in-out duration-300 hover:transition-shadow hover:shadow-glow my-6'
-        onClick={() => {
-          fetchRandomAdvice();
-        }}
+        onClick={fetchRandomAdvice}
       >
         <img src={DiceIcon} alt='hello' className='w-5 h-5' />
       </button>
