@@ -7,10 +7,10 @@ import Technology from './components/pages/Technology';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className='min-w-screen flex min-h-screen flex-col bg-home-mobile bg-cover bg-no-repeat md:bg-home-tablet lg:bg-home-dekstop'>
+    <div
+      className={`min-w-screen flex min-h-screen flex-col bg-home-dekstop bg-cover bg-no-repeat`}
+    >
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />

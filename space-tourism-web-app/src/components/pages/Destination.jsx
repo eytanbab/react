@@ -7,7 +7,7 @@ function Destination() {
   console.log(destinations);
 
   return (
-    <div className='page justify-around'>
+    <div className='page justify-around bg-destination-desktop'>
       <div className='flex gap-6 text-4xl text-white'>
         <h1>01</h1>
         <h1>PICK YOUR DESTINATION</h1>

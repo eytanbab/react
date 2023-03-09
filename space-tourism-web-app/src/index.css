@@ -7,7 +7,7 @@
     @apply flex h-20 items-center justify-center gap-2 p-2 focus:border-b-2;
   }
   .page {
-    @apply flex h-screen w-screen items-center justify-center text-white;
+    @apply flex h-screen w-screen items-center justify-center  bg-cover bg-no-repeat text-white;
   }
 }
 

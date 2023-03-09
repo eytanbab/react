@@ -10,7 +10,12 @@ module.exports = {
           "url('../helpers/starter-code/assets/home/background-home-tablet.jpg')",
         'home-mobile':
           "url('../helpers/starter-code/assets/home/background-home-mobile.jpg')",
-        moon: 'url(../helpers/starter-code/assets/destination/image-moon.png)',
+        'destination-desktop':
+          "url('../helpers/starter-code/assets/destination/background-destination-desktop.jpg')",
+        'crew-desktop':
+          "url('../helpers/starter-code/assets/crew/background-crew-desktop.jpg')",
+        'technology-desktop':
+          "url('../helpers/starter-code/assets/technology/background-technology-desktop.jpg')",
       },
       fontFamily: {
         barlow: ['Barlow Condensed'],
