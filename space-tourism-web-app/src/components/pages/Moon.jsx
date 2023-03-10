@@ -1,7 +1,0 @@
-import React from 'react';
-import Planet from './Planet';
-function Moon({ data }) {
-  return <Planet data={data} />;
-}
-
-export default Moon;
