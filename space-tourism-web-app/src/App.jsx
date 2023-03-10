@@ -7,6 +7,9 @@ import Technology from './components/pages/Technology';
 import NotFound from './components/pages/NotFound';
 import { Route, Routes } from 'react-router-dom';
 import Moon from './components/pages/Moon';
+import Mars from './components/pages/Mars';
+import Europa from './components/pages/Europa';
+import Titan from './components/pages/Titan';
 import data from '../helpers/starter-code/data.json';
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='destination' element={<Destinations />}>
           <Route path='moon' element={<Moon data={destinations[0]} />} />
+          <Route path='mars' element={<Mars data={destinations[1]} />} />
+          <Route path='europa' element={<Europa data={destinations[2]} />} />
+          <Route path='titan' element={<Titan data={destinations[3]} />} />
         </Route>
         <Route path='crew' element={<Crew />} />
         <Route path='technology' element={<Technology />} />

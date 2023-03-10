@@ -27,14 +27,29 @@ function Destinations() {
               MOON
             </button>
           </Link>
-          <Link to='destination/mars'>
-            <button className='btn-navbar h-10'>MARS</button>
+          <Link to='/destination/mars'>
+            <button
+              className='btn-navbar h-10'
+              onClick={() => setPlanetImg(MarsImg)}
+            >
+              MARS
+            </button>
           </Link>
-          <Link to='destination/europa'>
-            <button className='btn-navbar h-10'>EUROPA</button>
+          <Link to='/destination/europa'>
+            <button
+              className='btn-navbar h-10'
+              onClick={() => setPlanetImg(EuropaImg)}
+            >
+              EUROPA
+            </button>
           </Link>
-          <Link to='destination/titan'>
-            <button className='btn-navbar h-10'>TITAN</button>
+          <Link to='/destination/titan'>
+            <button
+              className='btn-navbar h-10'
+              onClick={() => setPlanetImg(TitanImg)}
+            >
+              TITAN
+            </button>
           </Link>
         </div>
         <Outlet />
