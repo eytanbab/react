@@ -10,11 +10,14 @@ import Planet from './components/pages/Planet';
 
 function App() {
   const destinations = data.destinations;
+  const crew = data.crew;
+  const technology = data.technology;
   return (
     <div
       className={`min-w-screen flex min-h-screen flex-col bg-home-dekstop bg-cover bg-no-repeat`}
     >
       <NavBar />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='destination' element={<Destinations />}>
@@ -23,8 +26,8 @@ function App() {
           <Route path='europa' element={<Planet data={destinations[2]} />} />
           <Route path='titan' element={<Planet data={destinations[3]} />} />
         </Route>
-        <Route path='crew' element={<Crew />} />
-        <Route path='technology' element={<Technology />} />
+        <Route path='crew' element={<Crew data={crew} />} />
+        <Route path='technology' element={<Technology data={technology} />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
