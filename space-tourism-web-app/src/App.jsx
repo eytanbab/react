@@ -12,6 +12,7 @@ function App() {
   const destinations = data.destinations;
   const crew = data.crew;
   const technology = data.technology;
+
   return (
     <div
       className={`min-w-screen flex min-h-screen flex-col bg-home-dekstop bg-cover bg-no-repeat`}

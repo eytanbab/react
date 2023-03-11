@@ -8,7 +8,6 @@ import GloverImg from '../../assets/crew/image-victor-glover.png';
 function Crew({ data }) {
   const [person, setPerson] = useState(0);
   const [img, setImg] = useState(HurleyImg);
-  console.log(data[person]);
 
   return (
     <div className='page flex flex-col items-start justify-center bg-crew-desktop px-96'>
