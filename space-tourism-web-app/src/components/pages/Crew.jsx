@@ -10,37 +10,39 @@ function Crew({ data }) {
   const [img, setImg] = useState(HurleyImg);
 
   return (
-    <div className='page flex flex-col items-start justify-center bg-crew-desktop px-96'>
-      <Person data={data[person]} Img={img} />
-      <div className='flex gap-12 py-10'>
-        <button
-          onClick={() => {
-            setPerson(0);
-            setImg(HurleyImg);
-          }}
-          className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
-        />
-        <button
-          onClick={() => {
-            setPerson(1);
-            setImg(MarkImg);
-          }}
-          className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
-        />
-        <button
-          onClick={() => {
-            setPerson(2);
-            setImg(GloverImg);
-          }}
-          className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
-        />
-        <button
-          onClick={() => {
-            setPerson(3);
-            setImg(AnsariImg);
-          }}
-          className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
-        />
+    <div className='page flex justify-start bg-crew-desktop px-96'>
+      <div className='flex flex-col'>
+        <Person data={data[person]} Img={img} />
+        <div className='flex gap-12 py-10'>
+          <button
+            onClick={() => {
+              setPerson(0);
+              setImg(HurleyImg);
+            }}
+            className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
+          />
+          <button
+            onClick={() => {
+              setPerson(1);
+              setImg(MarkImg);
+            }}
+            className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
+          />
+          <button
+            onClick={() => {
+              setPerson(2);
+              setImg(GloverImg);
+            }}
+            className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
+          />
+          <button
+            onClick={() => {
+              setPerson(3);
+              setImg(AnsariImg);
+            }}
+            className='h-6 w-6 rounded-full bg-gray-500 focus:bg-white'
+          />
+        </div>
       </div>
     </div>
   );

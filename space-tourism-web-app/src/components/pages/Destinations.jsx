@@ -17,7 +17,7 @@ function Destinations() {
         </div>
         <img src={planetImg} alt='' />
       </div>
-      <div className='flex flex-col gap-12'>
+      <div className='flex h-96 flex-col gap-12'>
         <div className='flex gap-8 text-2xl'>
           <Link to='/destination/moon'>
             <button

@@ -12,9 +12,9 @@ const NavBar = () => {
       <div className='absolute left-52 z-10 h-[1px] w-[64rem] self-center bg-white/20'></div>
 
       {/* BUTTONS  */}
-      <div className='absolute right-0 flex h-24 w-[96rem] items-center justify-center gap-24 bg-white/5 py-12 px-3 text-xl text-white backdrop-blur-2xl'>
+      <div className='absolute right-0 flex h-24 w-[96rem] items-center justify-center gap-24 bg-white/5 py-12 px-3 text-xl text-white backdrop-blur-2xl '>
         <Link to='/'>
-          <button className='btn-navbar '>
+          <button className='btn-navbar'>
             <h1 className='font-bold'>00</h1> HOME
           </button>
         </Link>

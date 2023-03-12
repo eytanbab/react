@@ -15,7 +15,9 @@ function App() {
 
   return (
     <div
-      className={`min-w-screen flex min-h-screen flex-col bg-home-dekstop bg-cover bg-no-repeat`}
+      className={
+        'min-w-screen flex flex-col bg-home-dekstop bg-cover bg-no-repeat'
+      }
     >
       <NavBar />
 

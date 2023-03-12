@@ -10,13 +10,13 @@ function Technology({ data }) {
   console.log(data);
 
   return (
-    <div className='page flex flex-col bg-technology-desktop '>
-      <div className='mx-16 flex gap-10 self-start text-4xl'>
+    <div className='page flex flex-col items-center justify-center bg-technology-desktop px-96 '>
+      <div className='flex gap-6 self-start py-20 font-barlow text-4xl'>
         <h1 className='font-bold text-gray-400'>03</h1>
         <h1>SPACE LAUNCH 101</h1>
       </div>
-      <div className='flex w-full items-center justify-around '>
-        <div className='flex flex-col gap-12  text-4xl text-white'>
+      <div className='flex h-[34rem] w-screen items-center justify-center gap-20'>
+        <div className='flex flex-col gap-12 text-4xl text-white'>
           <button
             onClick={() => {
               setTool(0);
@@ -45,7 +45,7 @@ function Technology({ data }) {
             3
           </button>
         </div>
-        <Tool data={data[tool]} img={img} />
+        <Tool data={data[tool]} />
         <img src={img} alt='' />
       </div>
     </div>
