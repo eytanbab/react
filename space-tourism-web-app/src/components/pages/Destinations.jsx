@@ -10,9 +10,9 @@ function Destinations() {
   const [planetImg, setPlanetImg] = useState('');
   return (
     <div className='page flex justify-around bg-destination-desktop'>
-      <div className=' flex-col gap-8'>
+      <div className='flex-col gap-8'>
         <div className='flex gap-6 py-12 text-4xl text-white'>
-          <h1>01</h1>
+          <h1 className='font-bold text-gray-400'>01</h1>
           <h1>PICK YOUR DESTINATION</h1>
         </div>
         <img src={planetImg} alt='' />
