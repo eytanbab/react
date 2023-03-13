@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import NameCard from './components/NameCard';
 import Card from './components/Card';
+import EllipsisIcon from './assets/icon-ellipsis.svg';
+import ExerciseIcon from './assets/icon-exercise.svg';
+import PlayIcon from './assets/icon-play.svg';
+import SelfCareIcon from './assets/icon-self-care.svg';
+import SocialIcon from './assets/icon-social.svg';
+import StudyIcon from './assets/icon-study.svg';
 import WorkIcon from './assets/icon-work.svg';
 
 import data from '../data.json';
