@@ -18,7 +18,6 @@ function App() {
         timelapse={timelapse}
         prevHours={data[0].timeframes.weekly.previous}
       />
-      ;{/* <Card bg={WorkBg} /> */}
     </div>
   );
 }
