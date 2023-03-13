@@ -16,28 +16,28 @@ function App() {
   const [timelapseName, setTimelapseName] = useState('');
   console.log(data);
   const [index, setIndex] = useState(1);
-  const currentDailyHours = data[index].timeframes.daily.current;
-  const currentWeeklyHours = data[index].timeframes.weekly.current;
-  const currentMonthlyHours = data[index].timeframes.monthly.current;
-  const prevDailyHours = data[index].timeframes.daily.previous;
-  const prevWeeklyHours = data[index].timeframes.weekly.previous;
-  const prevMonthlyHours = data[index].timeframes.monthly.previous;
+  const workCurrentDailyHours = data[index].timeframes.daily.current;
+  const workCurrentWeeklyHours = data[index].timeframes.weekly.current;
+  const workCurrentMonthlyHours = data[index].timeframes.monthly.current;
+  const workPrevDailyHours = data[index].timeframes.daily.previous;
+  const workPrevWeeklyHours = data[index].timeframes.weekly.previous;
+  const workPrevMonthlyHours = data[index].timeframes.monthly.previous;
 
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState(0);
 
   useEffect(() => {
     if (timelapseName === 'Day') {
-      setCurrent(currentDailyHours);
-      setPrev(prevDailyHours);
+      setCurrent(workCurrentDailyHours);
+      setPrev(workPrevDailyHours);
     }
     if (timelapseName === 'Week') {
-      setCurrent(currentWeeklyHours);
-      setPrev(prevWeeklyHours);
+      setCurrent(workCurrentWeeklyHours);
+      setPrev(workPrevWeeklyHours);
     }
     if (timelapseName === 'Month') {
-      setCurrent(currentMonthlyHours);
-      setPrev(prevMonthlyHours);
+      setCurrent(workCurrentMonthlyHours);
+      setPrev(workPrevMonthlyHours);
     }
   }, [timelapseName]);
 
@@ -54,13 +54,13 @@ function App() {
               timelapseName={timelapseName}
               prevHours={prev}
             />
-            <PlayCard
+            {/* <PlayCard
               icon={PlayIcon}
               activityName={data[1].title}
               hours={current}
               timelapseName={timelapseName}
               prevHours={prev}
-            />
+            /> */}
           </>
         )}
       </div>
