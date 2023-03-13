@@ -1,7 +1,7 @@
 import React from 'react';
 import ImgJeremy from '../assets/image-jeremy.png';
 
-function NameCard({ setTimelapse }) {
+function NameCard({ setTimelapseName }) {
   return (
     <div className=' bg-[#1D204B] w-80 h-60 flex flex-col rounded-2xl gap-6 justify-around'>
       <div className=' h-full flex bg-[#5746EA] items-center justify-center w-full rounded-2xl gap-4 p-2'>
@@ -17,19 +17,25 @@ function NameCard({ setTimelapse }) {
 
       <div className='flex items-center justify-around text-lg text-[#7479C5] pb-4'>
         <button
-          onClick={() => setTimelapse('Day')}
+          onClick={() => {
+            setTimelapseName('Day');
+          }}
           className='focus:text-white'
         >
           Daily
         </button>
         <button
-          onClick={() => setTimelapse('Week')}
+          onClick={() => {
+            setTimelapseName('Week');
+          }}
           className='focus:text-white'
         >
           Weekly
         </button>
         <button
-          onClick={() => setTimelapse('Month')}
+          onClick={() => {
+            setTimelapseName('Month');
+          }}
           className='focus:text-white'
         >
           Monthly

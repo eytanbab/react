@@ -1,8 +1,15 @@
 import React from 'react';
 
-function WorkCard({ icon, activityName, hours, timelapseName, prevHours }) {
+function PlayCard({
+  bgColor,
+  icon,
+  activityName,
+  hours,
+  timelapseName,
+  prevHours,
+}) {
   return (
-    <div className='bg-[#FF8B64] relative flex flex-col w-80 h-52 rounded-2xl justify-end bg-cover'>
+    <div className='bg-[#56C2E6] relative flex flex-col w-80 h-52 rounded-2xl justify-end bg-cover'>
       <img src={icon} className='absolute bg-no-repeat right-4 top-0' />
       <div className=' flex bg-[#1D204B] items-center justify-around h-40 rounded-2xl text-white z-10 '>
         <div className='flex items-end gap-8 justify-center w-full'>
@@ -28,4 +35,4 @@ function WorkCard({ icon, activityName, hours, timelapseName, prevHours }) {
   );
 }
 
-export default WorkCard;
+export default PlayCard;
