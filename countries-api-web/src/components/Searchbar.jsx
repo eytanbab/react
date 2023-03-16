@@ -1,8 +1,12 @@
 import React from 'react';
 import { GoSearch } from 'react-icons/go';
-export const Searchbar = ({ setQuery }) => {
+export const Searchbar = ({ darkMode, setQuery }) => {
   return (
-    <div className=' flex items-center border-b border-b-gray-300/20 p-2 transition-all duration-500 '>
+    <div
+      className={`${
+        darkMode ? 'border-b-gray-300/20' : 'border-b-gray-800/50'
+      } flex items-center border-b p-2 transition-all duration-500 `}
+    >
       <input
         className=' rounded-md bg-transparent px-4 outline-none'
         placeholder='Search here'

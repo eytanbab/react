@@ -12,6 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [query, setQuery] = useState('');
   const [region, setRegion] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   const getData = async () => {
     const url = 'https://restcountries.com/v3.1/all';
@@ -40,21 +41,27 @@ function App() {
   });
 
   return (
-    <div className='flex h-screen w-screen flex-col items-center gap-6 bg-gray-900 text-white'>
+    <div
+      className={`${
+        darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
+      } flex min-h-screen w-screen flex-col items-center gap-6`}
+    >
       {/* NAVBAR */}
-      <NavBar />
+      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* MAIN SECTION */}
       <div className='flex flex-col items-center justify-center gap-4'>
-        {/* SEARCH BAR */}
-        <Searchbar setQuery={setQuery} />
+        <div className='flex flex-col gap-4'>
+          {/* SEARCH BAR */}
+          <Searchbar darkMode={darkMode} setQuery={setQuery} />
 
-        {/* FILTER BUTTON*/}
-        <Dropdown setRegion={setRegion} />
-
+          {/* DROPDOWN */}
+          <Dropdown darkMode={darkMode} setRegion={setRegion} />
+        </div>
         {/* RESULTS */}
         {!isLoading && (
           <Result
+            darkMode={darkMode}
             filteredCountries={
               region === '' ? searchedCountries : filteredCountries
             }

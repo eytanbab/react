@@ -1,10 +1,11 @@
 import React from 'react';
-
-export const NavBar = () => {
+import { useState } from 'react';
+import Switch from './Toggle';
+export const NavBar = ({ darkMode, setDarkMode }) => {
   return (
-    <nav className='flex  w-full items-center justify-between bg-red-500 px-4'>
-      <h1 className='text-xl'>Where in the world?</h1>
-      <h1>Dark Mode</h1>
+    <nav className=' flex max-h-24 w-full items-center justify-between py-2 px-8'>
+      <h1 className='text-2xl font-medium'>Where in the world?</h1>
+      <Switch darkMode={darkMode} setDarkMode={setDarkMode} />
     </nav>
   );
 };
