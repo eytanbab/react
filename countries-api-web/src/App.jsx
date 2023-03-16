@@ -44,13 +44,13 @@ function App() {
     <div
       className={`${
         darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
-      } flex min-h-screen w-screen flex-col items-center gap-6`}
+      } max-w-screen flex min-h-screen flex-col items-center gap-6 px-8`}
     >
       {/* NAVBAR */}
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* MAIN SECTION */}
-      <div className='flex flex-col items-center justify-center gap-4'>
+      <div className='flex flex-col items-center justify-center gap-4  px-4'>
         <div className='flex flex-col gap-4'>
           {/* SEARCH BAR */}
           <Searchbar darkMode={darkMode} setQuery={setQuery} />
