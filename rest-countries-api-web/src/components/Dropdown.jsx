@@ -8,9 +8,9 @@ function Dropdown({ setRegion }) {
   };
 
   return (
-    <div className='flex w-40 self-start  rounded-md'>
+    <div className='flex w-40 self-start rounded-md'>
       <select
-        className='w-full mx-2 p-2 text-sm bg-slate-800/20 rounded-md'
+        className='mx-2 w-full rounded-md bg-slate-800/20 p-2 text-sm'
         name='continents'
         id='continents-select'
         onChange={optionClickedHandler}

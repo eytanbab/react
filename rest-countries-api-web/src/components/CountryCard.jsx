@@ -4,9 +4,9 @@ import Image from './Image';
 const CountryCard = ({ country }) => {
   const source = country.flags.svg;
   return (
-    <div className='flex flex-col items-center b w-full bg-slate-800/20 rounded-lg'>
+    <div className='flex w-full flex-col items-center rounded-lg bg-slate-800/20'>
       <Image src={source} alt={country.flags.alt} />
-      <div className='self-start flex flex-col items-start px-4 my-6'>
+      <div className='my-6 flex flex-col items-start self-start px-4'>
         <div className='py-2'>
           <h1 className='text-3xl'>{country.name.common}</h1>
         </div>
