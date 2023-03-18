@@ -16,11 +16,22 @@ function App() {
     email: '',
     phone: '',
   });
+  const [emailError, setEmailError] = useState(true);
+  const [online, setOnline] = useState(false);
+  const [storage, setStorage] = useState(false);
+  const [profile, setProfile] = useState(false);
 
   const validatePersonalInfo = () => {
     personalInfo.name && personalInfo.email && personalInfo.phone
       ? setError(false)
       : setError(true);
+  };
+
+  const validateEmail = () => {
+    const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    personalInfo.email.match(emailFormat)
+      ? setEmailError(false)
+      : setEmailError(true);
   };
 
   const validatePlan = () => {
@@ -30,15 +41,16 @@ function App() {
   useEffect(() => {
     if (index === 1) {
       validatePersonalInfo();
+      validateEmail();
     }
     if (index === 2) {
       validatePlan();
     }
-  }, [personalInfo, selectedPlan, index]);
+  }, [personalInfo, selectedPlan, index, emailError]);
 
   const handleNext = () => {
     if (index > 0 && index <= 4) {
-      error ? '' : setIndex(index + 1);
+      error || emailError ? '' : setIndex(index + 1);
     }
   };
 
@@ -103,6 +115,9 @@ function App() {
             {error ? (
               <p className=' text-red-500'>please fill in all the fields.</p>
             ) : null}
+            {emailError ? (
+              <p className=' text-red-500'>please Enter a valid email.</p>
+            ) : null}
           </>
         )}
         {index === 2 && (
@@ -118,8 +133,18 @@ function App() {
             ) : null}
           </>
         )}
-        {index === 3 && <AddOns enabled={enabled} />}
-        {index === 4 && <FinishingUp />}
+        {index === 3 && (
+          <AddOns
+            enabled={enabled}
+            online={online}
+            setOnline={setOnline}
+            storage={storage}
+            setStorage={setStorage}
+            profile={profile}
+            setProfile={setProfile}
+          />
+        )}
+        {index === 4 && <FinishingUp enabled={enabled} />}
         {index === 5 && <Confirm />}
       </div>
       {/* FOOTER */}

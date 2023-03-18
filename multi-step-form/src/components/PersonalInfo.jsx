@@ -11,6 +11,7 @@ const PersonalInfo = ({ personalInfo, setPersonalInfo }) => {
       <form className='flex flex-col py-4 font-medium text-blue-900 '>
         <label className='text-sm'>Name</label>
         <input
+          type='text'
           className='mb-4 w-full rounded-md border border-gray-300 p-2 outline-none'
           placeholder='e.g. Stephen King'
           onChange={(e) =>
@@ -20,6 +21,7 @@ const PersonalInfo = ({ personalInfo, setPersonalInfo }) => {
         />
         <label className='text-sm'>Email Address</label>
         <input
+          input='email'
           className='mb-4 w-full rounded-md border border-gray-300 p-2 outline-none'
           placeholder='e.g. stephenking@lorem.com'
           onChange={(e) =>

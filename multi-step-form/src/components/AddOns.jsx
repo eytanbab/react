@@ -1,11 +1,14 @@
 import React from 'react';
-import { useState } from 'react';
 
-const AddOns = ({ enabled }) => {
-  const [online, setOnline] = useState(false);
-  const [storage, setStorage] = useState(false);
-  const [profile, setProfile] = useState(false);
-
+const AddOns = ({
+  enabled,
+  online,
+  setOnline,
+  storage,
+  setStorage,
+  profile,
+  setProfile,
+}) => {
   return (
     <>
       <h1 className='text-2xl font-bold text-blue-900'>Pick add-ons</h1>
