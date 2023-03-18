@@ -61,7 +61,7 @@ function App() {
         </button>
       </div>
       {/* FORM CONTAINER */}
-      <div className='absolute top-28 left-0 right-0 mx-8 flex h-3/4 flex-col rounded-lg bg-white  py-6 px-4 text-black shadow-md'>
+      <div className='  absolute top-28 left-0 right-0 mx-8 flex flex-col rounded-lg bg-white  py-6 px-4 text-black shadow-md'>
         {index === 1 && <PersonalInfo />}
         {index === 2 && (
           <SelectPlan

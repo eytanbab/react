@@ -30,7 +30,7 @@ const SelectPlan = ({ selectedPlan, setSelectedPlan, enabled, setEnabled }) => {
             {enabled ? (
               <div className='flex flex-col items-start '>
                 <p className='text-sm text-neutral-400'>$90/yr</p>
-                <p className='text-sm text-blue-900'>2months free</p>
+                <p className='text-sm text-blue-900'>2 months free</p>
               </div>
             ) : (
               <p className='self-start text-sm text-neutral-400'>$9/mo</p>
@@ -53,7 +53,7 @@ const SelectPlan = ({ selectedPlan, setSelectedPlan, enabled, setEnabled }) => {
             {enabled ? (
               <div className='flex flex-col items-start '>
                 <p className='text-sm text-neutral-400'>$120/yr</p>
-                <p className='text-sm text-blue-900'>2months free</p>
+                <p className='text-sm text-blue-900'>2 months free</p>
               </div>
             ) : (
               <p className='self-start text-sm text-neutral-400'>$12/mo</p>
@@ -74,7 +74,7 @@ const SelectPlan = ({ selectedPlan, setSelectedPlan, enabled, setEnabled }) => {
             {enabled ? (
               <div className='flex flex-col items-start '>
                 <p className='text-sm text-neutral-400'>$150/yr</p>
-                <p className='text-sm text-blue-900'>2months free</p>
+                <p className='text-sm text-blue-900'>2 months free</p>
               </div>
             ) : (
               <p className='self-start text-sm text-neutral-400'>$15/mo</p>
