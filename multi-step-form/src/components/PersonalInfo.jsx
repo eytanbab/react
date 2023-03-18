@@ -1,6 +1,6 @@
-import React from 'react';
+import { useState } from 'react';
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ info, setInfo }) => {
   return (
     <>
       <h1 className='text-2xl font-bold text-blue-900'>Personal info</h1>
@@ -13,16 +13,22 @@ const PersonalInfo = () => {
         <input
           className='mb-4 w-full rounded-md border border-gray-300 p-2 outline-none'
           placeholder='e.g. Stephen King'
+          onChange={(e) => setInfo({ ...info, name: e.target.value })}
+          value={info.name}
         />
         <label className='text-sm'>Email Address</label>
         <input
           className='mb-4 w-full rounded-md border border-gray-300 p-2 outline-none'
           placeholder='e.g. stephenking@lorem.com'
+          onChange={(e) => setInfo({ ...info, email: e.target.value })}
+          value={info.email}
         />
         <label className='text-sm'>Phone Number</label>
         <input
           className='mb-4 w-full rounded-md border border-gray-300 p-2 outline-none'
           placeholder='e.g. +1 234 567 890'
+          onChange={(e) => setInfo({ ...info, phone: e.target.value })}
+          value={info.phone}
         />
       </form>
     </>
