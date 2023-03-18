@@ -3,6 +3,7 @@ import PersonalInfo from './components/PersonalInfo';
 import SelectPlan from './components/SelectPlan';
 import AddOns from './components/AddOns';
 import FinishingUp from './components/FinishingUp';
+import Confirm from './components/Confirm';
 import { useEffect } from 'react';
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
   }, [personalInfo, selectedPlan, index]);
 
   const handleNext = () => {
-    if (index > 0 && index < 4) {
+    if (index > 0 && index <= 4) {
       error ? '' : setIndex(index + 1);
     }
   };
@@ -119,6 +120,7 @@ function App() {
         )}
         {index === 3 && <AddOns enabled={enabled} />}
         {index === 4 && <FinishingUp />}
+        {index === 5 && <Confirm />}
       </div>
       {/* FOOTER */}
       <div className='absolute bottom-0 left-0 right-0 flex h-20 items-center justify-between bg-white px-4 font-medium'>
@@ -129,7 +131,7 @@ function App() {
           className='rounded-md bg-blue-900 p-2 text-white'
           onClick={handleNext}
         >
-          Next Step
+          {index === 4 ? 'Confirm' : 'Next Step'}
         </button>
       </div>
     </div>
