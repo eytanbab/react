@@ -16,15 +16,24 @@ function App() {
     phone: '',
   });
 
-  const validateForm = () => {
-    if (personalInfo.name && personalInfo.email && personalInfo.phone) {
-      setError(false);
-    } else setError(true);
+  const validatePersonalInfo = () => {
+    personalInfo.name && personalInfo.email && personalInfo.phone
+      ? setError(false)
+      : setError(true);
+  };
+
+  const validatePlan = () => {
+    selectedPlan ? setError(false) : setError(true);
   };
 
   useEffect(() => {
-    validateForm();
-  }, [personalInfo]);
+    if (index === 1) {
+      validatePersonalInfo();
+    }
+    if (index === 2) {
+      validatePlan();
+    }
+  }, [personalInfo, selectedPlan, index]);
 
   const handleNext = () => {
     if (index > 0 && index < 4) {
@@ -84,25 +93,32 @@ function App() {
       {/* FORM CONTAINER */}
       <div className='absolute top-28 right-4 left-4 m-auto flex max-w-md flex-col rounded-lg bg-white py-6 px-4 text-black shadow-md '>
         {index === 1 && (
-          <PersonalInfo
-            personalInfo={personalInfo}
-            setPersonalInfo={setPersonalInfo}
-            setError={setError}
-          />
+          <>
+            <PersonalInfo
+              personalInfo={personalInfo}
+              setPersonalInfo={setPersonalInfo}
+              setError={setError}
+            />
+            {error ? (
+              <p className=' text-red-500'>please fill in all the fields.</p>
+            ) : null}
+          </>
         )}
         {index === 2 && (
-          <SelectPlan
-            selectedPlan={selectedPlan}
-            setSelectedPlan={setSelectedPlan}
-            enabled={enabled}
-            setEnabled={setEnabled}
-          />
+          <>
+            <SelectPlan
+              selectedPlan={selectedPlan}
+              setSelectedPlan={setSelectedPlan}
+              enabled={enabled}
+              setEnabled={setEnabled}
+            />
+            {error ? (
+              <p className=' text-red-500'>please select a plan.</p>
+            ) : null}
+          </>
         )}
         {index === 3 && <AddOns enabled={enabled} />}
         {index === 4 && <FinishingUp />}
-        {error ? (
-          <p className=' text-red-500'>please fill in all the fields.</p>
-        ) : null}
       </div>
       {/* FOOTER */}
       <div className='absolute bottom-0 left-0 right-0 flex h-20 items-center justify-between bg-white px-4 font-medium'>
