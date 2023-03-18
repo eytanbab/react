@@ -10,16 +10,21 @@ function App() {
   const [selectedPlan, setSelectedPlan] = useState('');
   const [enabled, setEnabled] = useState(false);
   const [error, setError] = useState(true);
-  const [info, setInfo] = useState({ name: '', email: '', phone: '' });
+  const [personalInfo, setPersonalInfo] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+
   const validateForm = () => {
-    if (info.name && info.email && info.phone) {
+    if (personalInfo.name && personalInfo.email && personalInfo.phone) {
       setError(false);
     } else setError(true);
   };
 
   useEffect(() => {
     validateForm();
-  }, [info]);
+  }, [personalInfo]);
 
   const handleNext = () => {
     if (index > 0 && index < 4) {
@@ -34,7 +39,7 @@ function App() {
   };
 
   return (
-    <div className='relative h-screen w-screen bg-neutral-200 text-white'>
+    <div className='relative flex  h-screen w-screen bg-neutral-200 text-white'>
       {/* BG IMAGE */}
       <div className='flex h-40 w-full bg-mobile bg-cover p-6' />
       {/* PAGE NUMBERS */}
@@ -77,9 +82,13 @@ function App() {
         </button>
       </div>
       {/* FORM CONTAINER */}
-      <div className='  absolute top-28 left-0 right-0 mx-8 flex flex-col rounded-lg bg-white  py-6 px-4 text-black shadow-md'>
+      <div className='absolute top-28 right-4 left-4 m-auto flex max-w-md flex-col rounded-lg bg-white py-6 px-4 text-black shadow-md '>
         {index === 1 && (
-          <PersonalInfo info={info} setInfo={setInfo} setError={setError} />
+          <PersonalInfo
+            personalInfo={personalInfo}
+            setPersonalInfo={setPersonalInfo}
+            setError={setError}
+          />
         )}
         {index === 2 && (
           <SelectPlan
