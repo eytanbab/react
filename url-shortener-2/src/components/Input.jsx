@@ -15,9 +15,10 @@ const Input = (props) => {
   const [newUrl, setNewUrl] = useState('');
 
   const handleInput = () => {
-    if (!props.error || newUrl !== '') {
+    if (!props.error) {
       props.dataFetchedRef.current = false;
       props.setUrl(newUrl);
+      console.log(newUrl);
     }
   };
 
@@ -37,7 +38,10 @@ const Input = (props) => {
         className={`${
           props.error ? 'border-2 border-red-500 placeholder:text-red-500' : ''
         } z-20 w-full rounded-xl p-3 outline-none`}
-        onChange={(e) => setNewUrl(e)}
+        onChange={(e) => {
+          props.setError(false);
+          setNewUrl(e.target.value);
+        }}
       />
       {props.error ? (
         <span className='z-20 -mt-2 self-start text-xs italic text-red-500'>

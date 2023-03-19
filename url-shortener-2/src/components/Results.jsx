@@ -17,7 +17,9 @@ const Results = (props) => {
     fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then((res) => res.json())
       .then((actualData) => {
+        console.log(actualData);
         if (actualData.ok === true) {
+          setError(false);
           setUrl(actualData.result.original_link);
           setShortenUrl(actualData.result.short_link);
           setResults((prev) => [
@@ -27,7 +29,6 @@ const Results = (props) => {
             },
             ...prev,
           ]);
-          setError(false);
         } else {
           setError(true);
         }
@@ -64,6 +65,7 @@ const Results = (props) => {
           getData={getData}
           dataFetchedRef={dataFetchedRef}
           error={error}
+          setError={setError}
         />
 
         {shortenUrl && (
