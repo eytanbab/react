@@ -14,10 +14,16 @@ const Input = (props) => {
   const [newUrl, setNewUrl] = useState('');
 
   const handleInput = () => {
-    if (newUrl) {
+    console.log(newUrl);
+    console.log(props.error);
+    if (!props.error || newUrl !== '') {
       props.dataFetchedRef.current = false;
       props.setUrl(newUrl);
     }
+  };
+
+  const handleOnChange = (e) => {
+    setNewUrl(e.target.value);
   };
 
   return (
@@ -33,9 +39,18 @@ const Input = (props) => {
 
       <input
         placeholder='Shorten a link here..'
-        className='z-20 w-full rounded-xl p-3'
-        onChange={(e) => setNewUrl(e.target.value)}
+        className={`${
+          props.error ? 'border-2 border-red-500 placeholder:text-red-500' : ''
+        } z-20 w-full rounded-xl p-3 outline-none`}
+        onChange={(e) => handleOnChange(e)}
       />
+      {props.error ? (
+        <span className='z-20 -mt-2 self-start text-xs italic text-red-500'>
+          Please add a link
+        </span>
+      ) : (
+        ''
+      )}
       <button
         onClick={handleInput}
         className='z-20 w-full rounded-lg bg-[#2BD1D1] p-3'

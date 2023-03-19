@@ -7,14 +7,13 @@ const Results = (props) => {
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [shortenUrl, setShortenUrl] = useState('');
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
   const [results, setResults] = useState([{ url: '', shortenUrl: '' }]);
   const dataFetchedRef = useRef(false);
   const [isCleared, setIsCleared] = useState(false);
 
   const getData = () => {
     setIsLoading(true);
-    setError(true);
     fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then((res) => res.json())
       .then((actualData) => {
@@ -28,6 +27,9 @@ const Results = (props) => {
             },
             ...prev,
           ]);
+          setError(false);
+        } else {
+          setError(true);
         }
       })
       .catch((err) => console.error(err))
@@ -61,6 +63,7 @@ const Results = (props) => {
           setUrl={setUrl}
           getData={getData}
           dataFetchedRef={dataFetchedRef}
+          error={error}
         />
 
         {shortenUrl && (
