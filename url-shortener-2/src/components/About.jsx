@@ -6,11 +6,11 @@ import InstagramIcon from '../assets/images/icon-instagram.svg';
 
 const About = () => {
   return (
-    <div className='flex flex-col items-center gap-16 bg-[#232027] py-10 px-6 text-white'>
+    <div className='flex flex-col items-center  justify-center gap-16 bg-[#232027] py-10 px-6 text-white md:flex-row md:items-start'>
       <h1 className='text-4xl font-bold'>Shortly</h1>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 '>
         <h1 className='text-lg font-medium'>Features</h1>
-        <ul className='space-y-2 pt-2 text-gray-400'>
+        <ul className='flex flex-col space-y-2 pt-2 text-gray-400'>
           <li>Link Shortening</li>
           <li>Branded Links</li>
           <li>Analytics</li>
@@ -18,7 +18,7 @@ const About = () => {
       </div>
       <div className='flex flex-col gap-2'>
         <h1 className='text-lg font-medium'>Resources</h1>
-        <ul className='space-y-2 pt-4 text-gray-400'>
+        <ul className='flex flex-col space-y-2 pt-4 text-gray-400'>
           <li>Blog</li>
           <li>Developers</li>
           <li>Support</li>
@@ -26,7 +26,7 @@ const About = () => {
       </div>
       <div className='flex flex-col gap-2'>
         <h1 className='text-lg font-medium'>Company</h1>
-        <ul className='space-y-2 pt-4 text-gray-400'>
+        <ul className='flex flex-col space-y-2 pt-4 text-gray-400'>
           <li>About</li>
           <li>Our Team</li>
           <li>Careers</li>

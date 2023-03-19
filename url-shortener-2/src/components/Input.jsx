@@ -25,34 +25,37 @@ const Input = (props) => {
   return (
     <div
       ref={props.inputRef}
-      className='relative m-6  flex flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center'
+      className='relative m-6 flex flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
     >
       <img
         src={BgBoost}
         alt='illustration'
-        className='absolute top-0 left-12 z-20 '
+        className='absolute top-0  z-20 bg-repeat md:right-0'
       />
-
-      <input
-        placeholder='Shorten a link here..'
-        className={`${
-          props.error ? 'border-2 border-red-500 placeholder:text-red-500' : ''
-        } z-20 w-full rounded-xl p-3 outline-none`}
-        onChange={(e) => {
-          props.setError(false);
-          setNewUrl(e.target.value);
-        }}
-      />
-      {props.error ? (
-        <span className='z-20 -mt-2 self-start text-xs italic text-red-500'>
-          Please add a link
-        </span>
-      ) : (
-        ''
-      )}
+      <div className='z-50 flex h-full w-full flex-col items-center justify-center'>
+        <input
+          placeholder='Shorten a link here..'
+          className={`${
+            props.error
+              ? 'border-2 border-red-500 placeholder:text-red-500'
+              : ''
+          } z-20  w-full rounded-xl p-3 outline-none`}
+          onChange={(e) => {
+            props.setError(false);
+            setNewUrl(e.target.value);
+          }}
+        />
+        {props.error ? (
+          <div className='z-20  self-start text-xs italic text-red-500 md:absolute md:bottom-1'>
+            Please add a link
+          </div>
+        ) : (
+          ''
+        )}
+      </div>
       <button
         onClick={handleInput}
-        className='z-20 w-full rounded-lg bg-[#2BD1D1] p-3'
+        className='z-20 h-full w-full rounded-lg bg-[#2BD1D1] p-3 md:w-1/4'
       >
         Shorten it
       </button>

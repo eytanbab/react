@@ -20,7 +20,7 @@ const Hero = ({ inputRef }) => {
       />
       {/* HERO */}
       <div
-        className='relative flex w-full flex-col items-center justify-center gap-2 overflow-x-hidden bg-red-500/40 px-4 pt-96 pb-36 text-center
+        className='relative flex w-full flex-col items-center justify-center gap-2 overflow-x-hidden px-4 pt-96 pb-36 text-center
          md:pt-20 md:pb-[40rem]'
       >
         <h1 className='text-4xl font-bold text-gray-800 md:absolute md:top-20 md:left-0 md:px-20 md:pt-32'>

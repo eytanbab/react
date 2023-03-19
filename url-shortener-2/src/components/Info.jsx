@@ -28,8 +28,9 @@ const Info = () => {
         statistics dashboard.
       </p>
 
-      <div className=' relative flex flex-col gap-24 pt-12'>
-        <div className='absolute left-[49%] h-[40rem] w-2  bg-[#2BD1D1]' />
+      <div className=' relative flex flex-col gap-24 pt-12 md:md:flex-row'>
+        <div className='absolute left-[49%] h-[40rem] w-2 bg-[#2BD1D1]  md:right-0 md:bottom-16  md:h-2 md:w-[40em]' />
+        <div className='absolute left-[49%] hidden h-[40rem] w-2 bg-[#2BD1D1] md:bottom-36 md:left-36 md:block md:h-2 md:w-[40em]' />
         <Box
           Icon={BrandRecognition}
           title={info[0].title}
