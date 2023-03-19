@@ -3,17 +3,26 @@ import { useState } from 'react';
 
 const Result = ({ result, index }) => {
   const [isCopied, setIsCopied] = useState(false);
+
+  const copyTextToClipboard = async (text) => {
+    if ('clipboard' in navigator) {
+      setIsCopied(true);
+      return await navigator.clipboard.writeText(text);
+    } else {
+      setIsCopied(false);
+      return document.execCommand('copy', true, text);
+    }
+  };
+
   const handleCopy = () => {
-    setIsCopied(true);
+    copyTextToClipboard(result.shortenUrl);
   };
 
   return (
     <div className='mx-6 mb-6 flex flex-col gap-2 rounded-lg bg-white p-4'>
       <div className='flex w-full flex-col items-start justify-items-stretch divide-y-2 rounded-md text-left font-medium'>
         <h1 className='w-full '>{result.url}</h1>
-        <a href={result.shortenUrl} className='w-full text-[#2BD1D1]'>
-          {result.shortenUrl}
-        </a>
+        <h1 className='w-full text-[#2BD1D1]'>{result.shortenUrl}</h1>
       </div>
       <button
         onClick={handleCopy}

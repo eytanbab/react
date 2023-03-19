@@ -10,6 +10,7 @@ const Results = (props) => {
   const [error, setError] = useState(true);
   const [results, setResults] = useState([{ url: '', shortenUrl: '' }]);
   const dataFetchedRef = useRef(false);
+  const [isCleared, setIsCleared] = useState(false);
 
   const getData = () => {
     setIsLoading(true);
@@ -32,6 +33,7 @@ const Results = (props) => {
       .catch((err) => console.error(err))
       .finally(() => {
         setIsLoading(false);
+        setIsCleared(false);
       });
   };
 
@@ -43,9 +45,14 @@ const Results = (props) => {
     }
   }, [url]);
 
+  const handleClearAll = () => {
+    setResults([{ url: '', shortenUrl: '' }]);
+    setIsCleared(true);
+  };
+
   return (
     <>
-      <div className='bg-[#F0F1F6] p-2'>
+      <div className='flex flex-col gap-8 bg-[#F0F1F6] p-2'>
         <Input
           inputRef={props.inputRef}
           results={results}
@@ -55,9 +62,17 @@ const Results = (props) => {
           getData={getData}
           dataFetchedRef={dataFetchedRef}
         />
+
         {shortenUrl && (
           <>
-            <h1>RESULTS:</h1>
+            {!isCleared && (
+              <button
+                onClick={handleClearAll}
+                className='-my-6 mx-6 w-24 self-end  border-b border-b-[#2BD1D1] p-2'
+              >
+                Clear all
+              </button>
+            )}
             {results
               .filter((result) => result.url !== '')
               .map((result, index) => {
