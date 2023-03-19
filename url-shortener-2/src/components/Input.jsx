@@ -10,20 +10,15 @@ const Input = (props) => {
   // setResults={setResults}
   // shortenUrl={shortenUrl}
   // setUrl={setUrl}
+  // error={error}
 
   const [newUrl, setNewUrl] = useState('');
 
   const handleInput = () => {
-    console.log(newUrl);
-    console.log(props.error);
     if (!props.error || newUrl !== '') {
       props.dataFetchedRef.current = false;
       props.setUrl(newUrl);
     }
-  };
-
-  const handleOnChange = (e) => {
-    setNewUrl(e.target.value);
   };
 
   return (
@@ -42,7 +37,7 @@ const Input = (props) => {
         className={`${
           props.error ? 'border-2 border-red-500 placeholder:text-red-500' : ''
         } z-20 w-full rounded-xl p-3 outline-none`}
-        onChange={(e) => handleOnChange(e)}
+        onChange={(e) => setNewUrl(e)}
       />
       {props.error ? (
         <span className='z-20 -mt-2 self-start text-xs italic text-red-500'>
