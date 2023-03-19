@@ -5,7 +5,7 @@ import { IoIosClose } from 'react-icons/io';
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <div className='z-0 flex w-full items-center justify-between overflow-x-hidden p-6'>
+    <div className='z-30 flex w-full items-center justify-between overflow-x-hidden p-6'>
       <h1 className='text-4xl font-bold text-gray-800'>Shortly</h1>
       <button onClick={() => setIsActive((prev) => !prev)}>
         {isActive ? (
