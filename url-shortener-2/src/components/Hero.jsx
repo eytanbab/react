@@ -19,7 +19,7 @@ const Hero = ({ inputRef }) => {
         className=' absolute top-28 left-24 z-20 scale-125'
       />
       {/* HERO */}
-      <div className=' flex w-full flex-col items-center justify-center gap-2 px-4 pt-96 pb-36 text-center'>
+      <div className='flex w-full flex-col items-center justify-center gap-2 overflow-x-hidden px-4 pt-96 pb-36 text-center'>
         <h1 className='text-4xl font-bold text-gray-800'>
           More than just shorter links
         </h1>

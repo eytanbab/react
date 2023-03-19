@@ -52,7 +52,7 @@ const Results = (props) => {
 
   return (
     <>
-      <div className='flex flex-col gap-8 bg-[#F0F1F6] p-2'>
+      <div className='flex w-full flex-col gap-8 bg-[#F0F1F6] p-2'>
         <Input
           inputRef={props.inputRef}
           results={results}

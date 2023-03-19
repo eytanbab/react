@@ -21,7 +21,7 @@ const info = [
 
 const Info = () => {
   return (
-    <div className='relative flex flex-col gap-4 bg-[#F0F1F6] p-2 py-12 text-center'>
+    <div className='relative flex flex-col gap-4 overflow-x-hidden bg-[#F0F1F6] p-2 py-12 text-center'>
       <h1 className='text-2xl font-bold text-gray-800'>Advanced Statistics</h1>
       <p className='mx-6 font-medium text-gray-400'>
         Track how your links are performing across the web wth our advanced

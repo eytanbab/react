@@ -1,6 +1,7 @@
 import React from 'react';
 import Results from './Results';
 import { useState } from 'react';
+import BgBoost from '../assets/images/bg-boost-mobile.svg';
 
 const Input = (props) => {
   // PROPS
@@ -22,16 +23,22 @@ const Input = (props) => {
   return (
     <div
       ref={props.inputRef}
-      className='m-6 flex  flex-col items-center justify-center gap-4 rounded-lg bg-[#3A3055] p-6 text-center'
+      className='relative m-6  flex flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center'
     >
+      <img
+        src={BgBoost}
+        alt='illustration'
+        className='absolute top-0 left-12 z-20 '
+      />
+
       <input
         placeholder='Shorten a link here..'
-        className=' w-full rounded-xl p-3'
+        className='z-20 w-full rounded-xl p-3'
         onChange={(e) => setNewUrl(e.target.value)}
       />
       <button
         onClick={handleInput}
-        className='w-full rounded-lg bg-[#2BD1D1] p-3'
+        className='z-20 w-full rounded-lg bg-[#2BD1D1] p-3'
       >
         Shorten it
       </button>
