@@ -3,16 +3,20 @@ import Results from './Results';
 import { useState } from 'react';
 
 const Input = (props) => {
-  // results, setResults, inputRef
+  // PROPS
+  // inputRef={props.inputRef}
+  // results={results}
+  // setResults={setResults}
+  // shortenUrl={shortenUrl}
+  // setUrl={setUrl}
+
   const [newUrl, setNewUrl] = useState('');
 
-  const handleInput = (e) => {
-    e.preventDefault();
-    props.setUrl(newUrl);
-    props.setResults([
-      ...props.results,
-      { url: newUrl, shortenUrl: props.shortenUrl },
-    ]);
+  const handleInput = () => {
+    if (newUrl) {
+      props.dataFetchedRef.current = false;
+      props.setUrl(newUrl);
+    }
   };
 
   return (
@@ -26,7 +30,7 @@ const Input = (props) => {
         onChange={(e) => setNewUrl(e.target.value)}
       />
       <button
-        onClick={(e) => handleInput(e)}
+        onClick={handleInput}
         className='w-full rounded-lg bg-[#2BD1D1] p-3'
       >
         Shorten it

@@ -1,21 +1,48 @@
 import React from 'react';
 import Input from './Input';
 import Result from './Result';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Results = (props) => {
-  // props:
-  // url={url}
-  // setUrl={setUrl}
-  // shortenUrl={shortenUrl}
-  // setShortenUrl={setShortenUrl}
-  // inputRef={inputRef}
-  // setData={setData}
-  // error={error}
+  const [url, setUrl] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [shortenUrl, setShortenUrl] = useState('');
+  const [error, setError] = useState(true);
+  const [results, setResults] = useState([{ url: '', shortenUrl: '' }]);
+  const dataFetchedRef = useRef(false);
 
-  const [results, setResults] = useState([
-    { url: props.url, shortenUrl: props.shortenUrl },
-  ]);
+  const getData = () => {
+    setIsLoading(true);
+    setError(true);
+    fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
+      .then((res) => res.json())
+      .then((actualData) => {
+        if (actualData.ok === true) {
+          setUrl(actualData.result.original_link);
+          setShortenUrl(actualData.result.short_link);
+          setResults((prev) => [
+            {
+              url: actualData.result.original_link,
+              shortenUrl: actualData.result.short_link,
+            },
+            ...prev,
+          ]);
+        }
+      })
+      .catch((err) => console.error(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    if (url) {
+      if (dataFetchedRef.current) return;
+      dataFetchedRef.current = true;
+      getData();
+    }
+  }, [url]);
+
   return (
     <>
       <div className='bg-[#F0F1F6] p-2'>
@@ -23,21 +50,25 @@ const Results = (props) => {
           inputRef={props.inputRef}
           results={results}
           setResults={setResults}
-          shortenUrl={props.shortenUrl}
-          setUrl={props.setUrl}
+          shortenUrl={shortenUrl}
+          setUrl={setUrl}
+          getData={getData}
+          dataFetchedRef={dataFetchedRef}
         />
-        {!props.error && (
+        {shortenUrl && (
           <>
             <h1>RESULTS:</h1>
-            {results.map((result, index) => {
-              return (
-                <Result
-                  key={Math.random() * 100}
-                  result={result}
-                  index={index}
-                />
-              );
-            })}
+            {results
+              .filter((result) => result.url !== '')
+              .map((result, index) => {
+                return (
+                  <Result
+                    key={Math.random() * 100}
+                    result={result}
+                    index={index}
+                  />
+                );
+              })}
           </>
         )}
       </div>

@@ -4,7 +4,7 @@ import Illustration from '../assets/images/illustration-working.svg';
 const Hero = ({ inputRef }) => {
   const handleScroll = (inputRef) => {
     window.scrollTo({
-      top: inputRef.offsetTop,
+      top: inputRef.offsetTop - 50,
       left: 0,
       behavior: 'smooth',
     });
