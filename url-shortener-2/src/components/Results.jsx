@@ -71,7 +71,7 @@ const Results = (props) => {
             {!isCleared && (
               <button
                 onClick={handleClearAll}
-                className='-my-6 mx-6 w-24 self-end  border-b border-b-[#2BD1D1] p-2'
+                className='-my-4 mx-6 w-24 self-end border-b border-b-[#2BD1D1]'
               >
                 Clear all
               </button>
