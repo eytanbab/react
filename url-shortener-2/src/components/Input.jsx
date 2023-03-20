@@ -14,7 +14,8 @@ const Input = (props) => {
 
   const [newUrl, setNewUrl] = useState('');
 
-  const handleInput = () => {
+  const handleInput = (e) => {
+    e.preventDefault();
     if (newUrl) {
       if (!props.error) {
         props.setError(false);
@@ -36,7 +37,10 @@ const Input = (props) => {
         alt='illustration'
         className='absolute top-0  z-20 bg-repeat md:right-0'
       />
-      <div className='z-50 flex h-full w-full flex-col items-center justify-center'>
+      <form
+        onSubmit={(e) => handleInput(e)}
+        className='z-50 flex h-full w-full flex-col items-center justify-center gap-2 md:flex-row'
+      >
         <input
           placeholder='Shorten a link here..'
           className={`${
@@ -50,19 +54,19 @@ const Input = (props) => {
           }}
         />
         {props.error ? (
-          <div className='z-20  self-start text-xs italic text-red-500 md:absolute md:bottom-1'>
+          <div className='z-20  self-start text-xs italic text-red-500 md:absolute md:bottom-1 md:left-6'>
             Please add a link
           </div>
         ) : (
           ''
         )}
-      </div>
-      <button
-        onClick={handleInput}
-        className='z-20 h-full w-full rounded-lg bg-[#2BD1D1] p-3 md:w-1/4'
-      >
-        Shorten it
-      </button>
+
+        <input
+          type='submit'
+          value='Shorten it'
+          className='z-20 h-full w-full rounded-lg bg-[#2BD1D1] p-3 md:w-1/4'
+        />
+      </form>
     </div>
   );
 };
