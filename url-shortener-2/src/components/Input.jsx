@@ -18,14 +18,13 @@ const Input = (props) => {
     if (!props.error) {
       props.dataFetchedRef.current = false;
       props.setUrl(newUrl);
-      console.log(newUrl);
     }
   };
 
   return (
     <div
       ref={props.inputRef}
-      className='relative m-6 flex flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
+      className='relative m-6 flex w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
     >
       <img
         src={BgBoost}

@@ -17,7 +17,6 @@ const Results = (props) => {
     fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then((res) => res.json())
       .then((actualData) => {
-        console.log(actualData);
         if (actualData.ok === true) {
           setError(false);
           setUrl(actualData.result.original_link);
@@ -55,7 +54,7 @@ const Results = (props) => {
 
   return (
     <>
-      <div className='flex w-full flex-col gap-8 bg-[#F0F1F6] p-2'>
+      <div className='flex w-full flex-col items-center gap-8  bg-[#F0F1F6] p-2'>
         <Input
           inputRef={props.inputRef}
           results={results}

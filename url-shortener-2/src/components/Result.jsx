@@ -19,10 +19,10 @@ const Result = ({ result, index }) => {
   };
 
   return (
-    <div className='mx-6 mb-6 flex flex-col gap-2 rounded-lg bg-white p-4'>
+    <div className='mx-6 mb-6 flex w-full flex-col items-center gap-2 rounded-lg bg-white p-4 md:max-w-xl '>
       <div className='flex w-full flex-col items-start justify-items-stretch divide-y-2 rounded-md text-left font-medium'>
-        <h1 className='w-full '>{result.url}</h1>
-        <h1 className='w-full text-[#2BD1D1]'>{result.shortenUrl}</h1>
+        <h1 className='w-full pb-1'>{result.url}</h1>
+        <h1 className='w-full pt-1 text-[#2BD1D1]'>{result.shortenUrl}</h1>
       </div>
       <button
         onClick={handleCopy}
