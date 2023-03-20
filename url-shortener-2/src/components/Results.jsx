@@ -53,7 +53,7 @@ const Results = (props) => {
   };
 
   return (
-    <div className=' flex flex-col items-center gap-8 bg-[#F0F1F6] p-2'>
+    <div className=' box-border flex flex-col items-center gap-8 bg-[#F0F1F6] p-2'>
       <Input
         inputRef={props.inputRef}
         results={results}

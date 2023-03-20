@@ -29,7 +29,7 @@ const Input = (props) => {
   return (
     <div
       ref={props.inputRef}
-      className='relative m-6 flex w-3/4  flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
+      className='relative m-6 box-border flex  w-3/4 flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
     >
       <img
         src={BgBoost}
@@ -43,7 +43,7 @@ const Input = (props) => {
             props.error
               ? 'border-2 border-red-500 placeholder:text-red-500'
               : ''
-          } z-20  w-full rounded-xl p-3 outline-none`}
+          } z-20 box-border w-full rounded-xl p-3 outline-none`}
           onChange={(e) => {
             props.setError(false);
             setNewUrl(e.target.value);
