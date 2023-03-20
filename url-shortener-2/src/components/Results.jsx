@@ -53,45 +53,43 @@ const Results = (props) => {
   };
 
   return (
-    <>
-      <div className='flex w-full flex-col items-center gap-8  bg-[#F0F1F6] p-2'>
-        <Input
-          inputRef={props.inputRef}
-          results={results}
-          setResults={setResults}
-          shortenUrl={shortenUrl}
-          setUrl={setUrl}
-          getData={getData}
-          dataFetchedRef={dataFetchedRef}
-          error={error}
-          setError={setError}
-        />
+    <div className=' flex flex-col items-center gap-8 bg-[#F0F1F6] p-2'>
+      <Input
+        inputRef={props.inputRef}
+        results={results}
+        setResults={setResults}
+        shortenUrl={shortenUrl}
+        setUrl={setUrl}
+        getData={getData}
+        dataFetchedRef={dataFetchedRef}
+        error={error}
+        setError={setError}
+      />
 
-        {shortenUrl && (
-          <>
-            {!isCleared && (
-              <button
-                onClick={handleClearAll}
-                className='-my-4 mx-6 w-24 self-end border-b border-b-[#2BD1D1]'
-              >
-                Clear all
-              </button>
-            )}
-            {results
-              .filter((result) => result.url !== '')
-              .map((result, index) => {
-                return (
-                  <Result
-                    key={Math.random() * 100}
-                    result={result}
-                    index={index}
-                  />
-                );
-              })}
-          </>
-        )}
-      </div>
-    </>
+      {shortenUrl && (
+        <>
+          {!isCleared && (
+            <button
+              onClick={handleClearAll}
+              className='-my-4 mx-6 w-24 self-end border-b border-b-[#2BD1D1]'
+            >
+              Clear all
+            </button>
+          )}
+          {results
+            .filter((result) => result.url !== '')
+            .map((result, index) => {
+              return (
+                <Result
+                  key={Math.random() * 100}
+                  result={result}
+                  index={index}
+                />
+              );
+            })}
+        </>
+      )}
+    </div>
   );
 };
 

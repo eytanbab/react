@@ -15,16 +15,21 @@ const Input = (props) => {
   const [newUrl, setNewUrl] = useState('');
 
   const handleInput = () => {
-    if (!props.error) {
-      props.dataFetchedRef.current = false;
-      props.setUrl(newUrl);
+    if (newUrl) {
+      if (!props.error) {
+        props.setError(false);
+        props.dataFetchedRef.current = false;
+        props.setUrl(newUrl);
+      }
+    } else {
+      props.setError(true);
     }
   };
 
   return (
     <div
       ref={props.inputRef}
-      className='relative m-6 flex w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
+      className='relative m-6 flex w-3/4  flex-col items-center justify-center gap-4 overflow-hidden rounded-lg bg-[#3A3055] p-6 text-center md:flex-row'
     >
       <img
         src={BgBoost}
