@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { IoIosClose } from 'react-icons/io';
+import { FcMenu } from 'react-icons/fc';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -12,9 +12,9 @@ const NavBar = () => {
       <div className='md:hidden'>
         <button onClick={() => setIsActive((prev) => !prev)}>
           {isActive ? (
-            <IoIosClose className='text-gray-400' size={36} />
+            <AiOutlineClose className='text-gray-400' size={36} />
           ) : (
-            <GiHamburgerMenu className='text-gray-400' size={36} />
+            <FcMenu className='text-gray-400' size={36} />
           )}
         </button>
         {isActive && (
