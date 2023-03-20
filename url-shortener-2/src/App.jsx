@@ -10,8 +10,8 @@ function App() {
   const inputRef = useRef(null);
 
   return (
-    <div className='relative flex min-h-screen w-screen flex-col items-center overflow-x-hidden text-center'>
-      <div className=' overflow-x-hidden md:flex md:max-w-full md:flex-col'>
+    <div className='relative flex  w-screen flex-col items-center overflow-x-hidden text-center md:flex md:max-w-full md:flex-col'>
+      <div className=' overflow-x-hidden '>
         <NavBar />
         <Hero inputRef={inputRef} />
         <Results inputRef={inputRef} />
