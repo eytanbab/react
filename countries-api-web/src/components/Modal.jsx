@@ -5,12 +5,12 @@ const Modal = ({ country, darkMode, setOpenModal }) => {
   return (
     <div
       className={`${
-        darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
-      } absolute flex h-screen w-screen flex-col items-start gap-6 overflow-y-hidden p-8`}
+        darkMode ? 'bg-gray-900 text-white' : 'bg-gray-300 text-gray-900'
+      } absolute z-10 m-auto mt-20 flex flex-col items-start  gap-6 p-8 shadow-xl outline-2`}
     >
       <button
         className={`${
-          darkMode ? 'bg-gray-700 text-white' : 'bg-gray-300 text-gray-900'
+          darkMode ? 'bg-gray-700 text-white' : 'bg-gray-400 text-gray-900'
         } self-start rounded-lg px-3 py-2 shadow-lg`}
         onClick={() => setOpenModal(false)}
       >

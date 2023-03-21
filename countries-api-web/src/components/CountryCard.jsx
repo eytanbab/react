@@ -9,7 +9,7 @@ const CountryCard = ({ country, darkMode }) => {
     <div
       className={`${
         darkMode ? 'bg-gray-800' : 'shadow-xl'
-      } flex  h-80 flex-col content-center items-center gap-2  rounded-lg pb-4`}
+      } m-auto flex h-80 flex-col content-center items-center  gap-2 overflow-y-hidden rounded-lg pb-4`}
     >
       <img
         src={country.flags.svg}
