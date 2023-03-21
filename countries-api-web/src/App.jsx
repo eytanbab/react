@@ -26,7 +26,6 @@ function App() {
     const data = await response.json();
     setCountries(data);
     setIsLoading(false);
-    console.log(data);
   };
   useEffect(() => {
     getData();
@@ -44,7 +43,7 @@ function App() {
     <div
       className={`${
         darkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'
-      } max-w-screen flex min-h-screen flex-col items-center gap-6 px-8`}
+      } max-w-screen relative flex min-h-screen flex-col items-center  gap-6 px-8`}
     >
       {/* NAVBAR */}
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />

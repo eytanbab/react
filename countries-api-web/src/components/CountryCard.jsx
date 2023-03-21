@@ -1,12 +1,15 @@
 import React from 'react';
+import Modal from './Modal';
+import { useState } from 'react';
 
 const CountryCard = ({ country, darkMode }) => {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div
-      key={country.name.common}
       className={`${
         darkMode ? 'bg-gray-800' : 'shadow-xl'
-      } flex  h-80  flex-col content-center items-center gap-2 rounded-lg pb-4`}
+      } flex  h-80 flex-col content-center items-center gap-2  rounded-lg pb-4`}
     >
       <img
         src={country.flags.svg}
@@ -16,6 +19,7 @@ const CountryCard = ({ country, darkMode }) => {
       <h1>Population: {country.population.toLocaleString()}</h1>
       <h1>Region : {country.region}</h1>
       <button
+        onClick={() => setOpenModal(!openModal)}
         className={`${
           darkMode
             ? 'bg-gray-700 hover:bg-gray-500'
@@ -24,6 +28,13 @@ const CountryCard = ({ country, darkMode }) => {
       >
         Read More
       </button>
+      {openModal && (
+        <Modal
+          country={country}
+          darkMode={darkMode}
+          setOpenModal={setOpenModal}
+        />
+      )}
     </div>
   );
 };
