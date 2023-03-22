@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Quicksand', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
