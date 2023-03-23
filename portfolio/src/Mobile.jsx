@@ -49,8 +49,8 @@ const Mobile = () => {
             ''
           )
         )}
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };

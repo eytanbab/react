@@ -19,12 +19,12 @@ const Page = ({
 
   return (
     <div
-      className='grid-col-1 grid-row-5 grid h-full items-start justify-center gap-6 overflow-hidden text-center lg:h-auto lg:grid-cols-3'
+      className='grid-col-1 grid-row-5 grid h-full items-start justify-center gap-6 overflow-hidden text-center xl:h-auto xl:grid-cols-3'
       ref={ref}
     >
       <img
         src='https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
-        className='row-span-1 row-start-1 object-fill lg:col-span-2 lg:row-span-5'
+        className='col-span-1 row-span-1 row-start-1 object-fill xl:col-span-2 xl:row-span-5'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -35,7 +35,7 @@ const Page = ({
 
       {/* TITLE */}
       <h1
-        className='text-3xl font-medium lg:col-start-3 lg:row-start-1 lg:text-6xl'
+        className='text-3xl font-medium xl:col-start-3 xl:row-start-1 xl:text-6xl'
         style={{
           transform: isInView ? 'none' : 'translateX(200px)',
           opacity: isInView ? 1 : 0,
@@ -48,7 +48,7 @@ const Page = ({
 
       {/* DESCRIPTION */}
       <p
-        className='text-slate-50 lg:col-start-3 lg:row-start-2 lg:text-2xl'
+        className='text-slate-50 xl:col-start-3 xl:row-start-2 xl:text-2xl'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -61,7 +61,7 @@ const Page = ({
 
       {/* LINKS BUTTONS */}
       <div
-        className='flex flex-col items-center gap-1 lg:gap-4'
+        className='flex flex-col items-center gap-1 xl:gap-4'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -71,7 +71,7 @@ const Page = ({
       >
         {data.link ? (
           <a
-            className='button one relative justify-self-center px-2 lg:text-xl lg:px-4'
+            className='button one relative justify-self-center px-2 xl:px-4 xl:text-xl'
             href={data.link}
           >
             Live
@@ -80,7 +80,7 @@ const Page = ({
           <p className='italic text-slate-400'>In progress...</p>
         )}
         <a
-          className='button two relative justify-self-center py-1 px-4 text-sm lg:text-xl'
+          className='button two relative justify-self-center py-1 px-4 text-sm xl:text-xl'
           href={data.repo}
         >
           Github repository
@@ -88,7 +88,7 @@ const Page = ({
       </div>
 
       {/* NAVIGATION BUTTONS */}
-      <div className='flex w-full items-center justify-between self-end justify-self-end lg:col-start-3 lg:row-start-5'>
+      <div className='flex w-full items-center justify-between self-end justify-self-end xl:col-start-3 xl:row-start-5'>
         <button
           className='p-1'
           onClick={pagePrevHandle}
