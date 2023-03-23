@@ -7,6 +7,7 @@ const data = [
     techUsed: [],
     projectImageUrl: '',
     link: '',
+    repo: 'https://github.com/eytanbab/react/tree/master/advice-generator',
   },
   {
     projectId: 2,
@@ -16,15 +17,17 @@ const data = [
     techUsed: [],
     projectImageUrl: '',
     link: 'https://dict-web-app.netlify.app/',
+    repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
   },
   {
     projectId: 3,
     projectName: 'Space Tourism landing page',
     projectDesc:
-      'Welcome to our space tourism landing page website, where you can embark on a virtual journey to the final frontier! Explore the wonders of the cosmos from the comfort of your own home, with our interactive guides and immersive experiences. Join us on this epic adventure and start your space journey today!',
+      'Explore the wonders of the cosmos from the comfort of your own home, with our interactive guides and immersive experiences. Join us on this epic adventure and start your space journey today!',
     techUsed: [],
     projectImageUrl: '',
     link: '',
+    repo: 'https://github.com/eytanbab/react/tree/master/space-tourism-web-app',
   },
   {
     projectId: 4,
@@ -34,6 +37,7 @@ const data = [
     techUsed: [],
     projectImageUrl: '',
     link: 'https://calculate-my-tip.netlify.app/',
+    repo: 'https://github.com/eytanbab/react/tree/master/tip-calculator-app',
   },
   {
     projectId: 5,
@@ -43,6 +47,7 @@ const data = [
     techUsed: [],
     projectImageUrl: '',
     link: 'https://url-shortener-2.netlify.app/',
+    repo: 'https://github.com/eytanbab/react/tree/master/url-shortener-2',
   },
   {
     projectId: 6,
@@ -52,6 +57,7 @@ const data = [
     techUsed: [],
     projectImageUrl: '',
     link: '',
+    repo: 'https://github.com/eytanbab/react/tree/master/weather-web-app',
   },
 ];
 
