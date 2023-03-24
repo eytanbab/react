@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className='relative flex h-24 w-full items-center justify-between px-6'>
       {/* LOGO */}
       <Link to='/'>
-        <button>
+        <button className='w-12 p-2'>
           <img src={Logo} />
         </button>
       </Link>
@@ -19,11 +19,11 @@ const Navbar = () => {
       {/* MENU */}
       <div className='z-20'>
         {isOpen ? (
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button className='w-12 p-2' onClick={() => setIsOpen(!isOpen)}>
             <img src={IconClose} alt='' />
           </button>
         ) : (
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button className='w-12 p-2' onClick={() => setIsOpen(!isOpen)}>
             <img src={IconHamburger} alt='' />
           </button>
         )}
