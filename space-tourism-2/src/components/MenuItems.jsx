@@ -8,7 +8,7 @@ const MenuItems = ({ isOpen }) => {
     <ul
       className={`${
         isOpen ? 'translate-x-0' : 'translate-x-full'
-      } bg-white-500/10 absolute right-0 top-0 flex h-screen w-64  flex-col gap-4  bg-white/10 px-8 pt-20 font-barlow-condensed backdrop-blur-xl transition-transform  duration-500`}
+      } bg-white-500/10 absolute right-0 top-0 z-0 flex h-screen w-64  flex-col gap-4  bg-white/10 px-8 pt-20 font-barlow-condensed backdrop-blur-xl transition-transform  duration-500`}
     >
       <NavLink
         to='/'
