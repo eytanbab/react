@@ -12,7 +12,7 @@ const MenuItems = ({ isOpen }) => {
     >
       <NavLink
         to='/'
-        style={({ isActive, isPending }) => {
+        style={({ isActive }) => {
           return {
             borderLeftColor: isActive ? 'white' : '',
             borderLeftWidth: isActive ? 2 : '',

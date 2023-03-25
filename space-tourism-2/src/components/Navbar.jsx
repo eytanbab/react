@@ -36,7 +36,7 @@ const Navbar = () => {
       <ul className='hidden h-24  w-full items-center justify-evenly bg-white/30 pl-12 lg:flex'>
         <NavLink
           to='/'
-          style={({ isActive, isPending }) => {
+          style={({ isActive }) => {
             return {
               borderBottomColor: isActive ? 'white' : '',
               borderBottomWidth: isActive ? 2 : '',
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         <NavLink
           to='/destination'
-          style={({ isActive, isPending }) => {
+          style={({ isActive }) => {
             return {
               borderBottomColor: isActive ? 'white' : '',
               borderBottomWidth: isActive ? 2 : '',
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <NavLink
           to='/crew'
-          style={({ isActive, isPending }) => {
+          style={({ isActive }) => {
             return {
               borderBottomColor: isActive ? 'white' : '',
               borderBottomWidth: isActive ? 2 : '',

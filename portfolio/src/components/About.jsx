@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='bg-red-500'>
+    <div className='px-6 text-center text-2xl leading-relaxed xl:max-w-7xl'>
       <p>
         Hey! my name is Ethan Babaev, and I am a 27-year-old software
         engineering graduate from Sami Shamoon College of Engineering. As a
