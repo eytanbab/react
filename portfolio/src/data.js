@@ -21,7 +21,7 @@ const data = [
   },
   {
     projectId: 3,
-    projectName: 'Space Tourism landing page',
+    projectName: 'Space Tourism',
     projectDesc:
       'Explore the wonders of the cosmos from the comfort of your own home, with our interactive guides and immersive experiences. Join us on this epic adventure and start your space journey today!',
     techUsed: [],
@@ -41,7 +41,7 @@ const data = [
   },
   {
     projectId: 5,
-    projectName: 'Shortly - URL shortener',
+    projectName: 'Shortly',
     projectDesc:
       'Introducing our URL shortener - the perfect tool for simplifying and streamlining your online presence! With our app, you can quickly and easily generate shortened links that are easy to remember and share.',
     techUsed: [],
