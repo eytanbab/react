@@ -4,6 +4,7 @@ import ProjectPage from './components/ProjectPage';
 import Footer from './components/Footer';
 import data from './data';
 import Navbar from './components/Navbar';
+import About from './components/About';
 
 const Mobile = () => {
   const [pageIndex, setPageIndex] = useState(1);
