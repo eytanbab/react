@@ -10,10 +10,12 @@ const Navbar = () => {
 
   return (
     <nav className='flex-start relative flex h-24 w-full items-center justify-between gap-4 px-6'>
-      <h1 className='text-3xl uppercase'>My portfolio</h1>
+      <h1 className='text-3xl uppercase '>My portfolio</h1>
 
       {/* DESKTOP NAV */}
-      <h1 className='text-2xl'>About</h1>
+      <h1 className='text-2xl text-slate-300'>
+        About
+      </h1>
 
       {/* MOBILE NAV */}
       <ul className='flex  p-2 text-2xl  md:hidden'>
