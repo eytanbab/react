@@ -23,7 +23,7 @@ const ProjectPage = ({
       ref={ref}
     >
       <img
-        src='https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
+        src={data.projectImageUrl}
         className='col-span-1 row-span-1 row-start-1 object-fill xl:col-span-2 xl:row-span-5'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
