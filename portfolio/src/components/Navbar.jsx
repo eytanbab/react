@@ -19,7 +19,7 @@ const Navbar = ({ setFocus }) => {
   };
 
   return (
-    <nav className='flex-start relative flex h-24 w-full items-center justify-between gap-4 px-6'>
+    <nav className='flex-start flex h-24 w-full items-center justify-between gap-4 px-6'>
       <button onClick={handleProjects} className='z-20 text-3xl uppercase'>
         My portfolio
       </button>
@@ -43,7 +43,7 @@ const Navbar = ({ setFocus }) => {
         <div
           className={`${
             isOpen ? 'left-0' : '-left-[100%]'
-          } absolute  top-0 z-10 flex h-[90vh] w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
+          } absolute  top-0 z-10 flex h-full w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
         >
           <button onClick={handleProjects}>Projects</button>
           <div className='h-[1px] w-full bg-slate-200/50' />
