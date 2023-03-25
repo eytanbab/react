@@ -1,8 +1,21 @@
 import React from 'react';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <div className='px-6 text-center text-2xl leading-relaxed xl:max-w-7xl'>
+    <div
+      ref={ref}
+      style={{
+        transform: isInView ? 'none' : 'translateX(200px)',
+        opacity: isInView ? 1 : 0,
+        transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
+        filter: isInView ? 'none' : 'blur(30px)',
+      }}
+      className='flex grow px-6 text-center text-lg leading-relaxed xl:max-w-7xl xl:text-2xl'
+    >
       <p>
         Hey! my name is Ethan Babaev, and I am a 27-year-old software
         engineering graduate from Sami Shamoon College of Engineering. As a
