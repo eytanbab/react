@@ -34,7 +34,7 @@ const App = () => {
   }, [pageIndex]);
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-start gap-4 bg-slate-900  text-slate-100'>
+    <div className='relative flex min-h-screen flex-col items-center justify-start gap-4 bg-slate-900  text-slate-100'>
       <Navbar setFocus={setFocus} />
       {focus === 'projects' ? (
         <div className='flex grow flex-col justify-between'>
