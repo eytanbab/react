@@ -32,9 +32,9 @@ const Mobile = () => {
   }, [pageIndex]);
 
   return (
-    <div className='flex h-screen flex-col items-center justify-start gap-4 bg-slate-900 p-6 text-slate-100'>
+    <div className='flex min-h-screen flex-col items-center justify-start gap-4 bg-slate-900 p-6 text-slate-100'>
       <Navbar />
-      <div className='flex h-screen flex-col justify-between'>
+      <div className='flex flex-col justify-between'>
         {data.map((data, index) =>
           index === pageIndex - 1 ? (
             <Page
