@@ -56,13 +56,13 @@ const data = [
   },
   {
     projectId: 6,
-    projectName: 'Weather web app',
+    projectName: 'Weatherly',
     projectDesc:
       "Stay ahead of the weather with our user-friendly web app! With real-time updates and accurate forecasts, you'll always be prepared for whatever Mother Nature has in store. ",
     techUsed: [],
     projectImageUrl:
       'https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-    link: '',
+    link: 'https://weatherly-web-app.netlify.app/',
     repo: 'https://github.com/eytanbab/react/tree/master/weather-web-app',
   },
 ];
