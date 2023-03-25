@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Page from './components/Page';
+import ProjectPage from './components/ProjectPage';
 import Footer from './components/Footer';
 import data from './data';
 import Navbar from './components/Navbar';
@@ -32,12 +32,12 @@ const Mobile = () => {
   }, [pageIndex]);
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-start gap-4 bg-slate-900 p-6 text-slate-100'>
+    <div className='flex min-h-screen flex-col items-center justify-start gap-4 bg-slate-900  text-slate-100'>
       <Navbar />
-      <div className='flex flex-col justify-between'>
+      <div className='flex grow flex-col justify-between'>
         {data.map((data, index) =>
           index === pageIndex - 1 ? (
-            <Page
+            <ProjectPage
               key={index}
               data={data}
               pagePrevHandle={pagePrevHandle}
@@ -50,6 +50,7 @@ const Mobile = () => {
           )
         )}
       </div>
+
       <Footer />
     </div>
   );
