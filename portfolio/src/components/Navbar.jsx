@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='flex-start relative flex h-24 w-full items-center justify-between gap-4'>
+    <nav className='flex-start relative flex h-24 w-full items-center justify-between gap-4 px-6'>
       <h1 className='justify-self-center  text-3xl uppercase'>My portfolio</h1>
 
       {/* MOBILE NAV */}

@@ -1,10 +1,14 @@
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
+import { RiLinkedinLine } from 'react-icons/ri';
 const Footer = () => {
   return (
-    <div className='flex h-24 w-screen items-center justify-center bg-slate-900 p-4'>
-      <a href='https://github.com/eytanbab' className='text-5xl'>
+    <div className='flex h-24 w-full items-center justify-center gap-4 p-4 text-3xl'>
+      <a href='https://github.com/eytanbab'>
         <AiFillGithub />
+      </a>
+      <a href='https://www.linkedin.com/in/eytan-babaev/'>
+        <RiLinkedinLine />
       </a>
     </div>
   );
