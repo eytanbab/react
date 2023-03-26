@@ -19,12 +19,12 @@ const ProjectPage = ({
 
   return (
     <div
-      className='grid-col-1 grid-row-5 grid h-full grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 xl:grid-cols-3'
+      className='grid-col-1 grid h-full grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 xl:grid-cols-3'
       ref={ref}
     >
       <img
         src={data.projectImageUrl}
-        className='col-span-1 row-span-1 row-start-1 object-fill xl:col-span-2 xl:row-span-5'
+        className='col-span-1 row-span-1 row-start-1 object-fill xl:col-span-2 xl:row-span-3'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
@@ -35,7 +35,7 @@ const ProjectPage = ({
 
       {/* TITLE */}
       <h1
-        className='text-3xl font-medium xl:col-start-3 xl:row-start-1 xl:text-6xl'
+        className='flex items-center justify-center text-3xl font-medium xl:col-start-3 xl:row-start-1 xl:justify-center xl:text-5xl'
         style={{
           transform: isInView ? 'none' : 'translateX(200px)',
           opacity: isInView ? 1 : 0,
@@ -47,48 +47,50 @@ const ProjectPage = ({
       </h1>
 
       {/* DESCRIPTION */}
-      <p
-        className='text-slate-50 xl:col-start-3 xl:row-start-2 xl:text-2xl'
-        style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
-          filter: isInView ? 'none' : 'blur(5px)',
-        }}
-      >
-        {data.projectDesc}
-      </p>
-
-      {/* LINKS BUTTONS */}
-      <div
-        className='flex flex-col items-center gap-1 xl:gap-4'
-        style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
-          filter: isInView ? 'none' : 'blur(5px)',
-        }}
-      >
-        {data.link ? (
-          <a
-            className='button one relative justify-self-center px-2 xl:px-4 xl:text-xl'
-            href={data.link}
-          >
-            Live
-          </a>
-        ) : (
-          <p className='italic text-slate-400'>In progress...</p>
-        )}
-        <a
-          className='button two relative justify-self-center py-1 px-4 text-sm xl:text-xl'
-          href={data.repo}
+      <div className='flex flex-col gap-4'>
+        <p
+          className='text-slate-50 xl:col-start-3 xl:row-start-2 xl:text-xl'
+          style={{
+            transform: isInView ? 'none' : 'translateX(-200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+            filter: isInView ? 'none' : 'blur(5px)',
+          }}
         >
-          Github repository
-        </a>
+          {data.projectDesc}
+        </p>
+
+        {/* LINKS BUTTONS */}
+        <div
+          className='flex flex-col items-center xl:gap-4'
+          style={{
+            transform: isInView ? 'none' : 'translateX(-200px)',
+            opacity: isInView ? 1 : 0,
+            transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+            filter: isInView ? 'none' : 'blur(5px)',
+          }}
+        >
+          {data.link ? (
+            <a
+              className='button one relative justify-self-center px-2 xl:px-4 xl:text-xl'
+              href={data.link}
+            >
+              Live
+            </a>
+          ) : (
+            <p className='italic text-slate-400'>In progress...</p>
+          )}
+          <a
+            className='button two relative justify-self-center py-1 px-4 text-sm xl:text-xl'
+            href={data.repo}
+          >
+            Github repository
+          </a>
+        </div>
       </div>
 
       {/* NAVIGATION BUTTONS */}
-      <div className='flex w-full items-center justify-between self-end justify-self-end xl:col-start-3 xl:row-start-5'>
+      <div className='flex w-full items-center justify-between self-end justify-self-end xl:col-start-3 xl:row-start-3'>
         <button
           className='p-1'
           onClick={pagePrevHandle}
