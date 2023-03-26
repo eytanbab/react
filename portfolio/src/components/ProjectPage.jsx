@@ -19,7 +19,7 @@ const ProjectPage = ({
 
   return (
     <div
-      className='grid-col-1 grid-row-5 grid h-full grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grid-cols-3'
+      className='grid-col-1 grid-row-5 grid h-full grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 xl:grid-cols-3'
       ref={ref}
     >
       <img
