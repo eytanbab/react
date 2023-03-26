@@ -22,6 +22,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
     setIsOpen(false);
     setPageIndex(index + 1);
     setFocus('projects');
+    setProjectsDropdown(false);
   };
 
   const handleAbout = () => {
@@ -30,18 +31,41 @@ const Navbar = ({ setFocus, setPageIndex }) => {
   };
 
   return (
-    <nav className='flex-start flex h-24 w-full items-center justify-between gap-4 px-6'>
+    <nav className='flex h-24 w-full items-center  justify-between gap-4 px-6'>
       <button onClick={handleProjects} className='z-20 text-3xl uppercase'>
         My portfolio
       </button>
 
       {/* DESKTOP NAV */}
-      <button
-        onClick={handleAbout}
-        className='hidden text-2xl text-slate-300 xl:flex'
-      >
-        About
-      </button>
+      <div className='relative hidden gap-20 text-2xl text-slate-300 xl:flex'>
+        <button
+          onClick={() => setProjectsDropdown(!projectsDropdown)}
+          className='flex items-center gap-4'
+        >
+          <h1 className='font-medium'>Projects</h1>
+          <AiOutlineArrowLeft
+            className={`${
+              projectsDropdown ? '-rotate-90' : 'rotate-0'
+            } opacity-75 transition-transform duration-150 ease-in-out`}
+            size={20}
+          />
+        </button>
+        {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
+        {projectsDropdown && (
+          <div
+            className={`absolute left-0 top-0 mt-12 flex flex-col gap-2 rounded-md  px-4 py-8 text-base text-slate-200 backdrop-blur-lg`}
+          >
+            {data.map((project, index) => (
+              <button key={index} onClick={() => handleProject(index)}>
+                {project.projectName}
+              </button>
+            ))}
+          </div>
+        )}
+        <button onClick={handleAbout} className=''>
+          <h1 className='font-medium'>About</h1>
+        </button>
+      </div>
 
       {/* MOBILE NAV */}
 
@@ -57,7 +81,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
             isOpen ? 'left-0' : '-left-[100%]'
           } absolute  top-0 z-10 flex h-full w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
         >
-          {/* PROJECTS DROPDOWN MENU */}
+          {/* MOBILE PROJECTS DROPDOWN MENU */}
           <button
             onClick={() => setProjectsDropdown(!projectsDropdown)}
             className='flex items-center gap-4'
@@ -70,7 +94,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
               } opacity-75 transition-transform duration-150 ease-in-out`}
             />
           </button>
-          {/* PROJECTS DROPDOWN OPTIONS */}
+          {/* MOBILE PROJECTS DROPDOWN OPTIONS */}
           {projectsDropdown ? (
             <div className='flex flex-col items-start gap-2'>
               {data.map((project, index) => (
