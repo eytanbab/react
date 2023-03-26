@@ -57,11 +57,12 @@ const Navbar = ({ setFocus, setPageIndex }) => {
               isOpen ? 'left-0' : '-left-[100%]'
             } absolute  top-0 z-10 flex h-full w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
           >
+            {/* PROJECTS DROPDOWN MENU */}
             <button
               onClick={() => setProjectsDropdown(!projectsDropdown)}
               className='flex items-center gap-4'
             >
-              <h1>Projects</h1>
+              <h1 className='font-medium'>Projects</h1>
               <AiOutlineArrowLeft
                 size={22}
                 className={`${
@@ -76,7 +77,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
                   <button
                     key={project.projectId}
                     onClick={() => handleProject(index)}
-                    className='text-lg'
+                    className='text-lg text-slate-300'
                   >
                     {project.projectName}
                   </button>
@@ -88,7 +89,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
             {/* DIVIDER */}
             <div className='h-[1px] w-full bg-slate-200/40' />
             <button onClick={handleAbout}>
-              <h1>About</h1>
+              <h1 className='font-medium'>About</h1>
             </button>
           </div>
         </ul>
