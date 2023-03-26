@@ -1,4 +1,3 @@
-import img from './assets/advice-generator.png';
 const data = [
   {
     projectId: 1,
