@@ -39,7 +39,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
       <div className='relative hidden gap-20 text-2xl text-slate-300 xl:flex'>
         <button
           onClick={() => setProjectsDropdown(!projectsDropdown)}
-          className='flex items-center gap-2'
+          className='flex items-center gap-2 transition-transform duration-300 hover:scale-110'
         >
           <h1 className='font-medium'>Projects</h1>
           <AiOutlineArrowLeft
@@ -65,7 +65,10 @@ const Navbar = ({ setFocus, setPageIndex }) => {
             ))}
           </div>
         )}
-        <button onClick={handleAbout} className=''>
+        <button
+          onClick={handleAbout}
+          className='transition-transform duration-300 hover:scale-110'
+        >
           <h1 className='font-medium'>About</h1>
         </button>
       </div>
