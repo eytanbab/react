@@ -72,7 +72,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
 
       {/* MOBILE NAV */}
 
-      <ul className='flex p-2 text-2xl xl:hidden'>
+      <div className='flex p-2 text-2xl xl:hidden'>
         {isOpen ? (
           <MdOutlineExitToApp onClick={handleNav} className='z-20' />
         ) : (
@@ -119,7 +119,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
             <h1 className='font-medium'>About</h1>
           </button>
         </div>
-      </ul>
+      </div>
     </nav>
   );
 };
