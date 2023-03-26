@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { MdOutlineExitToApp } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
 import data from '../data.js';
+import MobileDropdown from './MobileDropdown.jsx';
+import DesktopDropdown from './DesktopDropdown.jsx';
 
 const Navbar = ({ setFocus, setPageIndex }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,18 +38,10 @@ const Navbar = ({ setFocus, setPageIndex }) => {
 
       {/* DESKTOP NAV */}
       <div className='relative hidden gap-20 text-2xl text-slate-300 xl:flex'>
-        <button
-          onClick={() => setProjectsDropdown(!projectsDropdown)}
-          className='flex items-center gap-2 transition-transform duration-300 hover:scale-110'
-        >
-          <h1 className='font-medium'>Projects</h1>
-          <AiOutlineArrowLeft
-            className={`${
-              projectsDropdown ? '-rotate-90' : 'rotate-0'
-            } opacity-75 transition-transform duration-150 ease-in-out`}
-            size={20}
-          />
-        </button>
+        <DesktopDropdown
+          projectsDropdown={projectsDropdown}
+          setProjectsDropdown={setProjectsDropdown}
+        />
         {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
         {projectsDropdown && (
           <div
@@ -74,7 +67,6 @@ const Navbar = ({ setFocus, setPageIndex }) => {
       </div>
 
       {/* MOBILE NAV */}
-
       <div className='flex p-2 text-2xl xl:hidden'>
         {isOpen ? (
           <MdOutlineExitToApp onClick={handleNav} className='z-20' />
@@ -88,34 +80,12 @@ const Navbar = ({ setFocus, setPageIndex }) => {
           } absolute  top-0 z-10 flex h-full w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
         >
           {/* MOBILE PROJECTS DROPDOWN MENU */}
-          <button
-            onClick={() => setProjectsDropdown(!projectsDropdown)}
-            className='flex items-center gap-4'
-          >
-            <h1 className='font-medium'>Projects</h1>
-            <AiOutlineArrowLeft
-              size={22}
-              className={`${
-                projectsDropdown ? '-rotate-90' : 'rotate-0'
-              } opacity-75 transition-transform duration-150 ease-in-out`}
-            />
-          </button>
-          {/* MOBILE PROJECTS DROPDOWN OPTIONS */}
-          {projectsDropdown ? (
-            <div className='flex flex-col items-start gap-2'>
-              {data.map((project, index) => (
-                <button
-                  key={project.projectId}
-                  onClick={() => handleProject(index)}
-                  className='text-lg text-slate-300'
-                >
-                  {project.projectName}
-                </button>
-              ))}
-            </div>
-          ) : (
-            ''
-          )}
+          <MobileDropdown
+            data={data}
+            projectsDropdown={projectsDropdown}
+            setProjectsDropdown={setProjectsDropdown}
+            handleProject={handleProject}
+          />
           {/* DIVIDER */}
           <div className='h-[1px] w-full bg-slate-200/40' />
           <button onClick={handleAbout}>
