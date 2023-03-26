@@ -33,7 +33,6 @@ const ProjectPage = ({
       {/* PROJECT INFORMATION CONTAINER */}
       <div className='grid grid-cols-1 gap-12 xl:px-12'>
         {/* TITLE */}
-
         <h1
           className='flex items-center justify-center text-3xl font-medium xl:col-start-1 xl:row-start-1 xl:justify-center xl:text-5xl'
           style={{
