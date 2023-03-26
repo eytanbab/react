@@ -40,7 +40,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
       <div className='relative hidden gap-20 text-2xl text-slate-300 xl:flex'>
         <button
           onClick={() => setProjectsDropdown(!projectsDropdown)}
-          className='flex items-center gap-4'
+          className='flex items-center gap-2'
         >
           <h1 className='font-medium'>Projects</h1>
           <AiOutlineArrowLeft
@@ -53,10 +53,14 @@ const Navbar = ({ setFocus, setPageIndex }) => {
         {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
         {projectsDropdown && (
           <div
-            className={`absolute left-0 top-0 mt-12 flex flex-col gap-2 rounded-md  px-4 py-8 text-base text-slate-200 backdrop-blur-lg`}
+            className={`absolute left-0 top-0 z-30 -m-6 mt-12 flex flex-col items-start gap-3 divide-slate-200/50 rounded-md bg-slate-800/50 p-6 text-base text-slate-200 backdrop-blur-lg`}
           >
             {data.map((project, index) => (
-              <button key={index} onClick={() => handleProject(index)}>
+              <button
+                className='pt-4'
+                key={index}
+                onClick={() => handleProject(index)}
+              >
                 {project.projectName}
               </button>
             ))}
