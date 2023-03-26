@@ -1,10 +1,6 @@
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import {
-  AiFillCaretRight,
-  AiFillCaretLeft,
-  AiFillGithub,
-} from 'react-icons/ai';
+import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
 import '../App.css';
 
 const ProjectPage = ({

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { MdOutlineExitToApp } from 'react-icons/md';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { Menu } from '@headlessui/react';
-import { AiOutlineArrowDown, AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import data from '../data.js';
 
 const Navbar = ({ setFocus, setPageIndex }) => {
