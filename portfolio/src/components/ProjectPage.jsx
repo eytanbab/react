@@ -19,12 +19,12 @@ const ProjectPage = ({
 
   return (
     <div
-      className='grid-col-1 grid h-full grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 xl:grid-cols-3'
+      className='grid-col-1 grid h-full max-h-fit grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 '
       ref={ref}
     >
       <img
         src={data.projectImageUrl}
-        className='col-span-1 row-span-1 row-start-1 object-fill xl:col-span-2 xl:row-span-3'
+        className='col-span-1 row-span-1 row-start-1  object-contain xl:col-span-2 xl:row-span-3'
         style={{
           transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
