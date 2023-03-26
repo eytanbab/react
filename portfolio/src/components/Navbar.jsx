@@ -19,7 +19,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
     setFocus('projects');
   };
 
-  const handleProject = (index) => {
+  const handleSelectedProject = (index) => {
     setIsOpen(false);
     setPageIndex(index + 1);
     setFocus('projects');
@@ -43,10 +43,8 @@ const Navbar = ({ setFocus, setPageIndex }) => {
           data={data}
           projectsDropdown={projectsDropdown}
           setProjectsDropdown={setProjectsDropdown}
-          handleProject={handleProject}
+          handleSelectedProject={handleSelectedProject}
         />
-        {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
-
         <AboutButton handleAbout={handleAbout} />
       </div>
 
@@ -57,21 +55,22 @@ const Navbar = ({ setFocus, setPageIndex }) => {
         ) : (
           <RxHamburgerMenu onClick={handleNav} />
         )}
-
+        {/* MOBILE MENU */}
         <div
           className={`${
             isOpen ? 'left-0' : '-left-[100%]'
           } absolute  top-0 z-10 flex h-full w-full flex-col items-start gap-4 overflow-hidden rounded-lg bg-slate-900/90 p-6 pt-24 backdrop-blur-md transition-all duration-300 ease-in`}
         >
-          {/* MOBILE PROJECTS DROPDOWN MENU */}
+          {/* MOBILE PROJECTS DROPDOWN */}
           <MobileDropdown
             data={data}
             projectsDropdown={projectsDropdown}
             setProjectsDropdown={setProjectsDropdown}
-            handleProject={handleProject}
+            handleSelectedProject={handleSelectedProject}
           />
           {/* DIVIDER */}
           <div className='h-[1px] w-full bg-slate-200/40' />
+          {/* ABOUT BUTTON */}
           <AboutButton handleAbout={handleAbout} />
         </div>
       </div>

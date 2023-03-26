@@ -4,7 +4,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 const DesktopDropdown = ({
   projectsDropdown,
   setProjectsDropdown,
-  handleProject,
+  handleSelectedProject,
   data,
 }) => {
   return (
@@ -29,7 +29,7 @@ const DesktopDropdown = ({
             <button
               className='pt-4'
               key={index}
-              onClick={() => handleProject(index)}
+              onClick={() => handleSelectedProject(index)}
             >
               {project.projectName}
             </button>

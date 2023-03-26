@@ -5,7 +5,7 @@ const MobileDropdown = ({
   data,
   projectsDropdown,
   setProjectsDropdown,
-  handleProject,
+  handleSelectedProject,
 }) => {
   return (
     <>
@@ -28,7 +28,7 @@ const MobileDropdown = ({
           {data.map((project, index) => (
             <button
               key={project.projectId}
-              onClick={() => handleProject(index)}
+              onClick={() => handleSelectedProject(index)}
               className='text-lg text-slate-300'
             >
               {project.projectName}
