@@ -38,11 +38,11 @@ const App = () => {
       <Navbar setFocus={setFocus} setPageIndex={setPageIndex} />
       {focus === 'projects' ? (
         <div className='flex grow flex-col justify-between'>
-          {data.map((data, index) =>
+          {data.map((item, index) =>
             index === pageIndex - 1 ? (
               <ProjectPage
                 key={index}
-                data={data}
+                data={item}
                 pagePrevHandle={pagePrevHandle}
                 pageNextHandle={pageNextHandle}
                 nextDisabled={nextDisabled}
