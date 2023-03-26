@@ -15,7 +15,7 @@ const ProjectPage = ({
 
   return (
     <div
-      className='grid-col-1 grid h-full max-h-fit grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0 '
+      className='grid-col-1 grid h-full max-h-fit grow items-start justify-center gap-6 overflow-hidden px-6 text-center xl:h-auto xl:grow-0'
       ref={ref}
     >
       <img
@@ -30,59 +30,63 @@ const ProjectPage = ({
         }}
       />
 
-      {/* TITLE */}
-      <h1
-        className='flex items-center justify-center text-3xl font-medium xl:col-start-3 xl:row-start-1 xl:justify-center xl:text-5xl'
-        style={{
-          transform: isInView ? 'none' : 'translateX(200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
-          filter: isInView ? 'none' : 'blur(5px)',
-        }}
-      >
-        {data.projectName}
-      </h1>
+      {/* PROJECT INFORMATION CONTAINER */}
+      <div className='grid grid-cols-1 gap-12 xl:px-12'>
+        {/* TITLE */}
 
-      {/* DESCRIPTION */}
-      <div className='flex flex-col gap-4'>
-        <p
-          className='text-slate-50 xl:col-start-3 xl:row-start-2 xl:text-xl'
+        <h1
+          className='flex items-center justify-center text-3xl font-medium xl:col-start-1 xl:row-start-1 xl:justify-center xl:text-5xl'
           style={{
-            transform: isInView ? 'none' : 'translateX(-200px)',
+            transform: isInView ? 'none' : 'translateX(200px)',
             opacity: isInView ? 1 : 0,
-            transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+            transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.6s',
             filter: isInView ? 'none' : 'blur(5px)',
           }}
         >
-          {data.projectDesc}
-        </p>
+          {data.projectName}
+        </h1>
 
-        {/* LINKS BUTTONS */}
-        <div
-          className='flex flex-col items-center xl:gap-4'
-          style={{
-            transform: isInView ? 'none' : 'translateX(-200px)',
-            opacity: isInView ? 1 : 0,
-            transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
-            filter: isInView ? 'none' : 'blur(5px)',
-          }}
-        >
-          {data.link ? (
-            <a
-              className='button one relative justify-self-center px-2 xl:px-4 xl:text-xl'
-              href={data.link}
-            >
-              Live
-            </a>
-          ) : (
-            <p className='italic text-slate-400'>In progress...</p>
-          )}
-          <a
-            className='button two relative justify-self-center py-1 px-4 text-sm xl:text-xl'
-            href={data.repo}
+        {/* DESCRIPTION */}
+        <div className='flex flex-col gap-4'>
+          <p
+            className='text-slate-50 xl:col-start-3 xl:row-start-2 xl:px-24 xl:text-xl'
+            style={{
+              transform: isInView ? 'none' : 'translateX(-200px)',
+              opacity: isInView ? 1 : 0,
+              transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+              filter: isInView ? 'none' : 'blur(5px)',
+            }}
           >
-            Github repository
-          </a>
+            {data.projectDesc}
+          </p>
+
+          {/* LINKS BUTTONS */}
+          <div
+            className='flex flex-col items-center xl:gap-4'
+            style={{
+              transform: isInView ? 'none' : 'translateX(-200px)',
+              opacity: isInView ? 1 : 0,
+              transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s',
+              filter: isInView ? 'none' : 'blur(5px)',
+            }}
+          >
+            {data.link ? (
+              <a
+                className='button one relative justify-self-center px-2 xl:px-4 xl:text-xl'
+                href={data.link}
+              >
+                Live
+              </a>
+            ) : (
+              <p className='italic text-slate-400'>In progress...</p>
+            )}
+            <a
+              className='button two relative justify-self-center py-1 px-4 text-sm xl:text-xl'
+              href={data.repo}
+            >
+              Github repository
+            </a>
+          </div>
         </div>
       </div>
 
