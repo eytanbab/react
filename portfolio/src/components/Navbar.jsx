@@ -4,6 +4,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import data from '../data.js';
 import MobileDropdown from './MobileDropdown.jsx';
 import DesktopDropdown from './DesktopDropdown.jsx';
+import AboutButton from './AboutButton.jsx';
 
 const Navbar = ({ setFocus, setPageIndex }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,12 +47,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
         />
         {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
 
-        <button
-          onClick={handleAbout}
-          className='transition-transform duration-300 hover:scale-110'
-        >
-          <h1 className='font-medium'>About</h1>
-        </button>
+        <AboutButton handleAbout={handleAbout} />
       </div>
 
       {/* MOBILE NAV */}
@@ -76,9 +72,7 @@ const Navbar = ({ setFocus, setPageIndex }) => {
           />
           {/* DIVIDER */}
           <div className='h-[1px] w-full bg-slate-200/40' />
-          <button onClick={handleAbout}>
-            <h1 className='font-medium'>About</h1>
-          </button>
+          <AboutButton handleAbout={handleAbout} />
         </div>
       </div>
     </nav>
