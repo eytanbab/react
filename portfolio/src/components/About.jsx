@@ -14,21 +14,28 @@ const About = () => {
         transition: 'all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
         filter: isInView ? 'none' : 'blur(30px)',
       }}
-      className='flex grow px-6 text-center text-lg leading-relaxed xl:max-w-7xl xl:text-2xl'
+      className='flex grow flex-col gap-4  px-6 text-center text-lg leading-relaxed md:text-2xl xl:max-w-5xl'
     >
       <p>
         Hey! my name is Ethan Babaev, and I am a 27-year-old software
-        engineering graduate from Sami Shamoon College of Engineering. As a
-        recent graduate, I am excited to start my career in the field of
+        engineering graduate from Sami Shamoon College of Engineering.
+      </p>
+      <p>
+        As a recent graduate, I am excited to start my career in the field of
         frontend development. Though I don't have any professional experience
         yet, I have been honing my skills in coding and design through various
         personal projects and coursework. I am proficient in HTML, CSS,
-        JavaScript, and React and have a keen eye for detail and aesthetics. I
-        am also a quick learner and thrive in collaborative environments. I am
+        JavaScript, and React and have a keen eye for detail and aesthetics.
+      </p>
+      <p>
+        I am also a quick learner and thrive in collaborative environments. I am
         currently seeking opportunities to work as a frontend developer and
-        contribute to innovative projects. I am confident that my skills and
-        passion for coding make me a valuable addition to any team. Thank you
-        for visiting my portfolio, and I look forward to connecting with you.
+        contribute to innovative projects.
+      </p>
+      <p>
+        I am confident that my skills and passion for coding make me a valuable
+        addition to any team. Thank you for visiting my portfolio, and I look
+        forward to connecting with you.
       </p>
     </div>
   );
