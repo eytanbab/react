@@ -39,25 +39,13 @@ const Navbar = ({ setFocus, setPageIndex }) => {
       {/* DESKTOP NAV */}
       <div className='relative hidden gap-20 text-2xl text-slate-300 xl:flex'>
         <DesktopDropdown
+          data={data}
           projectsDropdown={projectsDropdown}
           setProjectsDropdown={setProjectsDropdown}
+          handleProject={handleProject}
         />
         {/*DESKTOP PROJECTS DROPDOWN OPTIONS */}
-        {projectsDropdown && (
-          <div
-            className={`absolute left-0 top-0 z-30 -m-6 mt-12 flex flex-col items-start gap-3 divide-slate-200/50 rounded-md bg-slate-800/50 p-6 text-base text-slate-200 backdrop-blur-lg`}
-          >
-            {data.map((project, index) => (
-              <button
-                className='pt-4'
-                key={index}
-                onClick={() => handleProject(index)}
-              >
-                {project.projectName}
-              </button>
-            ))}
-          </div>
-        )}
+
         <button
           onClick={handleAbout}
           className='transition-transform duration-300 hover:scale-110'
