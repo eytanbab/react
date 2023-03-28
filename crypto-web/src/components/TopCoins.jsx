@@ -2,7 +2,6 @@ import { useQuery, QueryClient, useQueryClient } from '@tanstack/react-query';
 
 import Coin from './Coin';
 
-
 const TopCoins = () => {
   //   const queryClient = useQueryClient();
 
@@ -35,7 +34,7 @@ const TopCoins = () => {
 
   return (
     <div>
-      <div className='flex w-full items-center justify-between px-4'>
+      <div className='flex w-full items-center justify-between overflow-y-hidden px-4'>
         <h1>Name</h1>
         <h1>Price</h1>
         <h1>Change</h1>
@@ -45,7 +44,6 @@ const TopCoins = () => {
           <Coin key={coin.uuid} coin={coin} />
         ))}
       </div>
-      
     </div>
   );
 };
