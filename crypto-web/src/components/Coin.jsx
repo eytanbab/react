@@ -12,7 +12,7 @@ const Coin = ({ coin, index }) => {
       <button
         onClick={handleModal}
         className={`${
-          index % 2 === 0 ? 'bg-electric-800' : ''
+          coin.rank % 2 === 0 ? 'bg-electric-800' : ''
         } grid w-full grid-cols-5 items-center justify-center p-4 `}
       >
         <div className='col-span-2 flex items-center gap-2 py-1'>
