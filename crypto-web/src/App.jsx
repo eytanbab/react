@@ -1,10 +1,8 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
 import Nav from './components/Nav';
 import Results from './components/Results';
 import SearchBar from './components/SearchBar';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { FaAngleUp } from 'react-icons/fa';
+
 import ScrollToTop from './components/utils/ScrollToTop';
 const queryClient = new QueryClient();
 
