@@ -2,7 +2,10 @@ import React from 'react';
 
 const Modal = ({ coin, setOpenModal }) => {
   return (
-    <div className='fixed inset-0  z-50 flex h-screen w-full items-center justify-center backdrop-blur-sm'>
+    <div
+      className='fixed inset-0  z-50 flex h-screen w-full items-center justify-center backdrop-blur-sm'
+      onClick={() => setOpenModal(false)}
+    >
       {/* MODAL */}
       <div className='flex h-[60vh] w-80 flex-col items-center justify-between gap-6 rounded-md bg-electric-800 p-4 ring ring-electric-300/80'>
         <div className='flex w-full grow flex-col items-center gap-4'>
