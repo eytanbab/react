@@ -1,7 +1,7 @@
 import React from 'react';
 
+
 const Modal = ({ coin, setOpenModal }) => {
-  console.log(coin);
   return (
     <div className='absolute inset-0  flex h-screen w-full  items-center justify-center backdrop-blur-sm'>
       {/* MODAL */}
