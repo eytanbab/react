@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Modal from './Modal';
 
-const Coin = ({ coin, index }) => {
+const Coin = ({ coin }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleModal = () => {
