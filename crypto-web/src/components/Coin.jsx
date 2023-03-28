@@ -3,7 +3,6 @@ import Modal from './Modal';
 
 const Coin = ({ coin }) => {
   const [openModal, setOpenModal] = useState(false);
-
   const handleModal = () => {
     setOpenModal(true);
   };
@@ -28,7 +27,7 @@ const Coin = ({ coin }) => {
             coin.change < 0 ? 'text-red-400' : 'text-green-400'
           } w-24`}
         >
-          {coin.change} %
+          {coin?.change} %
         </h1>
       </button>
       {openModal ? <Modal coin={coin} setOpenModal={setOpenModal} /> : null}
