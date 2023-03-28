@@ -1,6 +1,5 @@
 import { useQuery, QueryClient, useQueryClient } from '@tanstack/react-query';
 import Coin from './Coin';
-import { Ellipsis } from 'react-spinners-css';
 
 const TopCoins = () => {
   //   const queryClient = useQueryClient();
@@ -26,7 +25,7 @@ const TopCoins = () => {
   );
 
   if (isLoading) {
-    return <Ellipsis color='#A866FF' />;
+    return <h1>Loading...</h1>;
   }
   if (isError) {
     return <span>Error: {error.message}</span>;

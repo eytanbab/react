@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Ellipsis } from 'react-spinners-css';
 import Coin from './Coin';
 
 const SearchedCoin = ({ query }) => {
@@ -24,7 +23,7 @@ const SearchedCoin = ({ query }) => {
   );
 
   if (isLoading) {
-    return <Ellipsis color='#A866FF' />;
+    return <h1>Loading...</h1>;
   }
   if (isError) {
     return <span>Error: {error.message}</span>;
