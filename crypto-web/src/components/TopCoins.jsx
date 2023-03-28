@@ -1,7 +1,7 @@
 import { useQuery, QueryClient, useQueryClient } from '@tanstack/react-query';
-import { useMemo } from 'react';
-import { useState } from 'react';
+
 import Coin from './Coin';
+
 
 const TopCoins = () => {
   //   const queryClient = useQueryClient();
@@ -45,6 +45,7 @@ const TopCoins = () => {
           <Coin key={coin.uuid} coin={coin} />
         ))}
       </div>
+      
     </div>
   );
 };
