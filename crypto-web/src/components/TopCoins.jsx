@@ -10,7 +10,7 @@ const TopCoins = () => {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'ab9c3dd4d5mshdeaf45152488ba4p17cacajsn834209a5dbbc',
+        'X-RapidAPI-Key': import.meta.env.VITE_RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
       },
     };
