@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 const SearchedCoin = ({ query }) => {
   const getSearchedCoin = async () => {
-    console.log('calling getSearchedCoin!');
+    
     const url = `https://coinranking1.p.rapidapi.com/search-suggestions?query=${query}`;
     const options = {
       method: 'GET',
@@ -37,7 +37,6 @@ const SearchedCoin = ({ query }) => {
 
   return (
     <div>
-      {console.log(data.data.coins)}
       <div className='flex w-full items-center justify-between overflow-y-hidden px-4'>
         <h1>Name</h1>
         <h1>Price</h1>
