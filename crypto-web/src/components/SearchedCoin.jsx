@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 
 const SearchedCoin = ({ query }) => {
   const getSearchedCoin = async () => {
-    
     const url = `https://coinranking1.p.rapidapi.com/search-suggestions?query=${query}`;
     const options = {
       method: 'GET',
