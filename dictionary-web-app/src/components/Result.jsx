@@ -2,6 +2,13 @@ import React from 'react';
 import { AiFillPlayCircle } from 'react-icons/ai';
 
 export default function Result({ definition, lightMode }) {
+  const src = definition[0]?.phonetics[0]?.audio;
+  const audio = new Audio(src);
+
+  const handlePlay = () => {
+    audio.play();
+  };
+  console.log(src);
   return (
     <div
       className={`mx-2 mb-6 flex max-w-lg flex-col items-center gap-4 rounded-3xl ${
@@ -17,9 +24,13 @@ export default function Result({ definition, lightMode }) {
             {definition[0]?.phonetic || definition[0]?.phonetics[1]?.text}
           </h4>
         </div>
-        <button className='text-purple-500'>
-          <AiFillPlayCircle size={50} />
-        </button>
+
+        {/* PLAY BUTTON */}
+        {src && (
+          <button onClick={handlePlay} className='text-purple-500'>
+            <AiFillPlayCircle size={50} />
+          </button>
+        )}
       </div>
       <div className='flex w-full flex-col gap-6 rounded-3xl py-4'>
         {definition[0]?.meanings?.map((meaning) => (
