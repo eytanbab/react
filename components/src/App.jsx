@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Dropdown from './components/Dropdown';
 // import './App.css';
 import Navbar from './components/Navbar';
+import Rating from './components/Rating';
 import Searchbar from './components/Searchbar';
 import SideNav from './components/SideNav';
 import Toggle from './components/Toggle';
@@ -16,6 +17,7 @@ function App() {
       <Dropdown />
       <Searchbar />
       <SideNav />
+      <Rating />
     </div>
   );
 }
