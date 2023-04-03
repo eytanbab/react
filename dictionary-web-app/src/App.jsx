@@ -9,6 +9,7 @@ function App() {
   const [definition, setDefinition] = useState([]);
   const [lightMode, setLightMode] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
 
   const getDefinition = async () => {
     try {
@@ -19,9 +20,13 @@ function App() {
         );
         const data = await api.json();
         if (data.title !== 'No Definitions Found') {
-          console.log(data);
+          setError(false);
           setDefinition(data);
           setIsLoaded(true);
+        } else {
+          setDefinition('No definitions found');
+          setError(true);
+          setIsLoaded(false);
         }
       }
     } catch (e) {
@@ -41,6 +46,11 @@ function App() {
       <Nav lightMode={lightMode} setLightMode={setLightMode} />
       <SearchBar setWord={setWord} />
       {isLoaded && <Result definition={definition} lightMode={lightMode} />}
+      {error && (
+        <p className={`${lightMode ? 'text-gray-900' : 'text-gray-50'}`}>
+          No definitions found.
+        </p>
+      )}
     </div>
   );
 }
