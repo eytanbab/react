@@ -11,15 +11,24 @@ const Dropdown = () => {
       >
         Dropdown
       </div>
+      {/* OPTIONS DIV */}
       <div
         className={`${
           open ? 'flex' : 'hidden'
         } absolute left-0 right-0 top-11 w-full flex-col items-center gap-4 rounded-lg bg-gray-800 py-2 text-gray-50`}
       >
-        <a href='#'>Option 1</a>
-        <a href='#'>Option 2</a>
-        <a href='#'>Option 3</a>
-        <a href='#'>Option 4</a>
+        <a href='#' className='hover:text-gray-400'>
+          Option 1
+        </a>
+        <a href='#' className='hover:text-gray-400'>
+          Option 2
+        </a>
+        <a href='#' className='hover:text-gray-400'>
+          Option 3
+        </a>
+        <a href='#' className='hover:text-gray-400'>
+          Option 4
+        </a>
       </div>
     </div>
   );
