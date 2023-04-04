@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className='flex h-screen w-full flex-col items-center justify-center gap-6 overflow-x-hidden py-6'>
-      <Navbar />
+      {/* <Navbar /> */}
       <Toggle />
       <Dropdown />
       <Searchbar />
