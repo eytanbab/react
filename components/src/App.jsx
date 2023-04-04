@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Accordion from './components/Accordion';
 import Dropdown from './components/Dropdown';
 // import './App.css';
 import Navbar from './components/Navbar';
@@ -18,6 +19,7 @@ function App() {
       <Searchbar />
       <SideNav />
       <Rating />
+      <Accordion/>
     </div>
   );
 }
