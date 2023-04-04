@@ -8,7 +8,7 @@ const Toggle = () => {
       onClick={() => setToggle(!toggle)}
       className={`${
         toggle ? 'bg-gray-200' : 'bg-gray-800'
-      } relative h-10 w-20 cursor-pointer rounded-full `}
+      } relative h-10 w-20 cursor-pointer rounded-full transition-colors duration-150`}
     >
       <div
         className={`${
