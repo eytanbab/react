@@ -33,7 +33,7 @@ const SideNav = () => {
             Link
           </a>
           {/* BUTTONS */}
-          <div className='flex grow flex-col justify-end gap-4 self-center'>
+          <div className='flex w-full grow flex-col justify-end gap-4 self-center px-6'>
             <button className='flex w-full  justify-center rounded-lg px-4 py-2 font-medium ring-2 ring-gray-200'>
               Login
             </button>
