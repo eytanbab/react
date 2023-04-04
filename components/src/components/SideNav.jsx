@@ -8,24 +8,28 @@ const SideNav = () => {
   return (
     <div
       className={`${
-        open ? 'w-40 items-start' : 'w-16 items-center'
-      } fixed left-0 top-0 flex h-full grow flex-col justify-start gap-6 bg-gray-800 px-4 py-6 text-gray-50 transition-all duration-200`}
+        open ? 'w-60 items-start gap-10' : 'w-20 items-start gap-4'
+      } fixed left-0 top-0 flex h-full grow flex-col justify-start  bg-gray-800 px-2 py-4 text-gray-50 transition-all duration-200`}
     >
       {open ? (
+        // SIDENAV OPENED
         <>
           <img src={Logo} alt='logo' className='h-8' />
 
           {/* LINKS */}
-          <a href='#' className='flex items-center gap-2'>
-            <IoLogoFacebook />
+          <a href='#' className='flex items-center gap-2 text-lg font-semibold'>
+            <IoLogoFacebook size={40} />
             Link
           </a>
-          <a href='#' className='flex  items-center gap-2'>
-            <IoLogoFacebook />
+          <a
+            href='#'
+            className='flex  items-center gap-2 text-lg font-semibold'
+          >
+            <IoLogoFacebook size={40} />
             Link
           </a>
-          <a href='#' className='flex items-center gap-2'>
-            <IoLogoFacebook />
+          <a href='#' className='flex items-center gap-2 text-lg font-semibold'>
+            <IoLogoFacebook size={40} />
             Link
           </a>
           {/* BUTTONS */}
@@ -44,13 +48,13 @@ const SideNav = () => {
           <img src={Logo} alt='logo' className='h-8' />
 
           <a href='#' className='flex items-center gap-2'>
-            <IoLogoFacebook />
+            <IoLogoFacebook size={40} />
           </a>
           <a href='#' className='flex  items-center gap-2'>
-            <IoLogoFacebook />
+            <IoLogoFacebook size={40} />
           </a>
           <a href='#' className='flex items-center gap-2'>
-            <IoLogoFacebook />
+            <IoLogoFacebook size={40} />
           </a>
         </>
       )}
@@ -59,7 +63,7 @@ const SideNav = () => {
         <AiOutlineArrowLeft
           className={`${
             open ? 'rotate-0' : '-rotate-180'
-          } absolute right-0 top-1/2 h-10 w-10 translate-x-1/2 rounded-full bg-gray-600 p-1 transition-all duration-300`}
+          } absolute right-0 top-1/2 h-8 w-8 translate-x-1/2 rounded-full bg-gray-600 p-1 transition-all duration-300`}
         />
       </button>
     </div>
