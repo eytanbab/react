@@ -10,13 +10,16 @@ import data from './data.json';
 import Planet from './components/Planet';
 
 function App() {
-  console.log(data);
+  console.log(data.destinations);
   return (
     <div className='max-h-screen min-h-screen overflow-x-hidden bg-mobile bg-cover bg-no-repeat text-white'>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/destination/' element={<Destination />}>
+        <Route
+          path='/destination/'
+          element={<Destination data={data.destinations} />}
+        >
           <Route path='moon' element={<Planet data={data.destinations[0]} />} />
         </Route>
         <Route path='/Crew' element={<Crew />} />
