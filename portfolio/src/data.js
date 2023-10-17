@@ -19,17 +19,17 @@ const data = [
     link: 'https://dict-web-app.netlify.app/',
     repo: 'https://github.com/eytanbab/react/tree/master/dictionary-web-app',
   },
-  {
-    projectId: 3,
-    projectName: 'Space Tourism',
-    projectDesc:
-      'Explore the wonders of the cosmos from the comfort of your own home, with our interactive guides and immersive experiences. Join us on this epic adventure and start your space journey today!',
-    techUsed: [],
-    projectImageUrl:
-      'https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
-    link: '',
-    repo: 'https://github.com/eytanbab/react/tree/master/space-tourism-web-app',
-  },
+  // {
+  //   projectId: 3,
+  //   projectName: 'Space Tourism',
+  //   projectDesc:
+  //     'Explore the wonders of the cosmos from the comfort of your own home, with our interactive guides and immersive experiences. Join us on this epic adventure and start your space journey today!',
+  //   techUsed: [],
+  //   projectImageUrl:
+  //     'https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80',
+  //   link: '',
+  //   repo: 'https://github.com/eytanbab/react/tree/master/space-tourism-web-app',
+  // },
   {
     projectId: 4,
     projectName: 'Tip calculator',
