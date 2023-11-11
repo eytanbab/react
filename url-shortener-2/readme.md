@@ -1,4 +1,4 @@
-# # Shortly
+# Shortly
  URL shortening API landing page.
 
 # Screenshot
