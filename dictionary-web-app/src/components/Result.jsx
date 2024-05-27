@@ -8,7 +8,6 @@ export default function Result({ definition, lightMode }) {
   const handlePlay = () => {
     audio.play();
   };
-  console.log(src);
   return (
     <div
       className={`mx-2 mb-6 flex max-w-lg flex-col items-center gap-4 rounded-3xl ${
