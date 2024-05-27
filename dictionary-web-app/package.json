@@ -2,7 +2,7 @@
   "name": "dictionary-web-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +14,8 @@
     "react-icons": "^4.8.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
