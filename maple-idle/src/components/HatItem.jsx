@@ -13,7 +13,7 @@ const HatItem = ({ item, coins, setCurrentHat }) => {
       <h1 className='bold uppercase w-full font-bold text-lg text-center'>
         Hat
       </h1>
-      <img src={item.imgURL} className='w-full' />
+      <img src={item.imgURL} className='w-full h-24' />
       {/* INFO */}
       <div className='flex flex-col gap-1 px-2 py-1'>
         <p>cost: {item.price}</p>
