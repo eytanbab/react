@@ -30,13 +30,13 @@ function App() {
     calculateLUK(currentSword, currentHat, currentTop, currentBottom)
   );
   return (
-    <div className='bg-gray-100 w-full flex justify-center text-gray-50'>
+    <div className='bg-gray-100 w-full flex justify-center'>
       {/* SCREEN CONTAINER */}
-      <div className='bg-gray-900 h-screen w-full container flex flex-col justify-center p-4 gap-4'>
+      <div className='h-screen w-full container flex flex-col justify-center p-4 gap-4'>
         {/* COINS AMOUNT */}
-        <div className='bg-red-500 w-full text-3xl'>Coins: {coins}</div>
+        <div className='w-full text-3xl'>Coins: {coins}</div>
         {/* ITEMS */}
-        <div className='bg-blue-500 h-full w-full grid auto-row-auto grid-cols-2 overflow-y-scroll place-items-center gap-y-4'>
+        <div className='h-full w-full grid auto-row-auto grid-cols-2 overflow-y-scroll place-items-center gap-y-4'>
           <SwordItem
             item={currentSword}
             coins={coins}
@@ -47,7 +47,7 @@ function App() {
           <BottomItem item={currentBottom} coins={coins} />
         </div>
         {/* STATS */}
-        <div className='bg-red-500 w-full p-4 place-items-center grid  grid-flow-col gap-2'>
+        <div className='w-full p-4 place-items-center grid  grid-flow-col gap-2'>
           <p>STR:{str}</p>
           <p>DEX:{dex}</p>
           <p>INT:{int}</p>
