@@ -4,7 +4,7 @@ import Destination from './components/Pages/Destination';
 
 function App() {
   return (
-    <div className={` text-white flex flex-col p-6 h-screen`}>
+    <div className={` text-white flex flex-col h-screen`}>
       {/* NAVBAR */}
       <MobileNavBar />
       {/* PAGES SECITON */}
