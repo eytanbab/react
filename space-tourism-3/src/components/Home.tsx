@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <section className='absolute inset-0 bg-[url("./assets/home/background-home-mobile.jpg")] bg-cover bg-no-repeat w-full h-full flex flex-col items-center justify-center gap-8 -z-10 p-6'>
+    <section className='bg-[url("./assets/home/background-home-mobile.jpg")] bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8'>
       <p className='uppercase'>So, you want to travel to</p>
       <p className='uppercase text-7xl'>Space</p>
       <p>
