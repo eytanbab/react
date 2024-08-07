@@ -20,7 +20,9 @@ const Destination = () => {
               onClick={() => {
                 setSelectedDestination(() => destinations[idx]);
               }}
-              className='hover:cursor-pointer'
+              className={`${
+                selectedDestination.name === destination.name ? 'underline' : ''
+              } hover:cursor-pointer`}
             >
               {destination.name}
             </li>
