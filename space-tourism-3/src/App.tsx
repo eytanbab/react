@@ -1,5 +1,6 @@
 import Home from './components/Home';
 import MobileNavBar from './components/Navbar/MobileNavBar';
+import Crew from './components/Pages/Crew';
 import Destination from './components/Pages/Destination';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
       <MobileNavBar />
       {/* PAGES SECITON */}
       {/* <Home /> */}
-      <Destination />
+      {/* <Destination /> */}
+      <Crew />
     </div>
   );
 }
