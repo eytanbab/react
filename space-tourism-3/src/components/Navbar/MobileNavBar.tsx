@@ -21,7 +21,7 @@ const MobileNavBar = () => {
         </button>
       </nav>
       {/* NAVBAR MENU */}
-      {isOpenNav && <MobileMenu />}
+      {isOpenNav && <MobileMenu setIsOpenNav={setIsOpenNav} />}
     </>
   );
 };
