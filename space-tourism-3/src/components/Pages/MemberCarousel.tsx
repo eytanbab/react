@@ -10,7 +10,7 @@ const Pagination = ({ currentIndex }: { currentIndex: number }) => {
           <div
             className={`${
               currentIndex === idx ? 'bg-white' : 'bg-white/50'
-            } w-4 h-4 rounded-full `}
+            } w-2 h-2 rounded-full `}
           />
         );
       })}
