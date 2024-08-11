@@ -25,6 +25,7 @@ const MobileMenu = ({
         {links.map((link, idx) => {
           return (
             <NavLink
+              key={link.name}
               to={link.path}
               onClick={closeNavHandler}
               className={({ isActive }) =>
