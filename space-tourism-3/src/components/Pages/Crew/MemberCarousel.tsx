@@ -1,22 +1,7 @@
 import { useState } from 'react';
 import { crew } from '../../../data.json';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-
-const Pagination = ({ currentIndex }: { currentIndex: number }) => {
-  return (
-    <div className='flex w-full justify-center gap-2'>
-      {crew.map((_, idx) => {
-        return (
-          <div
-            className={`${
-              currentIndex === idx ? 'bg-white' : 'bg-white/50'
-            } w-2 h-2 rounded-full `}
-          />
-        );
-      })}
-    </div>
-  );
-};
+import Pagination from './Pagination';
 
 const MemberCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,24 +18,28 @@ const MemberCarousel = () => {
       {crew.map((member, idx) => {
         if (currentIndex === idx) {
           return (
-            <div className=' flex w-full items-center' key={member.name}>
+            <div
+              className='flex w-full items-center h-[40rem]'
+              key={member.name}
+            >
               <button
                 onClick={previousMemberHandler}
                 className='aspect-square p-2 border rounded-full flex items-center justify-center'
               >
                 <FaArrowLeft size={20} />
               </button>
-              <div className='flex flex-col gap-6 items-center'>
+              {/* MEMBER INFORMATION */}
+              <div className='flex flex-col gap-6 items-center h-full'>
                 <div className='flex flex-col items-center gap-2'>
                   <p className='text-3xl'>{member.role}</p>
                   <p className='text-xl'>{member.name}</p>
                 </div>
                 <p className='flex-1'>{member.bio}</p>
-                <Pagination currentIndex={currentIndex} />
+                <Pagination currentIndex={currentIndex} length={crew.length} />
                 <img
                   src={member.images.webp}
                   alt={member.name}
-                  className='max-w-60 justify-self-end'
+                  className='h-80'
                 />
               </div>
               <button
