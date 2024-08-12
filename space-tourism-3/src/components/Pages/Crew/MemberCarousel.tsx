@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { crew } from '../../../data.json';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import Pagination from './Pagination';
+import Pagination from '../../shared/Pagination';
 
 const MemberCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,7 +35,11 @@ const MemberCarousel = () => {
                   <p className='text-xl'>{member.name}</p>
                 </div>
                 <p className='flex-1'>{member.bio}</p>
-                <Pagination currentIndex={currentIndex} length={crew.length} />
+                <Pagination
+                  currentIndex={currentIndex}
+                  length={crew.length}
+                  styleVariant='Crew'
+                />
                 <img
                   src={member.images.webp}
                   alt={member.name}
