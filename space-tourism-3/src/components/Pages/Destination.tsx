@@ -12,11 +12,7 @@ const Destination = () => {
         <p className='uppercase flex gap-2'>
           <span>01</span>Pick your destination
         </p>
-        <img
-          src={selectedDestination.images.webp}
-          alt=''
-          className='h-40 w-40'
-        />
+        <img src={selectedDestination.images.webp} alt='' className='size-40' />
         <ul className='uppercase flex gap-8 items-center'>
           {destinations.map((destination, idx) => {
             return (
