@@ -8,43 +8,51 @@ const Destination = () => {
   );
   return (
     <div className='bg-[url("./assets/destination/background-destination-mobile.jpg")] bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8'>
-      <p className='uppercase flex gap-2'>
-        <span>01</span>Pick your destination
-      </p>
-      <img src={selectedDestination.images.webp} alt='' className='h-40 w-40' />
-      <ul className='uppercase flex gap-8 items-center'>
-        {destinations.map((destination, idx) => {
-          return (
-            <li
-              key={destination.name}
-              onClick={() => {
-                setSelectedDestination(() => destinations[idx]);
-              }}
-              className={`${
-                selectedDestination.name === destination.name ? 'underline' : ''
-              } hover:cursor-pointer`}
-            >
-              {destination.name}
-            </li>
-          );
-        })}
-      </ul>
-      <section id='content' className='flex flex-col text-center gap-8'>
-        <h1 className='uppercase text-4xl'>{selectedDestination.name}</h1>
-        <p>{selectedDestination.description}</p>
+      <div className='flex flex-col items-center h-[calc(100%-5rem)] justify-between'>
+        <p className='uppercase flex gap-2'>
+          <span>01</span>Pick your destination
+        </p>
+        <img
+          src={selectedDestination.images.webp}
+          alt=''
+          className='h-40 w-40'
+        />
+        <ul className='uppercase flex gap-8 items-center'>
+          {destinations.map((destination, idx) => {
+            return (
+              <li
+                key={destination.name}
+                onClick={() => {
+                  setSelectedDestination(() => destinations[idx]);
+                }}
+                className={`${
+                  selectedDestination.name === destination.name
+                    ? 'underline'
+                    : ''
+                } hover:cursor-pointer`}
+              >
+                {destination.name}
+              </li>
+            );
+          })}
+        </ul>
+        <section id='content' className='flex flex-col text-center gap-8'>
+          <h1 className='uppercase text-4xl'>{selectedDestination.name}</h1>
+          <p className='h-32'>{selectedDestination.description}</p>
 
-        <Divider />
-        <section className='text-center flex flex-col gap-8'>
-          <div>
-            <p className='uppercase'>Avg. distance</p>
-            <p className='text-xl'>{selectedDestination.distance}</p>
-          </div>
-          <div>
-            <p className='uppercase'>EST. travel time</p>
-            <p className='text-xl'>{selectedDestination.travel}</p>
-          </div>
+          <Divider />
+          <section className='text-center flex flex-col gap-8'>
+            <div>
+              <p className='uppercase'>Avg. distance</p>
+              <p className='text-xl'>{selectedDestination.distance}</p>
+            </div>
+            <div>
+              <p className='uppercase'>EST. travel time</p>
+              <p className='text-xl'>{selectedDestination.travel}</p>
+            </div>
+          </section>
         </section>
-      </section>
+      </div>
     </div>
   );
 };
