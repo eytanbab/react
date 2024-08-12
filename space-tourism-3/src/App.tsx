@@ -1,9 +1,9 @@
 import MobileNavBar from './components/Navbar/MobileNavBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from './components/Home';
+import Home from './components/Pages/Home';
 import Destination from './components/Pages/Destination';
-import Crew from './components/Pages/Crew';
+import Crew from './components/Pages/Crew/Crew';
 import Technologies from './components/Pages/Technologies';
 
 function App() {
