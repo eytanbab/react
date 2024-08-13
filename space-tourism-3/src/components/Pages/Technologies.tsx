@@ -5,9 +5,16 @@ import Pagination from '../shared/Pagination';
 const Technologies = () => {
   const [selectedTechnology, setSelectedTechnology] = useState(technology[0]);
   const [selectedButton, setSelectedButton] = useState(0);
-
+  const mobileBG =
+    'bg-[url("./assets/technology/background-technology-mobile.jpg")]';
+  const tabletBG =
+    'md:bg-[url("./assets/technology/background-technology-tablet.jpg")]';
+  const desktopBG =
+    'lg:bg-[url("./assets/technology/background-technology-desktop.jpg")]';
   return (
-    <div className='bg-[url("./assets/technology/background-technology-mobile.jpg")] bg-cover bg-no-repeat flex flex-col items-center justify-center h-screen'>
+    <div
+      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center gap-8 `}
+    >
       <div className='flex flex-col items-center h-[calc(100%-8rem)] justify-between gap-8'>
         <p className='uppercase flex gap-2'>
           <span>03</span>Space launch 101

@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const mobileBG = 'bg-[url("./assets/home/background-home-mobile.jpg")]';
+  const tabletBG = 'md:bg-[url("./assets/home/background-home-tablet.jpg")]';
+  const desktopBG = 'lg:bg-[url("./assets/home/background-home-desktop.jpg")]';
+
   return (
-    <section className='bg-[url("./assets/home/background-home-mobile.jpg")] bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8'>
+    <section
+      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8 `}
+    >
       <p className='uppercase'>So, you want to travel to</p>
       <p className='uppercase text-7xl'>Space</p>
       <p>
