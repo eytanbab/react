@@ -9,7 +9,7 @@ const MobileNavBar = () => {
 
   return (
     <>
-      <nav className='flex w-full justify-between items-center absolute top-0 left-0 p-6'>
+      <nav className='flex w-full justify-between items-center absolute top-0 left-0 p-6 md:hidden'>
         <img src={Logo} width={32} height={32} />
         {/* NAVBAR BUTTONS */}
         <button className='z-50' onClick={() => setIsOpenNav(!isOpenNav)}>
