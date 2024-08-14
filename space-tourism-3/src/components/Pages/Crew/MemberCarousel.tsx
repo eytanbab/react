@@ -19,7 +19,7 @@ const MemberCarousel = () => {
         if (currentIndex === idx) {
           return (
             <div
-              className='flex w-full items-center h-[40rem]'
+              className='flex w-full items-center h-[40rem] md:h-full'
               key={member.name}
             >
               <button
@@ -30,11 +30,13 @@ const MemberCarousel = () => {
               </button>
               {/* MEMBER INFORMATION */}
               <div className='flex flex-col gap-6 items-center h-full'>
-                <div className='flex flex-col items-center gap-2'>
-                  <p className='text-3xl'>{member.role}</p>
-                  <p className='text-xl'>{member.name}</p>
+                <div className='flex flex-col items-center gap-2 text-2xl md:mt-10'>
+                  <p className='md:text-3xl'>{member.role}</p>
+                  <p className='md:text-5xl'>{member.name}</p>
                 </div>
-                <p className='flex-1'>{member.bio}</p>
+                <p className='flex-1 md:flex-none md:px-20  md:text-center'>
+                  {member.bio}
+                </p>
                 <Pagination
                   currentIndex={currentIndex}
                   length={crew.length}
@@ -43,7 +45,7 @@ const MemberCarousel = () => {
                 <img
                   src={member.images.webp}
                   alt={member.name}
-                  className='h-80'
+                  className='h-80 md:h-full'
                 />
               </div>
               <button
