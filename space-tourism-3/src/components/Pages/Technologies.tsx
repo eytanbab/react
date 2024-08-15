@@ -13,7 +13,7 @@ const Technologies = () => {
     'lg:bg-[url("./assets/technology/background-technology-desktop.jpg")]';
   return (
     <div
-      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center py-6 gap-8 md:py-10`}
+      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center py-6 gap-8 md:p-10`}
     >
       <div className='flex flex-col items-center h-[calc(100%-5rem)] justify-between md:h-[calc(100%-8rem)] py-6 md:p-10'>
         <p className='uppercase flex gap-6 w-full justify-center md:justify-start md:gap-6 md:text-xl'>

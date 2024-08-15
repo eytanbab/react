@@ -6,11 +6,11 @@ const Crew = () => {
   const desktopBG = 'lg:bg-[url("./assets/crew/background-crew-desktop.jpg")]';
   return (
     <div
-      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8 md:p-10`}
+      className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8 md:p-10 overflow-hidden`}
     >
       <div className='flex flex-col items-center h-[calc(100%-5rem)] justify-between md:h-[calc(100%-8rem)] pt-6 md:p-10 md:justify-start'>
         <p className='uppercase flex gap-6 w-full justify-center md:justify-start md:text-xl'>
-          <span className='text-white/25 font-bold'>02</span>Meet your crew
+          <span className='text-white/25 font-bold '>02</span>Meet your crew
         </p>
         <MemberCarousel />
       </div>

@@ -41,7 +41,7 @@ const MemberCarousel = () => {
                         {member.name}
                       </p>
                     </div>
-                    <p className=' h-44 md:px-20  md:text-center'>
+                    <p className='h-44 md:px-20  md:text-center'>
                       {member.bio}
                     </p>
                   </div>
@@ -54,7 +54,7 @@ const MemberCarousel = () => {
                 <img
                   src={member.images.webp}
                   alt={member.name}
-                  className='h-80 md:h-full'
+                  className='h-full '
                 />
               </div>
               {/* RIGHT ARROW */}

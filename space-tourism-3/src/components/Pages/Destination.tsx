@@ -16,12 +16,12 @@ const Destination = () => {
     <div
       className={`${mobileBG} ${tabletBG} ${desktopBG} bg-cover bg-no-repeat h-screen flex flex-col items-center justify-center p-6 gap-8 md:p-10`}
     >
-      <div className='flex flex-col items-center h-[calc(100%-5rem)] justify-between md:h-[calc(100%-8rem)] p-6 md:p-10 gap-6'>
+      <div className='flex flex-col items-center h-[calc(100%-5rem)] md:h-[calc(100%-8rem)] p-6 md:p-10 gap-6'>
         <p className='uppercase flex gap-6 w-full justify-center md:justify-start md:gap-6 md:text-xl'>
           <span className='text-white/25 font-bold'>01</span>Pick your
           destination
         </p>
-        <div className=' flex flex-col items-center gap-8'>
+        <div className='flex flex-col items-center gap-8'>
           <img
             src={selectedDestination.images.webp}
             alt={selectedDestination.name}
@@ -29,7 +29,7 @@ const Destination = () => {
           />
           <div className='flex flex-col items-center gap-10'>
             {/* DESTINATION NAVBAR */}
-            <ul className='uppercase flex justify-around w-full'>
+            <ul className='uppercase flex justify-center gap-8 w-full'>
               {destinations.map((destination, idx) => {
                 return (
                   <li
