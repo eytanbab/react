@@ -22,6 +22,7 @@ const MemberCarousel = () => {
               className='flex w-full items-center h-[40rem] md:h-full'
               key={member.name}
             >
+              {/* LEFT ARROW*/}
               <button
                 onClick={previousMemberHandler}
                 className='aspect-square p-2 border rounded-full flex items-center justify-center'
@@ -29,25 +30,34 @@ const MemberCarousel = () => {
                 <FaArrowLeft size={20} />
               </button>
               {/* MEMBER INFORMATION */}
-              <div className='flex flex-col gap-6 items-center h-full'>
-                <div className='flex flex-col items-center gap-2 text-2xl md:mt-10'>
-                  <p className='md:text-3xl'>{member.role}</p>
-                  <p className='md:text-5xl'>{member.name}</p>
+              <div className='flex flex-col gap-6 items-center h-full text-center'>
+                <div className='flex flex-col gap-6 pt-10'>
+                  <div className='flex flex-col items-center gap-6 md:mt-10'>
+                    <div className='flex flex-col gap-2 w-full'>
+                      <p className='text-lg text-white/50 uppercase md:text-3xl'>
+                        {member.role}
+                      </p>
+                      <p className='text-2xl uppercase md:text-5xl'>
+                        {member.name}
+                      </p>
+                    </div>
+                    <p className=' h-44 md:px-20  md:text-center'>
+                      {member.bio}
+                    </p>
+                  </div>
+                  <Pagination
+                    currentIndex={currentIndex}
+                    length={crew.length}
+                    styleVariant='Crew'
+                  />
                 </div>
-                <p className='flex-1 md:flex-none md:px-20  md:text-center'>
-                  {member.bio}
-                </p>
-                <Pagination
-                  currentIndex={currentIndex}
-                  length={crew.length}
-                  styleVariant='Crew'
-                />
                 <img
                   src={member.images.webp}
                   alt={member.name}
                   className='h-80 md:h-full'
                 />
               </div>
+              {/* RIGHT ARROW */}
               <button
                 onClick={nextMemberHandler}
                 className='aspect-square p-2 border rounded-full flex items-center justify-center'
