@@ -33,7 +33,7 @@ export const swords: Item[] = [
   },
   {
     reqLevel: 15,
-    name: 'Sabre'
+    name: 'Sabre',
     imgURL: '/weapons/sword_level_15.webp',
     price: 50,
     stats: {
@@ -80,6 +80,7 @@ export const swords: Item[] = [
 export const hats: Item[] = [
   {
     reqLevel: 0,
+    name: 'Maple Bandana White',
     imgURL: '/hats/hat_level_0.webp',
     price: 10,
     stats: {
@@ -92,7 +93,22 @@ export const hats: Item[] = [
     mesosMultiplier: 1,
   },
   {
+    reqLevel: 5,
+    name: 'Red Headband',
+    imgURL: '/hats/hat_level_5.webp',
+    price: 15,
+    stats: {
+      str: 6,
+      dex: 3,
+      int: 0,
+      luk: 0,
+    },
+    expMultiplier: 1,
+    mesosMultiplier: 1,
+  },
+  {
     reqLevel: 10,
+    name: 'Bronze Coif',
     imgURL: '/hats/hat_level_10.webp',
     price: 20,
     stats: {
@@ -106,6 +122,7 @@ export const hats: Item[] = [
   },
   {
     reqLevel: 15,
+    name: 'Bronze Full Helm',
     imgURL: '/hats/hat_level_15.webp',
     price: 50,
     stats: {
@@ -119,6 +136,7 @@ export const hats: Item[] = [
   },
   {
     reqLevel: 20,
+    name: 'Steel Football Helmet',
     imgURL: '/hats/hat_level_20.webp',
     price: 100,
     stats: {
@@ -132,6 +150,7 @@ export const hats: Item[] = [
   },
   {
     reqLevel: 25,
+    name: 'Gold Burgernet Helm',
     imgURL: '/hats/hat_level_25.webp',
     price: 100,
     stats: {
@@ -145,6 +164,7 @@ export const hats: Item[] = [
   },
   {
     reqLevel: 30,
+    name: 'Jousting Helmet',
     imgURL: '/hats/hat_level_30.webp',
     price: 500,
     stats: {
