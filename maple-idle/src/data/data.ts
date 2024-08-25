@@ -181,6 +181,7 @@ export const hats: Item[] = [
 export const tops: Item[] = [
   {
     reqLevel: 0,
+    name: 'White Undershirt',
     imgURL: '/tops/top_level_0.webp',
     price: 10,
     stats: {
@@ -194,6 +195,7 @@ export const tops: Item[] = [
   },
   {
     reqLevel: 10,
+    name: 'Brown Lolico Armor',
     imgURL: '/tops/top_level_10.webp',
     price: 20,
     stats: {
@@ -207,6 +209,7 @@ export const tops: Item[] = [
   },
   {
     reqLevel: 15,
+    name: 'Brown Corporal',
     imgURL: '/tops/top_level_15.webp',
     price: 50,
     stats: {
@@ -220,6 +223,7 @@ export const tops: Item[] = [
   },
   {
     reqLevel: 20,
+    name: 'Blue Sergeant',
     imgURL: '/tops/top_level_20.webp',
     price: 100,
     stats: {
@@ -233,6 +237,7 @@ export const tops: Item[] = [
   },
   {
     reqLevel: 25,
+    name: 'Dark Master Sergeant',
     imgURL: '/tops/top_level_25.webp',
     price: 100,
     stats: {
@@ -246,6 +251,7 @@ export const tops: Item[] = [
   },
   {
     reqLevel: 30,
+    name: 'Red Hwarang Shirt',
     imgURL: '/tops/top_level_30.webp',
     price: 500,
     stats: {
@@ -262,6 +268,7 @@ export const tops: Item[] = [
 export const bottoms: Item[] = [
   {
     reqLevel: 0,
+    name: 'Blue Jean Shorts',
     imgURL: '/bottoms/bottom_level_0.webp',
     price: 10,
     stats: {
@@ -275,6 +282,7 @@ export const bottoms: Item[] = [
   },
   {
     reqLevel: 10,
+    name: 'Brown Lolico Pants',
     imgURL: '/bottoms/bottom_level_10.webp',
     price: 20,
     stats: {
@@ -288,6 +296,7 @@ export const bottoms: Item[] = [
   },
   {
     reqLevel: 15,
+    name: 'Steel Corporal Pants',
     imgURL: '/bottoms/bottom_level_15.webp',
     price: 50,
     stats: {
@@ -301,6 +310,7 @@ export const bottoms: Item[] = [
   },
   {
     reqLevel: 20,
+    name: 'Steel Sergeant Kilt',
     imgURL: '/bottoms/bottom_level_20.webp',
     price: 100,
     stats: {
@@ -314,6 +324,7 @@ export const bottoms: Item[] = [
   },
   {
     reqLevel: 25,
+    name: 'Dark Master Sergeant Kilt',
     imgURL: '/bottoms/bottom_level_25.webp',
     price: 100,
     stats: {
@@ -327,6 +338,7 @@ export const bottoms: Item[] = [
   },
   {
     reqLevel: 30,
+    name: 'Black Martial Arts Pants',
     imgURL: '/bottoms/bottom_level_30.webp',
     price: 500,
     stats: {
