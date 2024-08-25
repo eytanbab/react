@@ -3,6 +3,7 @@ import { Item } from '../types/item';
 export const swords: Item[] = [
   {
     reqLevel: 0,
+    name: 'Sword',
     imgURL: '/weapons/sword_level_0.webp',
     price: 10,
     stats: {
@@ -11,11 +12,13 @@ export const swords: Item[] = [
       int: 0,
       luk: 0,
     },
+    attack: 15,
     expMultiplier: 1,
     mesosMultiplier: 1,
   },
   {
     reqLevel: 10,
+    name: 'Long Sword',
     imgURL: '/weapons/sword_level_10.webp',
     price: 20,
     stats: {
@@ -24,11 +27,13 @@ export const swords: Item[] = [
       int: 0,
       luk: 0,
     },
+    attack: 27,
     expMultiplier: 1,
     mesosMultiplier: 1,
   },
   {
     reqLevel: 15,
+    name: 'Sabre'
     imgURL: '/weapons/sword_level_15.webp',
     price: 50,
     stats: {
@@ -37,11 +42,13 @@ export const swords: Item[] = [
       int: 0,
       luk: 0,
     },
+    attack: 32,
     expMultiplier: 1,
     mesosMultiplier: 1,
   },
   {
     reqLevel: 20,
+    name: 'Machete',
     imgURL: '/weapons/sword_level_20.webp',
     price: 100,
     stats: {
@@ -50,11 +57,13 @@ export const swords: Item[] = [
       int: 0,
       luk: 0,
     },
+    attack: 37,
     expMultiplier: 1.1,
     mesosMultiplier: 1.5,
   },
   {
     reqLevel: 30,
+    name: 'Gladius',
     imgURL: '/weapons/sword_level_30.webp',
     price: 500,
     stats: {
@@ -63,6 +72,7 @@ export const swords: Item[] = [
       int: 0,
       luk: 0,
     },
+    attack: 47,
     expMultiplier: 1.5,
     mesosMultiplier: 3,
   },
