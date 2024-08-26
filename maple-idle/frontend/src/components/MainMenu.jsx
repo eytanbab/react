@@ -10,6 +10,7 @@ import {
   calculateINT,
   calculateLUK,
 } from '../utils/stats-calculator';
+import { SignOutButton, SignedIn } from '@clerk/clerk-react';
 
 function MainMenu() {
   const [coins, setCoins] = useState(0);
@@ -33,7 +34,12 @@ function MainMenu() {
     <div className='bg-gray-100 w-full flex justify-center'>
       <div className='h-screen w-full container flex flex-col justify-center p-4 gap-4'>
         {/* COINS AMOUNT */}
-        <div className='w-full text-3xl'>Coins: {coins}</div>
+        <div className='w-full text-3xl flex items-center justify-between'>
+          Coins: {coins}
+          <SignedIn>
+            <SignOutButton />
+          </SignedIn>
+        </div>
         {/* ITEMS */}
         <div className='h-full w-full grid auto-row-auto grid-cols-2 overflow-y-scroll place-items-center gap-y-4'>
           <SwordItem
