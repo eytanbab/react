@@ -3,7 +3,7 @@ import SwordItem from './SwordItem';
 import HatItem from './HatItem';
 import TopItem from './TopItem';
 import BottomItem from './BottomItem';
-import { swords, hats, bottoms, tops } from '../data/data';
+import { swords, hats, bottoms, tops } from '../data/items';
 import {
   calculateSTR,
   calculateDEX,
