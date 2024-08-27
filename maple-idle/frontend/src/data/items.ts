@@ -4,7 +4,7 @@ export const swords: Item[] = [
   {
     reqLevel: 0,
     name: 'Sword',
-    imgURL: '/weapons/sword_level_0.webp',
+    imgURL: 'items/weapons/sword_level_0.webp',
     price: 10,
     stats: {
       str: 5,
@@ -19,7 +19,7 @@ export const swords: Item[] = [
   {
     reqLevel: 10,
     name: 'Long Sword',
-    imgURL: '/weapons/sword_level_10.webp',
+    imgURL: 'items/weapons/sword_level_10.webp',
     price: 20,
     stats: {
       str: 8,
@@ -34,7 +34,7 @@ export const swords: Item[] = [
   {
     reqLevel: 15,
     name: 'Sabre',
-    imgURL: '/weapons/sword_level_15.webp',
+    imgURL: 'items/weapons/sword_level_15.webp',
     price: 50,
     stats: {
       str: 10,
@@ -49,7 +49,7 @@ export const swords: Item[] = [
   {
     reqLevel: 20,
     name: 'Machete',
-    imgURL: '/weapons/sword_level_20.webp',
+    imgURL: 'items/weapons/sword_level_20.webp',
     price: 100,
     stats: {
       str: 12,
@@ -64,7 +64,7 @@ export const swords: Item[] = [
   {
     reqLevel: 30,
     name: 'Gladius',
-    imgURL: '/weapons/sword_level_30.webp',
+    imgURL: 'items/weapons/sword_level_30.webp',
     price: 500,
     stats: {
       str: 20,
@@ -81,7 +81,7 @@ export const hats: Item[] = [
   {
     reqLevel: 0,
     name: 'Maple Bandana White',
-    imgURL: '/hats/hat_level_0.webp',
+    imgURL: 'items/hats/hat_level_0.webp',
     price: 10,
     stats: {
       str: 5,
@@ -95,7 +95,7 @@ export const hats: Item[] = [
   {
     reqLevel: 5,
     name: 'Red Headband',
-    imgURL: '/hats/hat_level_5.webp',
+    imgURL: 'items/hats/hat_level_5.webp',
     price: 15,
     stats: {
       str: 6,
@@ -109,7 +109,7 @@ export const hats: Item[] = [
   {
     reqLevel: 10,
     name: 'Bronze Coif',
-    imgURL: '/hats/hat_level_10.webp',
+    imgURL: 'items/hats/hat_level_10.webp',
     price: 20,
     stats: {
       str: 8,
@@ -123,7 +123,7 @@ export const hats: Item[] = [
   {
     reqLevel: 15,
     name: 'Bronze Full Helm',
-    imgURL: '/hats/hat_level_15.webp',
+    imgURL: 'items/hats/hat_level_15.webp',
     price: 50,
     stats: {
       str: 10,
@@ -137,7 +137,7 @@ export const hats: Item[] = [
   {
     reqLevel: 20,
     name: 'Steel Football Helmet',
-    imgURL: '/hats/hat_level_20.webp',
+    imgURL: 'items/hats/hat_level_20.webp',
     price: 100,
     stats: {
       str: 12,
@@ -151,7 +151,7 @@ export const hats: Item[] = [
   {
     reqLevel: 25,
     name: 'Gold Burgernet Helm',
-    imgURL: '/hats/hat_level_25.webp',
+    imgURL: 'items/hats/hat_level_25.webp',
     price: 100,
     stats: {
       str: 15,
@@ -165,7 +165,7 @@ export const hats: Item[] = [
   {
     reqLevel: 30,
     name: 'Jousting Helmet',
-    imgURL: '/hats/hat_level_30.webp',
+    imgURL: 'items/hats/hat_level_30.webp',
     price: 500,
     stats: {
       str: 20,
@@ -182,7 +182,7 @@ export const tops: Item[] = [
   {
     reqLevel: 0,
     name: 'White Undershirt',
-    imgURL: '/tops/top_level_0.webp',
+    imgURL: 'items/tops/top_level_0.webp',
     price: 10,
     stats: {
       str: 5,
@@ -196,7 +196,7 @@ export const tops: Item[] = [
   {
     reqLevel: 10,
     name: 'Brown Lolico Armor',
-    imgURL: '/tops/top_level_10.webp',
+    imgURL: 'items/tops/top_level_10.webp',
     price: 20,
     stats: {
       str: 8,
@@ -210,7 +210,7 @@ export const tops: Item[] = [
   {
     reqLevel: 15,
     name: 'Brown Corporal',
-    imgURL: '/tops/top_level_15.webp',
+    imgURL: 'items/tops/top_level_15.webp',
     price: 50,
     stats: {
       str: 10,
@@ -224,7 +224,7 @@ export const tops: Item[] = [
   {
     reqLevel: 20,
     name: 'Blue Sergeant',
-    imgURL: '/tops/top_level_20.webp',
+    imgURL: 'items/tops/top_level_20.webp',
     price: 100,
     stats: {
       str: 12,
@@ -238,7 +238,7 @@ export const tops: Item[] = [
   {
     reqLevel: 25,
     name: 'Dark Master Sergeant',
-    imgURL: '/tops/top_level_25.webp',
+    imgURL: 'items/tops/top_level_25.webp',
     price: 100,
     stats: {
       str: 15,
@@ -252,7 +252,7 @@ export const tops: Item[] = [
   {
     reqLevel: 30,
     name: 'Red Hwarang Shirt',
-    imgURL: '/tops/top_level_30.webp',
+    imgURL: 'items/tops/top_level_30.webp',
     price: 500,
     stats: {
       str: 20,
@@ -269,7 +269,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 0,
     name: 'Blue Jean Shorts',
-    imgURL: '/bottoms/bottom_level_0.webp',
+    imgURL: 'items/bottoms/bottom_level_0.webp',
     price: 10,
     stats: {
       str: 5,
@@ -283,7 +283,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 10,
     name: 'Brown Lolico Pants',
-    imgURL: '/bottoms/bottom_level_10.webp',
+    imgURL: 'items/bottoms/bottom_level_10.webp',
     price: 20,
     stats: {
       str: 8,
@@ -297,7 +297,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 15,
     name: 'Steel Corporal Pants',
-    imgURL: '/bottoms/bottom_level_15.webp',
+    imgURL: 'items/bottoms/bottom_level_15.webp',
     price: 50,
     stats: {
       str: 10,
@@ -311,7 +311,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 20,
     name: 'Steel Sergeant Kilt',
-    imgURL: '/bottoms/bottom_level_20.webp',
+    imgURL: 'items/bottoms/bottom_level_20.webp',
     price: 100,
     stats: {
       str: 12,
@@ -325,7 +325,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 25,
     name: 'Dark Master Sergeant Kilt',
-    imgURL: '/bottoms/bottom_level_25.webp',
+    imgURL: 'items/bottoms/bottom_level_25.webp',
     price: 100,
     stats: {
       str: 15,
@@ -339,7 +339,7 @@ export const bottoms: Item[] = [
   {
     reqLevel: 30,
     name: 'Black Martial Arts Pants',
-    imgURL: '/bottoms/bottom_level_30.webp',
+    imgURL: 'items/bottoms/bottom_level_30.webp',
     price: 500,
     stats: {
       str: 20,
