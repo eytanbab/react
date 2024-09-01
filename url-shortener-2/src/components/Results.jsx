@@ -8,47 +8,53 @@ const Results = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [shortenUrl, setShortenUrl] = useState('');
   const [error, setError] = useState(false);
-  const [results, setResults] = useState([{ url: '', shortenUrl: '' }]);
+  const [results, setResults] = useState([{ url: '', shorten_url: '' }]);
   const dataFetchedRef = useRef(false);
   const [isCleared, setIsCleared] = useState(false);
 
-  const getData = () => {
-    setIsLoading(true);
-    fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
-      .then((res) => res.json())
-      .then((actualData) => {
-        if (actualData.ok === true) {
-          setError(false);
-          setUrl(actualData.result.original_link);
-          setShortenUrl(actualData.result.short_link);
-          setResults((prev) => [
-            {
-              url: actualData.result.original_link,
-              shortenUrl: actualData.result.short_link,
-            },
-            ...prev,
-          ]);
-        } else {
-          setError(true);
+  const fetchData = async () => {
+    try {
+      const data = new FormData();
+      data.append('url', url);
+      const response = await fetch(
+        'https://url-shortener-service.p.rapidapi.com/shorten',
+        {
+          method: 'POST',
+          headers: {
+            'X-Rapidapi-Key':
+              '7e1bffa93fmsh2a40dc1747b8a86p1420b8jsn08b0d3c20627',
+            'x-rapidapi-host': 'url-shortener-service.p.rapidapi.com',
+          },
+          body: data,
         }
-      })
-      .catch((err) => console.error(err))
-      .finally(() => {
-        setIsLoading(false);
-        setIsCleared(false);
-      });
+      );
+
+      const result = await response.json();
+      if (result.error) {
+        setError(result.error);
+      }
+      setShortenUrl(result.result_url);
+      setResults((prev) => [
+        ...prev,
+        { url: url, shorten_url: result.result_url },
+      ]);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
     if (url) {
       if (dataFetchedRef.current) return;
       dataFetchedRef.current = true;
-      getData();
+      fetchData();
     }
   }, [url]);
 
   const handleClearAll = () => {
-    setResults([{ url: '', shortenUrl: '' }]);
+    setResults([]);
     setIsCleared(true);
   };
 
@@ -60,7 +66,7 @@ const Results = (props) => {
         setResults={setResults}
         shortenUrl={shortenUrl}
         setUrl={setUrl}
-        getData={getData}
+        getData={fetchData}
         dataFetchedRef={dataFetchedRef}
         error={error}
         setError={setError}
@@ -80,11 +86,7 @@ const Results = (props) => {
             .filter((result) => result.url !== '')
             .map((result, index) => {
               return (
-                <Result
-                  key={Math.random() * 100}
-                  result={result}
-                  index={index}
-                />
+                <Result key={index} result={result} index={index} url={url} />
               );
             })}
         </>
