@@ -55,7 +55,7 @@ const Input = (props) => {
         />
         {props.error ? (
           <div className='z-20  self-start text-xs italic text-red-500 md:absolute md:bottom-1 md:left-6'>
-            Please add a link
+            {props.error}
           </div>
         ) : (
           ''
@@ -64,7 +64,7 @@ const Input = (props) => {
         <input
           type='submit'
           value='Shorten it'
-          className='z-20 h-full w-full rounded-lg bg-[#2BD1D1] p-3 md:w-1/4'
+          className='z-20 h-full w-full rounded-lg bg-[#2BD1D1] p-3 hover:cursor-pointer md:w-1/4'
         />
       </form>
     </div>
