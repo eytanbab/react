@@ -26,5 +26,5 @@ export const useGetSession = () => {
     };
   }, []);
 
-  return [session];
+  return {session};
 };
