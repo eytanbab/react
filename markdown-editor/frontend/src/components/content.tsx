@@ -10,7 +10,7 @@ const Content = ({ setMarkdown }: Props) => {
   return (
     <textarea
       onChange={handleChange}
-      className='flex-1 shrink-0 w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 p-4 rounded-xl drop-shadow-md'
+      className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 p-4 rounded-xl drop-shadow-md'
     />
   );
 };
