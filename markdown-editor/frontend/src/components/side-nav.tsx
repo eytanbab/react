@@ -5,7 +5,7 @@ const SideNav = () => {
   const { session } = useGetSession();
 
   return (
-    <div className='h-full w-96 p-4 flex items-start'>
+    <div className='h-full w-80 p-4 flex items-start shrink-0'>
       {session && <UserAvatar />}
     </div>
   );
