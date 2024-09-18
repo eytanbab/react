@@ -4,7 +4,7 @@ import ModeToggle from './mode-toggle';
 import SearchBar from './search-bar';
 
 const Nav = () => {
-  const [session] = useGetSession();
+  const { session } = useGetSession();
   return (
     <div className='w-full flex items-center justify-between p-4'>
       {!session && <SignInButton />}

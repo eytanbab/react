@@ -2,7 +2,7 @@ import { supabase } from '../../lib/supabaseClient';
 import { useGetSession } from '../hooks/use-get-session';
 
 const UserAvatar = () => {
-  const [session] = useGetSession();
+  const {session} = useGetSession();
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
