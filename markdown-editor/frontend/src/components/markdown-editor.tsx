@@ -11,7 +11,7 @@ const MarkdownEditor = () => {
       <Content setMarkdown={setMarkdown} />
       <Markdown
         remarkPlugins={[remarkGfm]}
-        className='markdown w-full bg-slate-50 drop-shadow-md dark:bg-slate-900 p-4 rounded-xl break-words max-h-full overflow-auto'
+        className='markdown w-full bg-slate-50 drop-shadow-md dark:bg-slate-900 p-4 rounded-xl max-h-full overflow-auto whitespace-pre'
       >
         {markdown}
       </Markdown>
