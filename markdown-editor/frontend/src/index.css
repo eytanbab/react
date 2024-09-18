@@ -23,3 +23,7 @@
 .scrollbar-hide {
   scrollbar-width: thin; /* Allows scrollbar to appear only when needed */
 }
+
+.markdown > * {
+  all: revert;
+}
