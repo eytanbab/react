@@ -12,3 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Hide scrollbar by default */
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* For Firefox */
+.scrollbar-hide {
+  scrollbar-width: thin; /* Allows scrollbar to appear only when needed */
+}
