@@ -1,11 +1,9 @@
-import SaveButton from './save-button';
-
 type Props = {
   markdown: string;
   setMarkdown: (e: string) => void;
 };
 
-const Content = ({ markdown, setMarkdown }: Props) => {
+const Content = ({ setMarkdown }: Props) => {
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
   };
@@ -16,7 +14,6 @@ const Content = ({ markdown, setMarkdown }: Props) => {
         onChange={handleChange}
         className='w-full h-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900'
       />
-      <SaveButton markdown={markdown} />
     </div>
   );
 };
