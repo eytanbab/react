@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabaseClient';
 import { useGetSession } from './use-get-session';
 
@@ -17,31 +17,32 @@ export const useGetMarkdowns = () => {
   const { session } = useGetSession();
   const userId = session?.user.id;
 
-  useEffect(() => {
+  const getMarkdowns = useCallback(async () => {
     if (!userId) return;
-    const getMarkdowns = async () => {
-      setLoading(true);
-      try {
-        const { data: markdown, error } = await supabase
-          .from('markdown')
-          .select('id,title,content,is_favorite,user_id')
-          .eq('user_id', userId);
+    setLoading(true);
+    try {
+      const { data: markdown, error } = await supabase
+        .from('markdown')
+        .select('id,title,content,is_favorite,user_id, created_at')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false });
 
-        if (error) {
-          throw error;
-        }
-
-        setMarkdowns(markdown);
-      } catch (err) {
-        setError('Failed to fetch saved markdowns');
-        console.error('Error fetching markdowns:', err);
-      } finally {
-        setLoading(false);
+      if (error) {
+        throw error;
       }
-    };
 
-    getMarkdowns();
+      setMarkdowns(markdown);
+    } catch (err) {
+      setError('Failed to fetch saved markdowns');
+      console.error('Error fetching markdowns:', err);
+    } finally {
+      setLoading(false);
+    }
   }, [userId]);
+
+  useEffect(() => {
+    getMarkdowns();
+  }, [getMarkdowns]);
 
   return { markdowns, loading, error };
 };
