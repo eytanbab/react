@@ -1,9 +1,14 @@
+import { Link } from 'react-router-dom';
 import { useGetMarkdowns } from '../hooks/use-get-markdowns';
 import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
 
-const SideNav = ({ refresh }: { refresh: boolean }) => {
+type Props = {
+  refresh: boolean;
+};
+
+const SideNav = ({ refresh }: Props) => {
   const { session } = useGetSession();
   const { markdowns, loading, error } = useGetMarkdowns(refresh);
 
@@ -16,7 +21,11 @@ const SideNav = ({ refresh }: { refresh: boolean }) => {
         {loading && <div>Loading...</div>}
         {error && <div>Error: {error}</div>}
         {markdowns?.map((markdown) => {
-          return <SavedMarkdownCard key={markdown.id} markdown={markdown} />;
+          return (
+            <Link key={markdown.id} to={`/${markdown.id}`}>
+              <SavedMarkdownCard markdown={markdown} />;
+            </Link>
+          );
         })}
       </div>
     </div>
