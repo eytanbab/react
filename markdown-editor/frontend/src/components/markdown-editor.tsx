@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Content from './content';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import SaveButton from './save-button';
 
-const MarkdownEditor = () => {
+const MarkdownEditor = ({ onSave }: { onSave: () => void }) => {
   const [markdown, setMarkdown] = useState<string>('');
 
   return (
@@ -15,6 +16,7 @@ const MarkdownEditor = () => {
       >
         {markdown}
       </Markdown>
+      <SaveButton markdown={markdown} onSave={onSave}/>
     </div>
   );
 };

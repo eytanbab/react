@@ -10,7 +10,7 @@ type Markdown = {
   user_id: string;
 };
 
-export const useGetMarkdowns = () => {
+export const useGetMarkdowns = (refresh: boolean) => {
   const [markdowns, setMarkdowns] = useState<Markdown[] | null>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +42,7 @@ export const useGetMarkdowns = () => {
 
   useEffect(() => {
     getMarkdowns();
-  }, [getMarkdowns]);
+  }, [getMarkdowns, refresh]);
 
   return { markdowns, loading, error };
 };

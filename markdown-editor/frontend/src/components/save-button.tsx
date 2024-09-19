@@ -2,8 +2,9 @@ import { supabase } from '../../lib/supabaseClient';
 
 type Props = {
   markdown: string;
+  onSave: () => void;
 };
-const SaveButton = ({ markdown }: Props) => {
+const SaveButton = ({ markdown, onSave }: Props) => {
   const handleSubmit = async () => {
     try {
       // Get the current session to access user details
@@ -28,6 +29,7 @@ const SaveButton = ({ markdown }: Props) => {
         console.error('Error saving markdown:', error.message);
       } else {
         console.log('Markdown saved successfully');
+        onSave();
       }
     } catch (err) {
       console.error('Error submitting markdown:', err);

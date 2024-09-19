@@ -3,9 +3,9 @@ import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
 
-const SideNav = () => {
+const SideNav = ({ refresh }: { refresh: boolean }) => {
   const { session } = useGetSession();
-  const { markdowns, loading, error } = useGetMarkdowns();
+  const { markdowns, loading, error } = useGetMarkdowns(refresh);
 
   if (!session) return null;
 
