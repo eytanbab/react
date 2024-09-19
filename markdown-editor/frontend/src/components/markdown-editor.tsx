@@ -8,10 +8,10 @@ const MarkdownEditor = () => {
 
   return (
     <div className='grid grid-cols-2 h-[calc(100%-4rem)] gap-4 p-2 w-full'>
-      <Content setMarkdown={setMarkdown} />
+      <Content markdown={markdown} setMarkdown={setMarkdown} />
       <Markdown
         remarkPlugins={[remarkGfm]}
-        className='markdown w-full bg-slate-50 drop-shadow-md dark:bg-slate-900 p-4 rounded-xl max-h-full overflow-auto whitespace-pre'
+        className='markdown w-full p-4 bg-slate-50 drop-shadow-md dark:bg-slate-900 rounded-xl break-words max-h-full overflow-auto whitespace-pre-wrap '
       >
         {markdown}
       </Markdown>
