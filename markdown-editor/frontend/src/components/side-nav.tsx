@@ -23,7 +23,7 @@ const SideNav = ({ refresh }: Props) => {
         {markdowns?.map((markdown) => {
           return (
             <Link key={markdown.id} to={`/${markdown.id}`}>
-              <SavedMarkdownCard markdown={markdown} />;
+              <SavedMarkdownCard markdown={markdown} />
             </Link>
           );
         })}
