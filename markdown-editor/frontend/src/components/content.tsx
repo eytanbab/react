@@ -9,7 +9,7 @@ const Content = ({ markdown, setMarkdown }: Props) => {
   };
 
   return (
-    <div className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 p-4 rounded-xl drop-shadow-md relative'>
+    <div className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 px-4 py-8 rounded-xl drop-shadow-md relative'>
       <textarea
         value={markdown}
         onChange={handleChange}
