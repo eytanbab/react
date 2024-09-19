@@ -15,7 +15,7 @@ const ModeToggle = () => {
   return (
     <button
       onClick={handleClick}
-      className='size-8 flex items-center justify-center border border-slate-800/50 dark:border-slate-300/50 rounded-lg'
+      className='size-8 flex items-center justify-center border border-slate-800/25 dark:border-slate-300/50 rounded-lg'
     >
       {theme === 'dark' ? (
         <FaSun className='fill-[#ED8A19] size-5' />
