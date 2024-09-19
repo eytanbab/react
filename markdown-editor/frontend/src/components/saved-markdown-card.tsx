@@ -1,3 +1,5 @@
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+
 type Props = {
   markdown: {
     id: string;
@@ -10,8 +12,9 @@ type Props = {
 
 const SavedMarkdownCard = ({ markdown }: Props) => {
   return (
-    <div className='bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2'>
+    <div className='relative bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2'>
       <div className='line-clamp-3'>{markdown.content}</div>
+      <IoIosCloseCircleOutline className='size-6 absolute top-2 right-2' />
     </div>
   );
 };
