@@ -10,8 +10,8 @@ type Props = {
 
 const SavedMarkdownCard = ({ markdown }: Props) => {
   return (
-    <div className='bg-slate-50 dark:bg-slate-900 w-full h-40 rounded-xl drop-shadow-md p-2 truncate whitespace-pre-wrap'>
-      {markdown.content}
+    <div className='bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2'>
+      <div className='line-clamp-3'>{markdown.content}</div>
     </div>
   );
 };
