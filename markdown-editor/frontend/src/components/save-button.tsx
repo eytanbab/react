@@ -7,7 +7,7 @@ type Props = {
 };
 const SaveButton = ({ content, onSave }: Props) => {
   const { id } = useParams<{ id: string }>();
-
+  const isEmpty = content === '';
   const handleSubmit = async () => {
     try {
       // Get the current session to access user details
@@ -56,7 +56,8 @@ const SaveButton = ({ content, onSave }: Props) => {
   return (
     <button
       onClick={handleSubmit}
-      className='bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-950 absolute px-4 py-2 rounded-full right-4 bottom-8 drop-shadow-md'
+      disabled={isEmpty}
+      className='bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 absolute px-4 py-2 rounded-full right-4 bottom-8 drop-shadow-md disabled:bg-slate-400 disabled:dark:bg-slate-700 disabled:drop-shadow-none'
     >
       {id ? 'Update Markdown' : 'Save Markdown'}
     </button>
