@@ -1,10 +1,9 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 import { useGetSession } from '../hooks/use-get-session';
 
 const UserAvatar = () => {
-  const {session} = useGetSession();
-  const navigate = useNavigate()
+  const { session } = useGetSession();
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -16,9 +15,9 @@ const UserAvatar = () => {
 
   return session ? (
     <div className='w-full flex items-center justify-between'>
-      <button onClick={() => navigate('/')} className='font-bold text-lg'>
+      <Link to='/' className='font-bold text-lg'>
         Markdown Editor
-      </button>
+      </Link>
       <button onClick={handleLogout}>
         <img
           src={session.user.user_metadata.picture}
