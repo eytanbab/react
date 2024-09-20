@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useGetMarkdowns } from '../hooks/use-get-markdowns';
 import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
@@ -17,14 +17,16 @@ const SideNav = ({ refresh }: Props) => {
   return (
     <div className='h-full w-80 p-4 flex flex-col items-start shrink-0 gap-8'>
       <UserAvatar />
-      <div className='w-full flex flex-col gap-2 overflow-y-auto h-full'>
+      <div className='w-full flex flex-col gap-2 overflow-y-auto h-full scrollbar-hide'>
         {loading && <div>Loading...</div>}
         {error && <div>Error: {error}</div>}
         {markdowns?.map((markdown) => {
           return (
-            <Link key={markdown.id} to={`/${markdown.id}`}>
-              <SavedMarkdownCard markdown={markdown} />
-            </Link>
+            <NavLink key={markdown.id} to={`/${markdown.id}`}>
+              {({ isActive }) => (
+                <SavedMarkdownCard markdown={markdown} isActive={isActive} />
+              )}
+            </NavLink>
           );
         })}
       </div>
