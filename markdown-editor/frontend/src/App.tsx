@@ -9,7 +9,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const App = () => {
   const [refresh, setRefresh] = useState(false);
   const [content, setContent] = useState('');
-
   const handleRefresh = () => {
     setRefresh((prev) => !prev); // Toggle to trigger re-render
   };
