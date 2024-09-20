@@ -5,6 +5,7 @@ import Nav from './components/nav';
 import MarkdownEditor from './components/markdown-editor';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MarkdownGuide from './components/markdown-guide';
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
@@ -45,6 +46,7 @@ const App = () => {
                   />
                 }
               />
+              <Route path='/how-to-use' element={<MarkdownGuide />} />
             </Routes>
           </div>
         </div>
