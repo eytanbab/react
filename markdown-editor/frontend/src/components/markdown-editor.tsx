@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 const MarkdownEditor = ({ onSave }: { onSave: () => void }) => {
   const { id } = useParams<{ id: string }>();
   const [markdown, setMarkdown] = useState<string>('');
-  console.log('id', id);
   const { markdown: fetchedMarkdown } = useGetMarkdown(id);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const MarkdownEditor = ({ onSave }: { onSave: () => void }) => {
       <Content markdown={markdown} setMarkdown={setMarkdown} />
       <Markdown
         remarkPlugins={[remarkGfm]}
-        className='markdown w-full p-4 bg-slate-50 drop-shadow-md dark:bg-slate-900 rounded-xl break-words max-h-full overflow-auto whitespace-pre-wrap '
+        className='markdown w-full p-4 bg-slate-50 drop-shadow-md dark:bg-slate-900 rounded-xl break-words max-h-full overflow-auto whitespace-pre-wrap scrollbar-hide'
       >
         {markdown}
       </Markdown>
