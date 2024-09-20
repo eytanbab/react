@@ -6,9 +6,10 @@ import UserAvatar from './user-avatar';
 
 type Props = {
   refresh: boolean;
+  onDelete: () => void
 };
 
-const SideNav = ({ refresh }: Props) => {
+const SideNav = ({ refresh, onDelete }: Props) => {
   const { session } = useGetSession();
   const { markdowns, loading, error } = useGetMarkdowns(refresh);
 
@@ -24,7 +25,11 @@ const SideNav = ({ refresh }: Props) => {
           return (
             <NavLink key={markdown.id} to={`/${markdown.id}`}>
               {({ isActive }) => (
-                <SavedMarkdownCard markdown={markdown} isActive={isActive} />
+                <SavedMarkdownCard
+                  markdown={markdown}
+                  isActive={isActive}
+                  onDelete={onDelete}
+                />
               )}
             </NavLink>
           );

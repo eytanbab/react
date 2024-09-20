@@ -9,25 +9,25 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 const App = () => {
   const [refresh, setRefresh] = useState(false);
 
-  const handleSave = () => {
+  const handleRefresh = () => {
     setRefresh((prev) => !prev); // Toggle to trigger re-render
   };
   return (
     <Router>
       <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
         <div className='h-screen flex bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100'>
-          <SideNav refresh={refresh} />
+          <SideNav refresh={refresh} onDelete={handleRefresh} />
           <Separator />
           <div className='flex flex-col w-full gap-x-2'>
             <Nav />
             <Routes>
               <Route
                 path='/'
-                element={<MarkdownEditor onSave={handleSave} />}
+                element={<MarkdownEditor onSave={handleRefresh} />}
               />
               <Route
                 path='/:id'
-                element={<MarkdownEditor onSave={handleSave} />}
+                element={<MarkdownEditor onSave={handleRefresh} />}
               />
             </Routes>
           </div>

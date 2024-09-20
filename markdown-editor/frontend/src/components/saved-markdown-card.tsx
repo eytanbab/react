@@ -1,4 +1,6 @@
 import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { supabase } from '../../lib/supabaseClient';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   markdown: {
@@ -9,13 +11,31 @@ type Props = {
     user_id: string;
   };
   isActive: boolean;
+  onDelete: () => void;
 };
 
-const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
-  e.preventDefault();
-};
+const SavedMarkdownCard = ({ markdown, isActive, onDelete }: Props) => {
+  const navigate = useNavigate();
 
-const SavedMarkdownCard = ({ markdown, isActive }: Props) => {
+  const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      const { error } = await supabase
+        .from('markdown')
+        .delete()
+        .eq('id', markdown.id);
+
+      if (error) {
+        console.error('Error deleting markdown:', error.message);
+      } else {
+        onDelete();
+        console.log('Markdown deleted successfully');
+        navigate('/');
+      }
+    } catch (err) {
+      console.error('Error submitting markdown:', err);
+    }
+  };
   return (
     <div
       className={`
