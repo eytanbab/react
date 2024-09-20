@@ -58,7 +58,7 @@ const SaveButton = ({ content, onSave }: Props) => {
       onClick={handleSubmit}
       className='bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-950 absolute px-4 py-2 rounded-full right-4 bottom-8 drop-shadow-md'
     >
-      Save Markdown
+      {id ? 'Update Markdown' : 'Save Markdown'}
     </button>
   );
 };
