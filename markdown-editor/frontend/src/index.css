@@ -21,7 +21,7 @@
 
 /* For Firefox */
 .scrollbar-hide {
-  scrollbar-width: thin; /* Allows scrollbar to appear only when needed */
+  scrollbar-width: none; /* Allows scrollbar to appear only when needed */
 }
 
 .markdown > * {
