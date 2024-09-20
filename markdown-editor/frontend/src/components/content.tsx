@@ -13,7 +13,7 @@ const Content = ({ markdown, setMarkdown }: Props) => {
       <textarea
         value={markdown}
         onChange={handleChange}
-        className='w-full h-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900'
+        className='w-full h-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 scrollbar-hide'
       />
     </div>
   );
