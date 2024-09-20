@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 
 type Props = {
-  markdown: string;
+  content: string;
   onSave: () => void;
 };
-const SaveButton = ({ markdown, onSave }: Props) => {
+const SaveButton = ({ content, onSave }: Props) => {
   const { id } = useParams<{ id: string }>();
 
   const handleSubmit = async () => {
@@ -27,7 +27,7 @@ const SaveButton = ({ markdown, onSave }: Props) => {
         // Insert new markdown
         const { error } = await supabase
           .from('markdown')
-          .insert([{ content: markdown, user_id: userId }]);
+          .insert([{ content: content, user_id: userId }]);
         if (error) {
           console.error('Error saving markdown:', error.message);
         } else {
@@ -38,7 +38,7 @@ const SaveButton = ({ markdown, onSave }: Props) => {
         // Update existing markdown
         const { error } = await supabase
           .from('markdown')
-          .update({ content: markdown })
+          .update({ content: content })
           .eq('id', id);
 
         if (error) {

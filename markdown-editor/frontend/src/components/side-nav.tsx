@@ -6,10 +6,11 @@ import UserAvatar from './user-avatar';
 
 type Props = {
   refresh: boolean;
-  onDelete: () => void
+  onDelete: () => void;
+  setContent: (content: string) => void;
 };
 
-const SideNav = ({ refresh, onDelete }: Props) => {
+const SideNav = ({ refresh, onDelete, setContent }: Props) => {
   const { session } = useGetSession();
   const { markdowns, loading, error } = useGetMarkdowns(refresh);
 
@@ -29,6 +30,7 @@ const SideNav = ({ refresh, onDelete }: Props) => {
                   markdown={markdown}
                   isActive={isActive}
                   onDelete={onDelete}
+                  setContent={setContent}
                 />
               )}
             </NavLink>

@@ -12,9 +12,15 @@ type Props = {
   };
   isActive: boolean;
   onDelete: () => void;
+  setContent: (content: string) => void;
 };
 
-const SavedMarkdownCard = ({ markdown, isActive, onDelete }: Props) => {
+const SavedMarkdownCard = ({
+  markdown,
+  isActive,
+  onDelete,
+  setContent,
+}: Props) => {
   const navigate = useNavigate();
 
   const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -30,6 +36,7 @@ const SavedMarkdownCard = ({ markdown, isActive, onDelete }: Props) => {
       } else {
         onDelete();
         console.log('Markdown deleted successfully');
+        setContent('');
         navigate('/');
       }
     } catch (err) {
