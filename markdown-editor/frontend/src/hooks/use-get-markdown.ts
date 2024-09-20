@@ -18,7 +18,6 @@ export const useGetMarkdown = (id: string | undefined) => {
           .single();
         if (error) throw error;
         setMarkdown(data.content);
-        console.log(data.content);
       } catch (err) {
         setError('Failed to fetch markdown');
         console.error(err);
