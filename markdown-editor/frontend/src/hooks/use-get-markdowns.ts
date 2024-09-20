@@ -8,6 +8,7 @@ type Markdown = {
   content: string;
   is_favorite: boolean;
   user_id: string;
+  created_at: Date;
 };
 
 export const useGetMarkdowns = (refresh: boolean) => {
