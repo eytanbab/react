@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 
 type Props = {
@@ -7,6 +7,7 @@ type Props = {
 };
 const SaveButton = ({ content, onSave }: Props) => {
   const { id } = useParams<{ id: string }>();
+  const navigator = useNavigate();
   const isEmpty = content === '';
   const handleSubmit = async () => {
     try {
@@ -25,14 +26,16 @@ const SaveButton = ({ content, onSave }: Props) => {
 
       if (!id) {
         // Insert new markdown
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('markdown')
-          .insert([{ content: content, user_id: userId }]);
+          .insert([{ content: content, user_id: userId }])
+          .select();
         if (error) {
           console.error('Error saving markdown:', error.message);
         } else {
           console.log('Markdown saved successfully');
           onSave();
+          navigator(data[0].id);
         }
       } else {
         // Update existing markdown
