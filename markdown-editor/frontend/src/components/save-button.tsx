@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 
 type Props = {
@@ -5,6 +6,8 @@ type Props = {
   onSave: () => void;
 };
 const SaveButton = ({ markdown, onSave }: Props) => {
+  const { id } = useParams<{ id: string }>();
+
   const handleSubmit = async () => {
     try {
       // Get the current session to access user details
@@ -20,16 +23,30 @@ const SaveButton = ({ markdown, onSave }: Props) => {
 
       const userId = session.user.id;
 
-      // Insert the markdown content and user ID into the markdowns table
-      const { error } = await supabase
-        .from('markdown')
-        .insert([{ content: markdown, user_id: userId }]);
-
-      if (error) {
-        console.error('Error saving markdown:', error.message);
+      if (!id) {
+        // Insert new markdown
+        const { error } = await supabase
+          .from('markdown')
+          .insert([{ content: markdown, user_id: userId }]);
+        if (error) {
+          console.error('Error saving markdown:', error.message);
+        } else {
+          console.log('Markdown saved successfully');
+          onSave();
+        }
       } else {
-        console.log('Markdown saved successfully');
-        onSave();
+        // Update existing markdown
+        const { error } = await supabase
+          .from('markdown')
+          .update({ content: markdown })
+          .eq('id', id);
+
+        if (error) {
+          console.error('Error updating markdown:', error.message);
+        } else {
+          onSave();
+          console.log('Markdown updated successfully');
+        }
       }
     } catch (err) {
       console.error('Error submitting markdown:', err);
