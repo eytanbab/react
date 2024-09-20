@@ -51,10 +51,10 @@ const SavedMarkdownCard = ({
         ? 'text-slate-800 dark:text-slate-200'
         : 'text-slate-400 dark:text-slate-600'
     }
-    relative bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2`}
+    flex bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2`}
     >
-      <p className='line-clamp-3'>{markdown.content}</p>
-      <button onClick={handleDelete} className='absolute top-2 right-2 z-50'>
+      <p className='line-clamp-3 w-full'>{markdown.content}</p>
+      <button onClick={handleDelete} className='self-start'>
         <IoIosCloseCircleOutline className='size-6' />
       </button>
     </div>
