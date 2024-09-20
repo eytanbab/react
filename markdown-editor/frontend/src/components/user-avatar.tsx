@@ -16,7 +16,7 @@ const UserAvatar = () => {
 
   return session ? (
     <div className='w-full flex items-center justify-between'>
-      <button onClick={() => navigate('/')} className='font-bold'>
+      <button onClick={() => navigate('/')} className='font-bold text-lg'>
         Markdown Editor
       </button>
       <button onClick={handleLogout}>
