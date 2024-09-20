@@ -4,7 +4,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SaveButton from './save-button';
 import { useGetMarkdown } from '../hooks/use-get-markdown';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 type Props = {
   onSave: () => void;
@@ -13,12 +13,17 @@ type Props = {
 };
 
 const MarkdownEditor = ({ onSave, content, setContent }: Props) => {
+  const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const { markdown: fetchedMarkdown } = useGetMarkdown(id);
 
   useEffect(() => {
-    setContent(fetchedMarkdown);
-  }, [fetchedMarkdown]);
+    if (location.pathname === '/') {
+      setContent('');
+    } else {
+      setContent(fetchedMarkdown);
+    }
+  }, [location.pathname, fetchedMarkdown, setContent]);
 
   return (
     <div className='grid grid-cols-2 h-[calc(100%-4rem)] gap-4 p-2 w-full'>
