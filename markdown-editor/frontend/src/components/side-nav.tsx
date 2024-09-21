@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useGetMarkdowns } from '../hooks/use-get-markdowns';
 import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
