@@ -5,6 +5,7 @@ import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
 import { FaSort } from 'react-icons/fa';
 import { useMemo, useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 
 type Props = {
   refresh: boolean;
@@ -31,6 +32,14 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
     markdowns?.sort();
   };
 
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) console.error('Error logging out:', error.message);
+    else {
+      console.log('Logged out successfully');
+    }
+  };
+
   const sortedMarkdowns = useMemo(() => {
     if (!markdowns) return;
     return [...markdowns].sort((a: Markdown, b: Markdown) => {
@@ -50,7 +59,7 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
     <div className='h-full w-80 p-4 flex flex-col items-start shrink-0 gap-8'>
       <UserAvatar />
       <div className='w-full flex flex-col gap-2 overflow-y-auto h-full scrollbar-hide'>
-        <div className='flex justify-between items-center'>
+        <div className='flex justify-between items-center mb-4'>
           <Link
             className='
             dark:bg-slate-200 
@@ -83,6 +92,12 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
             </NavLink>
           );
         })}
+      </div>
+      <div className='w-full'>
+        <div className='w-full h-[1px] bg-slate-900/25 dark:bg-slate-100/25' />
+        <button onClick={handleLogout} className='w-full text-center py-2'>
+          Logout
+        </button>
       </div>
     </div>
   );
