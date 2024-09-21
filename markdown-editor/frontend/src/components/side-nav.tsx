@@ -4,7 +4,7 @@ import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
 import { TbArrowsSort } from 'react-icons/tb';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import LogoutButton from './logout-button';
 import SearchBar from './search-bar';
 
@@ -27,6 +27,24 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
   const { session } = useGetSession();
   const { markdowns, loading, error } = useGetMarkdowns(refresh);
   const [ascending, setAscending] = useState(false);
+  const [query, setQuery] = useState('');
+  const [filteredMarkdowns, setFilteredMarkdowns] = useState<
+    Markdown[] | undefined
+  >([]);
+
+  useEffect(() => {
+    if (markdowns) {
+      // Filter markdowns when query changes
+      const results = markdowns.filter((markdown) =>
+        markdown.content.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredMarkdowns(results);
+    }
+  }, [query, markdowns]);
+
+  const handleFilterMarkdowns = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
 
   const handleSort = () => {
     setAscending((prev) => !prev);
@@ -34,17 +52,18 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
   };
 
   const sortedMarkdowns = useMemo(() => {
-    if (!markdowns) return;
-    return [...markdowns].sort((a: Markdown, b: Markdown) => {
+    const markdownsToSort = query ? filteredMarkdowns : markdowns;
+    if (!markdownsToSort) return [];
+    return [...markdownsToSort].sort((a: Markdown, b: Markdown) => {
       const dateA = new Date(a.created_at).getTime();
       const dateB = new Date(b.created_at).getTime();
       if (ascending) {
-        return dateA - dateB; // Ascending order
+        return dateA - dateB;
       } else {
         return dateB - dateA;
       }
     });
-  }, [markdowns, ascending]);
+  }, [markdowns, filteredMarkdowns, ascending, query]);
 
   if (!session) return null;
 
@@ -53,7 +72,7 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
       <UserAvatar />
       <div className='w-full flex flex-col gap-2 overflow-y-auto h-full scrollbar-hide'>
         <div className='flex justify-between items-center mb-4 gap-2'>
-          <SearchBar />
+          <SearchBar onChange={handleFilterMarkdowns} value={query} />
           <button
             onClick={handleSort}
             className='fill-slate-800 dark:fill-slate-200 hover:cursor-pointer flex items-center justify-center'
