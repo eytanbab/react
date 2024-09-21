@@ -3,9 +3,10 @@ import { useGetMarkdowns } from '../hooks/use-get-markdowns';
 import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
-import { FaSort } from 'react-icons/fa';
+import { TbArrowsSort } from 'react-icons/tb';
 import { useMemo, useState } from 'react';
 import LogoutButton from './logout-button';
+import SearchBar from './search-bar';
 
 type Props = {
   refresh: boolean;
@@ -51,21 +52,13 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
     <div className='h-full w-80 p-4 flex flex-col items-start shrink-0 gap-8'>
       <UserAvatar />
       <div className='w-full flex flex-col gap-2 overflow-y-auto h-full scrollbar-hide'>
-        <div className='flex justify-between items-center mb-4'>
-          <Link
-            className='
-            dark:bg-slate-200 
-            dark:text-slate-900 bg-slate-900 text-slate-200
-            rounded-lg py-1 px-2'
-            to='/'
-          >
-            Create new markdown
-          </Link>
+        <div className='flex justify-between items-center mb-4 gap-2'>
+          <SearchBar />
           <button
             onClick={handleSort}
             className='fill-slate-800 dark:fill-slate-200 hover:cursor-pointer flex items-center justify-center'
           >
-            <FaSort className='size-6' />
+            <TbArrowsSort className='size-6' />
           </button>
         </div>
         {loading && <div>Loading...</div>}
