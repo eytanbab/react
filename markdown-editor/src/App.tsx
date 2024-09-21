@@ -6,6 +6,7 @@ import MarkdownEditor from './components/markdown-editor';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MarkdownGuide from './components/markdown-guide';
+import { Toaster } from 'sonner';
 
 const App = () => {
   const [refresh, setRefresh] = useState(false);
@@ -17,6 +18,14 @@ const App = () => {
     <Router>
       <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
         <div className='h-screen flex bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100'>
+          <Toaster
+            toastOptions={{
+              className:
+                'bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 drop-shadow-md',
+            }}
+            position='bottom-right'
+            offset='16px'
+          />
           <SideNav
             refresh={refresh}
             onDelete={handleRefresh}
