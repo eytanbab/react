@@ -14,7 +14,7 @@ const SignInButton = () => {
   return (
     <button
       onClick={handleGoogleLogin}
-      className='rounded-full bg-slate-900 text-slate-200 dark:bg-slate-200 dark:text-slate-900 py-1 px-4'
+      className='rounded-full bg-slate-900 text-slate-200 dark:bg-slate-200 dark:text-slate-900 py-1 px-4 w-24'
     >
       Sign in
     </button>
