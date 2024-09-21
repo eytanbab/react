@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
 
 const LogoutButton = () => {
+  const navigator = useNavigate();
+
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
+    navigator('/');
     if (error) console.error('Error logging out:', error.message);
     else {
       console.log('Logged out successfully');
