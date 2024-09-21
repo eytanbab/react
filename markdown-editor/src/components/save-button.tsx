@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../../lib/supabaseClient';
+import { toast } from 'sonner';
 
 type Props = {
   content: string;
@@ -39,7 +40,9 @@ const SaveButton = ({ content, onSave }: Props) => {
             if (error) {
               console.error('Error saving markdown:', error.message);
             } else {
-              console.log('Markdown saved successfully');
+              toast('Markdown saved successfully!', {
+                duration: 1500,
+              });
               onSave();
               navigator(`/${data[0].id}`);
             }
@@ -53,8 +56,10 @@ const SaveButton = ({ content, onSave }: Props) => {
             if (error) {
               console.error('Error updating markdown:', error.message);
             } else {
+              toast('Markdown updated successfully!', {
+                duration: 1500,
+              });
               onSave();
-              console.log('Markdown updated successfully');
             }
           }
           // Clear the saved draft from localStorage after saving
@@ -73,7 +78,9 @@ const SaveButton = ({ content, onSave }: Props) => {
           if (error) {
             console.error('Error saving markdown:', error.message);
           } else {
-            console.log('Markdown saved successfully');
+            toast('Markdown saved successfully!', {
+              duration: 1500,
+            });
             onSave();
             navigator(`/${data[0].id}`);
           }
@@ -87,8 +94,10 @@ const SaveButton = ({ content, onSave }: Props) => {
           if (error) {
             console.error('Error updating markdown:', error.message);
           } else {
+            toast('Markdown updated successfully!', {
+              duration: 1500,
+            });
             onSave();
-            console.log('Markdown updated successfully');
           }
         }
       }
