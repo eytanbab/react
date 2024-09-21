@@ -5,7 +5,7 @@ import SavedMarkdownCard from './saved-markdown-card';
 import UserAvatar from './user-avatar';
 import { FaSort } from 'react-icons/fa';
 import { useMemo, useState } from 'react';
-import { supabase } from '../../lib/supabaseClient';
+import LogoutButton from './logout-button';
 
 type Props = {
   refresh: boolean;
@@ -30,14 +30,6 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
   const handleSort = () => {
     setAscending((prev) => !prev);
     markdowns?.sort();
-  };
-
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) console.error('Error logging out:', error.message);
-    else {
-      console.log('Logged out successfully');
-    }
   };
 
   const sortedMarkdowns = useMemo(() => {
@@ -93,12 +85,7 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
           );
         })}
       </div>
-      <div className='w-full'>
-        <div className='w-full h-[1px] bg-slate-900/25 dark:bg-slate-100/25' />
-        <button onClick={handleLogout} className='w-full text-center py-2'>
-          Logout
-        </button>
-      </div>
+      <LogoutButton />
     </div>
   );
 };
