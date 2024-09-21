@@ -1,12 +1,28 @@
+import { useState } from 'react';
+import { toast } from 'sonner';
+
 type Props = {
   content: string;
 };
 
 const CopyButton = ({ content }: Props) => {
-  const disabled = content === '';
+  const [isCopying, setIsCopying] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(content);
+  const disabled = content === '' || isCopying;
+
+  const handleCopy = async () => {
+    try {
+      setIsCopying(true);
+      await navigator.clipboard.writeText(content);
+      setIsCopying(false);
+      toast('Text copied!', {
+        duration: 1500,
+      });
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsCopying(false);
+    }
   };
   return (
     <button
