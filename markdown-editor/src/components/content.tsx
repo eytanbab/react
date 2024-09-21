@@ -1,3 +1,5 @@
+import CopyButton from './copy-button';
+
 type Props = {
   markdown: string;
   setMarkdown: (e: string) => void;
@@ -15,6 +17,7 @@ const Content = ({ markdown, setMarkdown }: Props) => {
         onChange={handleChange}
         className='w-full h-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 scrollbar-hide'
       />
+      <CopyButton content={markdown}/>
     </div>
   );
 };
