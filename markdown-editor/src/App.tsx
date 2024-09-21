@@ -21,7 +21,7 @@ const App = () => {
           <Toaster
             toastOptions={{
               className:
-                'bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 drop-shadow-md',
+                'bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 drop-shadow-md',
             }}
             position='bottom-right'
             offset='16px'
