@@ -1,6 +1,8 @@
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { supabase } from '../../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
+import { CiStar } from 'react-icons/ci';
+import { useState } from 'react';
 
 type Props = {
   markdown: {
@@ -22,6 +24,7 @@ const SavedMarkdownCard = ({
   setContent,
 }: Props) => {
   const navigate = useNavigate();
+  const [isFavorite, setIsFavorite] = useState(markdown.is_favorite);
 
   const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -43,6 +46,24 @@ const SavedMarkdownCard = ({
       console.error('Error submitting markdown:', err);
     }
   };
+
+  const handleFavorite = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      const { error } = await supabase
+        .from('markdown')
+        .update({ is_favorite: !isFavorite })
+        .eq('id', markdown.id);
+
+      if (error) {
+        console.log(error);
+      } else {
+        setIsFavorite((prev) => !prev);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div
       className={`
@@ -54,9 +75,14 @@ const SavedMarkdownCard = ({
     flex bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2`}
     >
       <p className='line-clamp-3 w-full break-words'>{markdown.content}</p>
-      <button onClick={handleDelete} className='self-start'>
-        <IoIosCloseCircleOutline className='size-6' />
-      </button>
+      <div className='flex flex-col items-center justify-between'>
+        <button onClick={handleDelete} className='self-start'>
+          <IoIosCloseCircleOutline className='size-6' />
+        </button>
+        <button onClick={handleFavorite}>
+          <CiStar className={`${isFavorite ? 'text-[#ED8A19]' : ''} size-6`} />
+        </button>
+      </div>
     </div>
   );
 };
