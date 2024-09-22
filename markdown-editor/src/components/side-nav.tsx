@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useGetMarkdowns } from '../hooks/use-get-markdowns';
 import { useGetSession } from '../hooks/use-get-session';
 import SavedMarkdownCard from './saved-markdown-card';
-import UserAvatar from './user-avatar';
+import Title from './title';
 import { TbArrowsSort } from 'react-icons/tb';
 import { useEffect, useMemo, useState } from 'react';
 import LogoutButton from './logout-button';
@@ -69,8 +69,10 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
   if (!session) return null;
 
   return (
-    <div className='h-full w-80 p-4 flex flex-col items-start shrink-0 gap-8'>
-      <UserAvatar />
+    <div className='h-full w-80 p-4 hidden lg:flex flex-col items-start shrink-0 gap-8 '>
+      <div className='w-full hidden lg:block'>
+        <Title />
+      </div>
       <div className='w-full flex flex-col gap-2 overflow-y-auto h-full scrollbar-hide'>
         <div className='flex justify-between items-center mb-4 gap-2'>
           <SearchBar onChange={handleFilterMarkdowns} value={query} />
@@ -98,7 +100,10 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
           );
         })}
       </div>
-      <LogoutButton />
+      <div className='flex flex-col items-center justify-center w-full gap-2'>
+        <div className='w-full h-[1px] bg-slate-900/25 dark:bg-slate-100/25' />
+        <LogoutButton />
+      </div>
     </div>
   );
 };
