@@ -130,7 +130,7 @@ const SaveButton = ({ content, onSave }: Props) => {
     <button
       onClick={handleSubmit}
       disabled={isDisabled}
-      className='bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 absolute px-4 py-1 rounded-full right-4 bottom-8 drop-shadow-md disabled:bg-slate-400 disabled:dark:bg-slate-700 disabled:drop-shadow-none'
+      className='bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 absolute px-4 py-1 rounded-full right-4 bottom-6 drop-shadow-md disabled:bg-slate-400 disabled:dark:bg-slate-700 disabled:drop-shadow-none'
     >
       {id ? 'Update Markdown' : !session ? 'Login to save' : 'Save Markdown'}
     </button>
