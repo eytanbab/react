@@ -3,6 +3,7 @@ import { supabase } from '../../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import { CiStar } from 'react-icons/ci';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 type Props = {
   markdown: {
@@ -61,6 +62,12 @@ const SavedMarkdownCard = ({
         console.log(error);
       } else {
         setIsFavorite((prev) => !prev);
+        toast(
+          `${
+            !isFavorite ? 'Markdown was favorited!' : 'Markdown was unfavorited'
+          }`
+        );
+        console.log(isFavorite);
       }
     } catch (err) {
       console.log(err);
