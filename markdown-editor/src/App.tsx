@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Router>
       <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
-        <div className='h-screen flex bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100'>
+        <div className='w-full h-screen flex flex-col lg:flex-row bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100'>
           <Toaster
             toastOptions={{
               className:
@@ -32,7 +32,7 @@ const App = () => {
             setContent={setContent}
           />
           <Separator />
-          <div className='flex flex-col w-full gap-x-2'>
+          <div className='flex h-dvh flex-col w-full gap-x-2 overflow-hidden'>
             <Nav />
             <Routes>
               <Route
