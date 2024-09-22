@@ -79,13 +79,13 @@ const SavedMarkdownCard = ({
     >
       <div className='flex flex-col w-full justify-between'>
         <p className='line-clamp-3 w-full break-words'>{markdown.content}</p>
-        <p className='text-sm'>
+        <p className='text-sm text-slate-500'>
           Last updated:{' '}
           <span>{new Date(markdown.updated_at).toLocaleString('en-US')}</span>
         </p>
       </div>
       <div className='flex flex-col items-center justify-between'>
-        <button onClick={handleDelete} className='self-start'>
+        <button onClick={handleDelete}>
           <IoIosCloseCircleOutline className='size-6' />
         </button>
         <button onClick={handleFavorite}>
