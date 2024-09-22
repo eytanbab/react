@@ -20,7 +20,8 @@ type Markdown = {
   content: string;
   is_favorite: boolean;
   user_id: string;
-  created_at: Date;
+  created_at: string;
+  updated_at: string;
 };
 
 const SideNav = ({ refresh, onDelete, setContent }: Props) => {
