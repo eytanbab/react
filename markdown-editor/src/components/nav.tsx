@@ -1,11 +1,11 @@
 import { useGetSession } from '../hooks/use-get-session';
 import SignInButton from './sign-in-button';
 import ModeToggle from './mode-toggle';
-import { Link, useLocation } from 'react-router-dom';
+// import { Link, useLocation } from 'react-router-dom';
 
 const Nav = () => {
   const { session } = useGetSession();
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <div className='w-full flex items-center justify-between px-2 py-4'>
       {!session && <SignInButton />}
