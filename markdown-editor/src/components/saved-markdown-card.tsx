@@ -11,6 +11,8 @@ type Props = {
     content: string;
     is_favorite: boolean;
     user_id: string;
+    created_at: string;
+    updated_at: string;
   };
   isActive: boolean;
   onDelete: () => void;
@@ -64,6 +66,7 @@ const SavedMarkdownCard = ({
       console.log(err);
     }
   };
+
   return (
     <div
       className={`
@@ -74,7 +77,13 @@ const SavedMarkdownCard = ({
     }
     flex bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2`}
     >
-      <p className='line-clamp-3 w-full break-words'>{markdown.content}</p>
+      <div className='flex flex-col w-full justify-between'>
+        <p className='line-clamp-3 w-full break-words'>{markdown.content}</p>
+        <p className='text-sm'>
+          Last updated:{' '}
+          <span>{new Date(markdown.updated_at).toLocaleString('en-US')}</span>
+        </p>
+      </div>
       <div className='flex flex-col items-center justify-between'>
         <button onClick={handleDelete} className='self-start'>
           <IoIosCloseCircleOutline className='size-6' />
