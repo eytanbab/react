@@ -14,8 +14,7 @@ const LogoutButton = () => {
   };
 
   return (
-    <div className='w-full'>
-      <div className='w-full h-[1px] bg-slate-900/25 dark:bg-slate-100/25' />
+    <div className='lg:w-full'>
       <button onClick={handleLogout} className='w-full text-center py-2'>
         Logout
       </button>
