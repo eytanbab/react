@@ -8,7 +8,8 @@ type Markdown = {
   content: string;
   is_favorite: boolean;
   user_id: string;
-  created_at: Date;
+  created_at: string;
+  updated_at: string;
 };
 
 export const useGetMarkdowns = (refresh: boolean) => {
@@ -24,9 +25,9 @@ export const useGetMarkdowns = (refresh: boolean) => {
     try {
       const { data: markdown, error } = await supabase
         .from('markdown')
-        .select('id,title,content,is_favorite,user_id, created_at')
+        .select('*')
         .eq('user_id', userId)
-        .order('created_at', { ascending: false });
+        .order('updated_at', { ascending: false });
 
       if (error) {
         throw error;
