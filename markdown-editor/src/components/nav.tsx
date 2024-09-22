@@ -11,14 +11,14 @@ const Nav = () => {
       {!session && <SignInButton />}
       {/* {session && <SearchBar />} */}
       <div className='flex gap-4 items-center w-full justify-end'>
-        <Link
+        {/* <Link
           className='border border-slate-800/25 dark:border-slate-300/50 rounded-lg py-1 px-2'
           to={location.pathname === '/how-to-use' ? '/' : 'how-to-use'}
         >
           {location.pathname === '/how-to-use'
             ? 'Markdown Editor'
             : 'How to use'}
-        </Link>
+        </Link> */}
         <ModeToggle />
       </div>
     </div>
