@@ -63,6 +63,13 @@ const SaveButton = ({ content, onSave }: Props) => {
               toast('Markdown updated successfully!', {
                 duration: 1500,
               });
+              const { error } = await supabase
+                .from('markdown')
+                .update({ updated_at: new Date().toISOString() })
+                .eq('id', id);
+              if (error) {
+                console.log(error);
+              }
               onSave();
             }
           }
@@ -101,6 +108,15 @@ const SaveButton = ({ content, onSave }: Props) => {
             toast('Markdown updated successfully!', {
               duration: 1500,
             });
+            const { error } = await supabase
+              .from('markdown')
+              .update({
+                updated_at: new Date(),
+              })
+              .eq('id', id);
+            if (error) {
+              console.log(error);
+            }
             onSave();
           }
         }
