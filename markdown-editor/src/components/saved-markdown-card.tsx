@@ -77,8 +77,10 @@ const SavedMarkdownCard = ({
     }
     flex bg-slate-50 dark:bg-slate-900 w-full min-h-24 rounded-xl drop-shadow-md p-2`}
     >
-      <div className='flex flex-col w-full justify-between'>
-        <p className='line-clamp-3 w-full break-words'>{markdown.content}</p>
+      <div className='flex flex-col w-full justify-between '>
+        <p className='line-clamp-3 w-full break-words max-w-60'>
+          {markdown.content}
+        </p>
         <p className='text-sm text-slate-500'>
           Last updated:{' '}
           <span>{new Date(markdown.updated_at).toLocaleString('en-US')}</span>
