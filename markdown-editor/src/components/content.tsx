@@ -11,13 +11,13 @@ const Content = ({ markdown, setMarkdown }: Props) => {
   };
 
   return (
-    <div className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 px-4 py-8 rounded-xl drop-shadow-md relative'>
+    <div className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 px-4 py-8 rounded-xl drop-shadow-md relative h-1/2 lg:h-full lg:overflow-y-scroll scrollbar-hide'>
       <textarea
         value={markdown}
         onChange={handleChange}
-        className='w-full h-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 scrollbar-hide'
+        className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 scrollbar-hide h-full'
       />
-      <CopyButton content={markdown}/>
+      <CopyButton content={markdown} />
     </div>
   );
 };
