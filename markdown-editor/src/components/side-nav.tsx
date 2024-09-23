@@ -71,8 +71,8 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
     const markdownsToSort = query ? filteredMarkdowns : markdowns;
     if (!markdownsToSort) return [];
     return [...markdownsToSort].sort((a: Markdown, b: Markdown) => {
-      const dateA = new Date(a.created_at).getTime();
-      const dateB = new Date(b.created_at).getTime();
+      const dateA = new Date(a.updated_at).getTime();
+      const dateB = new Date(b.updated_at).getTime();
       if (ascending) {
         return dateA - dateB;
       } else {
