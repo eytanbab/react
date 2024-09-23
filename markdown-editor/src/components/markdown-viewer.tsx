@@ -12,7 +12,7 @@ const MarkdownViewer = ({ content, onSave }: Props) => {
     <div className='w-full border-none outline-none resize-none bg-slate-50 dark:bg-slate-900 px-4 py-8 rounded-xl drop-shadow-md relative h-1/2 lg:h-full lg:overflow-y-scroll scrollbar-hide'>
       <Markdown
         remarkPlugins={[remarkGfm]}
-        className='markdown w-full drop-shadow-md dark:bg-slate-900 rounded-xl break-words overflow-auto whitespace-pre-wrap scrollbar-hide h-full'
+        className='markdown w-full dark:bg-slate-900 rounded-xl break-words overflow-auto whitespace-pre-wrap scrollbar-hide h-full'
       >
         {content}
       </Markdown>
