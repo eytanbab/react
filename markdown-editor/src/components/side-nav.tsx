@@ -145,7 +145,7 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
                   <SheetHeader className='self-center'>
                     <SheetTitle>Sign in to access saved markdowns</SheetTitle>
                   </SheetHeader>
-                  <SheetDescription className='self-center mt-36'>
+                  <SheetDescription className='self-center'>
                     <SheetClose asChild>
                       <SignInButton />
                     </SheetClose>
