@@ -92,7 +92,7 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
             <SheetTrigger asChild>
               <BiMenu className='size-6 cursor-pointer' />
             </SheetTrigger>
-            <SheetContent className='w-full flex flex-col gap-4'>
+            <SheetContent side='left' className='w-full flex flex-col gap-4'>
               {session ? (
                 <>
                   <SheetHeader>
