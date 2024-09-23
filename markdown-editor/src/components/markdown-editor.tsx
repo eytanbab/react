@@ -24,7 +24,7 @@ const MarkdownEditor = ({ onSave, content, setContent }: Props) => {
   }, [location.pathname, fetchedMarkdown, setContent]);
 
   return (
-    <div className='flex flex-col lg:grid grid-cols-2 gap-4 p-2 w-full h-[calc(100%-4rem)] items-start'>
+    <div className='flex flex-col lg:grid grid-cols-2 gap-4 p-2 w-full h-full lg:h-[calc(100%-4rem)] items-start'>
       <Content markdown={content} setMarkdown={setContent} />
       <MarkdownViewer content={content} onSave={onSave} />
     </div>
