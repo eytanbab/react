@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Content from './content';
 import { useGetMarkdown } from '../hooks/use-get-markdown';
 import { useLocation, useParams } from 'react-router-dom';
@@ -14,6 +14,7 @@ const MarkdownEditor = ({ onSave, content, setContent }: Props) => {
   const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const { markdown: fetchedMarkdown } = useGetMarkdown(id);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -25,7 +26,11 @@ const MarkdownEditor = ({ onSave, content, setContent }: Props) => {
 
   return (
     <div className='flex flex-col lg:grid grid-cols-2 gap-4 p-2 w-full h-full lg:h-[calc(100%-4rem)] items-start'>
-      <Content markdown={content} setMarkdown={setContent} />
+      <Content
+        forwardedRef={textareaRef}
+        markdown={content}
+        setMarkdown={setContent}
+      />
       <MarkdownViewer content={content} onSave={onSave} />
     </div>
   );
