@@ -4,6 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { CiStar } from 'react-icons/ci';
 import { useState } from 'react';
 import { toast } from 'sonner';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './ui/dialog';
 
 type Props = {
   markdown: {
@@ -94,9 +103,39 @@ const SavedMarkdownCard = ({
         </p>
       </div>
       <div className='flex flex-col items-center justify-between'>
-        <button onClick={handleDelete}>
-          <IoIosCloseCircleOutline className='size-6' />
-        </button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <button>
+              <IoIosCloseCircleOutline className='size-6' />
+            </button>
+          </DialogTrigger>
+          <DialogContent className='w-80 rounded-md drop-shadow-md'>
+            <DialogHeader>
+              <DialogTitle>Delete markdown</DialogTitle>
+              <DialogDescription>
+                Are you sure you want to delete this markdown?
+              </DialogDescription>
+            </DialogHeader>
+            <div className='flex mt-0 justify-center gap-8'>
+              <DialogClose asChild>
+                <button
+                  onClick={handleDelete}
+                  className='bg-slate-900 text-slate-100 dark:bg-slate-100 dark:text-slate-900  px-2 py-1 rounded-md'
+                >
+                  Confirm
+                </button>
+              </DialogClose>
+              <DialogClose asChild>
+                <button
+                  className='outline outline-1 px-2 py-1 rounded-md outline-slate-900 dark:outline-slate-100
+                '
+                >
+                  Cancel
+                </button>
+              </DialogClose>
+            </div>
+          </DialogContent>
+        </Dialog>
         <button onClick={handleFavorite}>
           <CiStar className={`${isFavorite ? 'text-[#ED8A19]' : ''} size-6`} />
         </button>
