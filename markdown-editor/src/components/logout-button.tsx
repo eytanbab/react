@@ -15,7 +15,7 @@ const LogoutButton = () => {
 
   return (
     <div className='lg:w-full'>
-      <button onClick={handleLogout} className='w-full text-center py-2'>
+      <button onClick={handleLogout} className='w-full text-center py-1 px-4'>
         Logout
       </button>
     </div>
