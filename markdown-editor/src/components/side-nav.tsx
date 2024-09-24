@@ -116,18 +116,16 @@ const SideNav = ({ refresh, onDelete, setContent }: Props) => {
                     {error && <div>Error: {error}</div>}
                     {sortedMarkdowns?.map((markdown) => {
                       return (
-                        <SheetClose asChild>
-                          <NavLink key={markdown.id} to={`/${markdown.id}`}>
-                            {({ isActive }) => (
-                              <SavedMarkdownCard
-                                markdown={markdown}
-                                isActive={isActive}
-                                onDelete={onDelete}
-                                setContent={setContent}
-                              />
-                            )}
-                          </NavLink>
-                        </SheetClose>
+                        <NavLink key={markdown.id} to={`/${markdown.id}`}>
+                          {({ isActive }) => (
+                            <SavedMarkdownCard
+                              markdown={markdown}
+                              isActive={isActive}
+                              onDelete={onDelete}
+                              setContent={setContent}
+                            />
+                          )}
+                        </NavLink>
                       );
                     })}
                   </div>
