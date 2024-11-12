@@ -29,16 +29,39 @@
   margin: 0;
 }
 
-blockquote {
-  margin: 0 1rem !important; /* Forcefully remove all margin */
-}
-
 blockquote > * {
-  @apply bg-slate-100 text-gray-900 border-l-4 border-slate-300 p-2;
+  @apply bg-slate-200 text-gray-900 border-l-4 border-slate-400 p-2;
 }
 
 .dark blockquote > * {
   @apply bg-slate-800 text-slate-100 border-slate-600;
+}
+
+pre code {
+  @apply bg-slate-200 text-gray-900 block p-2;
+}
+
+.dark pre code {
+  @apply bg-slate-800 text-slate-100 block p-2;
+}
+
+table {
+  @apply border-collapse border-spacing-0 m-0 p-0;
+}
+
+th,
+td {
+  @apply p-2 m-0 text-center border-[1px] border-slate-900/50;
+}
+
+p > a {
+  @apply underline;
+}
+
+ul,
+li {
+  all: revert;
+  margin: 0;
 }
 
 @layer base {
