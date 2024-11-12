@@ -19,7 +19,7 @@ const MarkdownGuide = () => {
     <div className='h-[calc(100%-4rem)] gap-4 p-2 w-full'>
       <Markdown
         remarkPlugins={[remarkGfm]}
-        className='markdown w-full dark:bg-slate-900 rounded-xl break-words overflow-auto whitespace-pre-wrap scrollbar-hide h-full'
+        className='markdown w-full dark:bg-slate-900 rounded-xl break-words overflow-auto whitespace-pre-wrap scrollbar-hide h-full p-4'
       >
         {tutorialContent}
       </Markdown>
