@@ -54,7 +54,7 @@ Shortcut: Ctrl+Shift+. (or Cmd+Shift+. on Mac) to start an ordered list
 
 ## Links
 
-Create links by putting the link text in square brackets and the URL in parentheses:
+Create links by putting the link text in square brackets and the URL in parentheses `[text](link)`:
 
 [Visit my portfolio](https://www.ethanbabaev.dev)
 
