@@ -1,50 +1,115 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Markdown Editor
 
-Currently, two official plugins are available:
+A simple and powerful markdown editor built using **Vite**, **React**, and **TypeScript**, designed to offer a seamless writing experience. This project includes features like real-time markdown preview, local storage for temporary data persistence, and a freemium subscription model for advanced functionalities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Project preview](https://imgur.com/6LeHX2E.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Real-Time Markdown Preview**: See the rendered markdown alongside your edits in real-time.
+- **Local Storage Support**: Automatically saves your content locally for temporary storage before logging in.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Tech Stack
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Frontend**: React, Vite
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (for cloud storage and user management)
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/eytanbab/react/tree/master/markdown-editor
+   cd markdown-editor
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+4. Open your browser and navigate to:
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## Usage
+
+1. Open the markdown editor in your browser.
+2. Start typing in the editor pane; your content will be saved in local storage automatically.
+3. Log in to save your markdown files to the cloud (available for premium users).
+4. Use the markdown preview pane to view the rendered markdown in real-time.
+
+---
+
+## Roadmap
+
+- **Themes**: Add light/dark/custom theme support.
+- **Export Options**: Download markdown as `.md` or `.pdf` files.
+- **Collaboration**: Enable real-time collaborative editing.
+- **Mobile Support**: Improve responsiveness for mobile devices.
+- **Freemium Subscription Model**:
+  - **Free Tier**: Basic markdown editing and preview functionality.
+  - **Premium Tier**: Advanced features (e.g., cloud sync, custom themes).
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to submit a pull request or open an issue for any bugs or feature suggestions.
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Contact
+
+- **Author**: Ethan Babaev
+- **Portfolio**: [ethanbabaev.dev](https://ethanbabaev.dev/)
+- **Email**: [ethan.babaev@gmail.com](mailto:ethan.babaev@gmail.com)
+- **GitHub**: [eytanbab](https://github.com/eytanbab)
+
+---
+
+Thank you for using the Markdown Editor! Happy writing! 🚀
