@@ -58,11 +58,11 @@ p > a {
   @apply underline;
 }
 
-ul,
+/* ul,
 li {
   all: revert;
   margin: 0;
-}
+} */
 
 @layer base {
   :root {
