@@ -3,7 +3,7 @@
 
 A simple and powerful markdown editor built using **Vite**, **React**, and **TypeScript**, designed to offer a seamless writing experience. This project includes features like real-time markdown preview, local storage for temporary data persistence, and a freemium subscription model for advanced functionalities.
 
-![Project preview](https://imgur.com/6LeHX2E.png)
+![Project preview](https://i.imgur.com/k5jN4WK.png)
 
 ---
 
