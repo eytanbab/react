@@ -1,7 +1,7 @@
 
 # Markdown Editor
 
-A simple and powerful markdown editor built using **Vite**, **React**, and **TypeScript**, designed to offer a seamless writing experience. This project includes features like real-time markdown preview, local storage for temporary data persistence, and a freemium subscription model for advanced functionalities.
+A simple and powerful markdown editor built using **Vite**, **React**, and **TypeScript**, designed to offer a seamless writing experience. This project includes features like real-time markdown preview, and local storage for temporary data persistence.
 
 ![Project preview](https://i.imgur.com/k5jN4WK.png)
 
@@ -66,10 +66,8 @@ A simple and powerful markdown editor built using **Vite**, **React**, and **Typ
 
 ## Roadmap
 
-- **Themes**: Add light/dark/custom theme support.
 - **Export Options**: Download markdown as `.md` or `.pdf` files.
 - **Collaboration**: Enable real-time collaborative editing.
-- **Mobile Support**: Improve responsiveness for mobile devices.
 - **Freemium Subscription Model**:
   - **Free Tier**: Basic markdown editing and preview functionality.
   - **Premium Tier**: Advanced features (e.g., cloud sync, custom themes).
